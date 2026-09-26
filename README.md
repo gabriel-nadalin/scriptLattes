@@ -28,7 +28,91 @@ sendo a referência; o que está aqui é a minha cópia, com alterações para c
   foi chamado.
 - Empacotamento opcional com PyInstaller (`empacotar.py`) e workflows de CI.
 
-## Como rodar
+## Como rodar (explicado passo a passo)
+
+Esta seção é para quem nunca usou o terminal. As seções seguintes são as mesmas instruções em
+forma curta.
+
+### Em qualquer sistema, antes de tudo: instale o Python
+
+O scriptLattes é um programa em Python, então o Python precisa estar no computador.
+
+- **Windows**: baixe em <https://www.python.org/downloads/> e, na primeira tela do instalador,
+  **marque a caixa "Add python.exe to PATH"** antes de clicar em *Install Now*. Esse detalhe é o
+  que faz o lançador encontrar o Python depois.
+- **macOS**: baixe em <https://www.python.org/downloads/> e clique em *Install Now* (pode precisar
+  da sua senha). Esse instalador já traz o Tkinter, que é o que a janela gráfica usa; quem instala
+  o Python pelo Homebrew precisa de `brew install python-tk`.
+- **Linux (Debian/Ubuntu)**: `sudo apt install python3 python3-tk python3-venv`
+  (no Fedora: `sudo dnf install python3 python3-tkinter python3-virtualenv`).
+
+### Baixe o programa
+
+Se você só quer usar: na página do repositório, clique no botão verde **Code → Download ZIP** e
+descompacte em uma pasta sua (ex.: `Documentos/scriptlattes`).
+Se tem Git: `git clone https://github.com/gabriel-nadalin/scriptLattes.git`.
+
+### Rode a demonstração (Windows, sem digitar nada)
+
+1. Abra a pasta do programa.
+2. Clique duas vezes em **`executar.bat`**.
+3. Na primeira vez ele instala o que falta — precisa de internet. Nas próximas, começa direto.
+4. Ao terminar aparece `Concluido com sucesso`; pressione qualquer tecla para fechar.
+5. Abra a pasta `exemplo/demo-lattes/saida` e dê dois cliques em **`index.html`**.
+
+Se a janela fechar na mesma hora ou der erro, o próprio `executar.bat` mostra o motivo (falta de
+Python, falta de internet) e espera você ler antes de fechar.
+
+### Rode a demonstração (macOS, sem digitar nada)
+
+1. Abra a pasta do programa no **Finder**.
+2. Clique duas vezes em **`executar.command`**.
+3. Na primeira vez o macOS pode dizer que o arquivo não pode ser aberto. Vá em
+   **Ajustes do Sistema → Privacidade e Segurança**, procure a mensagem sobre o `executar.command`
+   e clique em **"Abrir mesmo assim"**, confirmando com a sua senha. Se não aparecer nada lá:
+   clique com o botão direito (ou Control+clique) no `executar.command` e escolha **Abrir**.
+4. O resultado sai em `exemplo/demo-lattes/saida` — abra o `index.html`.
+
+### Rode a demonstração (Linux, sem digitar nada)
+
+Muitas versões do Linux abrem um aviso ao clicar duas vezes em um arquivo `.sh`. Se abrir, escolha
+**Executar**. Se nada acontecer ou o arquivo abrir no editor de textos, use o terminal:
+
+```bash
+cd caminho/da/pasta/scriptLattes
+./executar.sh
+```
+
+O resultado sai em `exemplo/demo-lattes/saida`. Se aparecer `Permissão negada`, rode antes:
+`chmod +x executar.sh`.
+
+### Agora com os seus currículos (qualquer sistema)
+
+1. Entre na pasta do programa (`cd caminho/da/pasta/scriptLattes`).
+2. Rode o assistente e responda o que ele pergunta:
+   - Windows: `executar.bat --assistente`
+   - macOS/Linux: `./executar.sh --assistente`
+   - Se preferir janela em vez do terminal: troque `--assistente` por `--janela`.
+3. Ele pede, em ordem: o nome do grupo; os links ou números dos currículos Lattes; o ano inicial e
+   o final; a pasta de saída; a pasta de currículos; o seu e-mail (opcional). Para aceitar a
+   sugestão entre `[colchetes]`, basta apertar **Enter**.
+4. No fim ele pergunta se pode gerar os relatórios na sequência (responda `s`). Se o computador
+   ainda não tiver baixado esses currículos, o programa baixa agora — só nesta parte o Google
+   Chrome é necessário, e pode demorar.
+5. Abra o `index.html` da pasta de saída que você escolheu.
+
+Um currículo do Lattes é identificado por 16 números. No site, o endereço é
+`http://lattes.cnpq.br/1234567890123456` — pode colar o endereço inteiro ou só os números, um por
+linha.
+
+### Se der problema
+
+Rode o diagnóstico e leia a última parte da saída, que diz o que está faltando:
+
+- Windows: `executar.bat --diagnostico`
+- macOS/Linux: `./executar.sh --diagnostico`
+
+## Como rodar (resumo)
 
 Precisa de Python 3.9 ou mais novo. Nada além disso para processar currículos que já estejam
 no cache.

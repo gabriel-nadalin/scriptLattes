@@ -179,6 +179,13 @@ def executar_diagnostico(arquivo_configuracao=None):
         if not disponivel and essencial:
             bloqueios.append((3, f'{distribuicao} não instalado; rode o lançador do projeto para instalar'))
 
+    janela = modulo_disponivel('tkinter')
+    _linha('janela gráfica (--janela)', 'disponível' if janela else 'AUSENTE (instale o Tkinter)')
+    if not janela:
+        avisos.append('Tkinter não instalado: a janela (--janela) não abre. Use --assistente, que funciona '
+                      'no terminal. No Debian/Ubuntu: sudo apt install python3-tk; no Fedora: '
+                      'sudo dnf install python3-tkinter')
+
     print('\nNavegador (necessário apenas para baixar currículos novos)')
     chrome = procurar_chrome()
     if chrome:
