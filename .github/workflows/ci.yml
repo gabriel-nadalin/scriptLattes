@@ -45,15 +45,42 @@ jobs:
 
       # O assistente precisa funcionar com entrada vinda de um script (é assim que ele
       # será usado por quem cola uma lista de currículos e aperta Enter).
+      #
+      # Este passo é todo em Python de propósito: o `mktemp -d` do Git Bash devolve um
+      # caminho do MSYS (/tmp/...) que o Python do Windows resolve para outra pasta
+      # (<unidade>:\tmp\...), então verificar com `test -f` no bash falhava no Windows.
+      # Aqui os caminhos são criados, usados e conferidos pelo mesmo interpretador.
       - name: Assistente cria .config e .list e roda os relatórios
-        shell: bash
+        shell: python
         run: |
-          pasta="$(mktemp -d)"
-          printf 'Grupo CI\n1111111111111111 , Ana Beatriz Ferreira Lima\n2222222222222222 , Carlos Eduardo Mendes Rocha\n\n2000\nhoje\n%s/relatorios\n%s/exemplo/demo-lattes/cache\n\ns\n' "$pasta" "$PWD" \
-            | python -m scriptLattes.assistente --pasta "$pasta" --rodar
-          test -f "$pasta/grupo-ci.config"
-          test -f "$pasta/grupo-ci.list"
-          test -f "$pasta/relatorios/index.html"
+          import os, subprocess, sys, tempfile
+
+          pasta = tempfile.mkdtemp(prefix='sl-ci-')
+          respostas = os.path.join(pasta, 'respostas.txt')
+          with open(respostas, 'w', encoding='utf-8') as arquivo:
+              arquivo.write(
+                  'Grupo CI\n'
+                  '1111111111111111 , Ana Beatriz Ferreira Lima\n'
+                  '2222222222222222 , Carlos Eduardo Mendes Rocha\n'
+                  '\n'
+                  '2000\n'
+                  'hoje\n'
+                  f'{pasta}/relatorios\n'
+                  f'{os.getcwd()}/exemplo/demo-lattes/cache\n'
+                  '\n'
+                  's\n')
+
+          with open(respostas, encoding='utf-8') as entrada:
+              resultado = subprocess.run(
+                  [sys.executable, '-m', 'scriptLattes.assistente', '--pasta', pasta, '--rodar'],
+                  stdin=entrada)
+          assert resultado.returncode == 0, f'o assistente terminou com código {resultado.returncode}'
+
+          for nome in ('grupo-ci.config', 'grupo-ci.list',
+                       os.path.join('relatorios', 'index.html')):
+              caminho = os.path.join(pasta, nome)
+              assert os.path.isfile(caminho), f'não foi criado: {caminho}'
+          print('assistente ok:', pasta)
 
       # O lançador é o caminho que um usuário sem experiência percorre: ele precisa
       # funcionar nos dois sistemas, criando o ambiente virtual e instalando tudo.
