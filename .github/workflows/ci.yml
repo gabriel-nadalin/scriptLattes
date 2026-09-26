@@ -107,12 +107,25 @@ jobs:
           python -c "import os,sys; sys.exit(0 if os.path.isfile('exemplo/demo-lattes/saida/index.html') else 1)"
           python -c "import glob,sys; sys.exit(0 if len(glob.glob('exemplo/demo-lattes/saida/json/*.json')) == 3 else 1)"
 
+      # Mesma razão do passo anterior para ser todo em Python: o `/tmp` do Git Bash
+      # não é o mesmo `<unidade>:\tmp` que o Python do Windows usa.
       - name: Importar currículos salvos pelo navegador (--adicionar-cv)
-        shell: bash
+        shell: python
         run: |
-          pasta="$(mktemp -d)"
-          python scriptLattes.py --adicionar-cv exemplo/demo-lattes/cache --cache "$pasta/cache"
-          python -c "import glob,os,sys; sys.exit(0 if len(os.listdir('$pasta/cache')) == 3 else 1)"
+          import os, subprocess, sys, tempfile
+
+          pasta = tempfile.mkdtemp(prefix='sl-cv-')
+          destino = os.path.join(pasta, 'cache')
+          resultado = subprocess.run(
+              [sys.executable, 'scriptLattes.py',
+               '--adicionar-cv', 'exemplo/demo-lattes/cache',
+               '--cache', destino])
+          assert resultado.returncode == 0, (
+              f'--adicionar-cv terminou com código {resultado.returncode}')
+
+          importados = sorted(os.listdir(destino))
+          assert len(importados) == 3, f'esperava 3 currículos, veio: {importados}'
+          print('currículos importados:', importados)
 
       # Sem currículos em cache/ (a pasta é ignorada pelo git), o programa precisa
       # explicar o problema em português, sem traceback e sem travar. O .list aponta
@@ -120,21 +133,29 @@ jobs:
       # ou não Chrome/ChromeDriver/rede no runner (o download automático do driver
       # tornava este passo instável).
       - name: Falha previsível deve ser explicada, não quebrada
-        shell: bash
+        shell: python
         run: |
-          pasta="$(mktemp -d)"
-          {
-            echo "global-arquivo_de_entrada = $pasta/nao-existe.list"
-            echo "global-diretorio_de_saida = $pasta/saida"
-            echo "global-diretorio_de_armazenamento_de_cvs = $pasta/cache"
-          } > "$pasta/ci.config"
-          set +e
-          python scriptLattes.py "$pasta/ci.config" > "$pasta/saida.txt" 2> "$pasta/erro.txt"
-          codigo=$?
-          set -e
-          echo "código de saída: $codigo"
-          cat "$pasta/saida.txt"
-          test "$codigo" -eq 2
-          grep -q '\[ERRO\]' "$pasta/saida.txt"
-          grep -q 'O que fazer:' "$pasta/saida.txt"
-          test ! -s "$pasta/erro.txt"
+          import os, subprocess, sys, tempfile
+
+          pasta = tempfile.mkdtemp(prefix='sl-erro-')
+          config = os.path.join(pasta, 'ci.config')
+          with open(config, 'w', encoding='utf-8') as arquivo:
+              arquivo.write(
+                  f'global-arquivo_de_entrada = {pasta}/nao-existe.list\n'
+                  f'global-diretorio_de_saida = {pasta}/saida\n'
+                  f'global-diretorio_de_armazenamento_de_cvs = {pasta}/cache\n')
+
+          resultado = subprocess.run(
+              [sys.executable, 'scriptLattes.py', config],
+              capture_output=True, text=True)
+          print('código de saída:', resultado.returncode)
+          print('--- saída ---')
+          print(resultado.stdout)
+          print('--- erros ---')
+          print(resultado.stderr)
+
+          assert resultado.returncode == 2, (
+              f'esperava código 2 (erro de arquivo de entrada), veio {resultado.returncode}')
+          assert '[ERRO]' in resultado.stdout, 'faltou a linha [ERRO]'
+          assert 'O que fazer:' in resultado.stdout, 'faltou a orientação "O que fazer:"'
+          assert resultado.stderr.strip() == '', 'devia explicar sem traceback'
