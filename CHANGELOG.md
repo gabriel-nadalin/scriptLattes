@@ -33,6 +33,14 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
   programa morria com `FileNotFoundError: ''`. Os valores `0/1/false/true` passaram a ser
   reconhecidos, o `.config` volta a ser gravado como `sim`/`nao`, e o filtro ligado sem lista
   de termos agora apenas avisa.
+- O teste dos caminhos absolutos do assistente falhava no Windows: o `.config` grava os
+  caminhos com `/` (funciona nos dois sistemas), e o teste comparava com o separador nativo.
+  Agora ele exercita caminhos relativos de propósito, então pega de fato a regressão que
+  deveria pegar (conferido removendo a conversão).
+- O passo do CI "falha previsível deve ser explicada" dependia de o runner ter (ou não)
+  Chrome/ChromeDriver/rede — no Windows o download automático do driver fazia o programa
+  encerrar com código 3 em vez de 2. Agora ele usa um `.list` inexistente, que falha por
+  motivo determinístico no código 2.
 - `--diagnostico` informa se a janela gráfica (`--janela`) está disponível e, quando o Tkinter
   falta, diz o comando de instalação de cada distribuição — antes a janela simplesmente não abria.
 - As mensagens passaram a chamar o programa pelo nome do ambiente atual: `scriptlattes` no

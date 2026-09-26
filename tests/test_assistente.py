@@ -137,13 +137,38 @@ class TestCriarProjeto(unittest.TestCase):
         criar_projeto('G', LINHAS_DE_EXEMPLO, pasta_de_trabalho=self.pasta, sobrescrever=True)
 
     def test_saida_e_cache_ficam_em_caminho_absoluto(self):
-        resultado = criar_projeto('G', LINHAS_DE_EXEMPLO, pasta_de_trabalho=self.pasta)
-        with open(resultado.config, encoding='utf-8') as arquivo:
-            texto = arquivo.read()
-        self.assertIn(f'global-diretorio_de_saida                 = {resultado.saida}', texto)
-        self.assertIn(f'global-diretorio_de_armazenamento_de_cvs  = {resultado.cache}', texto)
-        self.assertTrue(os.path.isabs(resultado.saida))
-        self.assertTrue(os.path.isabs(resultado.cache))
+        # Relativos de propósito: é o que exercita a conversão. Com o caminho absoluto
+        # de entrada o teste não provaria nada, porque ele já sai absoluto daqui.
+        resultado = criar_projeto('G', LINHAS_DE_EXEMPLO, pasta_de_trabalho=self.pasta,
+                                  pasta_de_saida=os.path.join('rel-saida', 'x'),
+                                  pasta_de_cache=os.path.join('rel-cache', 'y'))
+
+        def valor_gravado(parametro):
+            with open(resultado.config, encoding='utf-8') as arquivo:
+                for linha in arquivo:
+                    if linha.startswith(parametro):
+                        return linha.split('=', 1)[1].strip()
+            self.fail(f'{parametro} não está no .config')
+
+        saida = valor_gravado('global-diretorio_de_saida')
+        cache = valor_gravado('global-diretorio_de_armazenamento_de_cvs')
+
+        # O .config grava sempre no formato com '/', que funciona nos dois sistemas:
+        # no Windows o separador nativo ('\\') seria interpretado como escape.
+        self.assertEqual(os.path.abspath(os.path.join('rel-saida', 'x')).replace(os.sep, '/'),
+                         saida)
+        self.assertEqual(os.path.abspath(os.path.join('rel-cache', 'y')).replace(os.sep, '/'),
+                         cache)
+        self.assertTrue(os.path.isabs(saida), f'{saida!r} deveria ser absoluto')
+        self.assertTrue(os.path.isabs(cache), f'{cache!r} deveria ser absoluto')
+        self.assertNotIn('\\', saida)
+        self.assertNotIn('\\', cache)
+
+    def test_pastas_padrao_usam_o_nome_do_grupo(self):
+        resultado = criar_projeto('Meu Grupo Acentuado', LINHAS_DE_EXEMPLO,
+                                  pasta_de_trabalho=self.pasta)
+        self.assertEqual(os.path.join(self.pasta, 'saida-meu-grupo-acentuado'), resultado.saida)
+        self.assertEqual(os.path.join(self.pasta, 'cache'), resultado.cache)
 
     def test_lista_fica_relativa_ao_config(self):
         resultado = criar_projeto('G', LINHAS_DE_EXEMPLO, pasta_de_trabalho=self.pasta)

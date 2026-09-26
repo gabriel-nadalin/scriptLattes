@@ -87,14 +87,17 @@ jobs:
           python scriptLattes.py --adicionar-cv exemplo/demo-lattes/cache --cache "$pasta/cache"
           python -c "import glob,os,sys; sys.exit(0 if len(os.listdir('$pasta/cache')) == 3 else 1)"
 
-      # Sem currículos em cache/ (a pasta é ignorada pelo git) e sem ChromeDriver, o
-      # programa precisa explicar o problema em português, sem traceback e sem travar.
+      # Sem currículos em cache/ (a pasta é ignorada pelo git), o programa precisa
+      # explicar o problema em português, sem traceback e sem travar. O .list aponta
+      # para um arquivo inexistente de propósito: assim o teste não depende de haver
+      # ou não Chrome/ChromeDriver/rede no runner (o download automático do driver
+      # tornava este passo instável).
       - name: Falha previsível deve ser explicada, não quebrada
         shell: bash
         run: |
           pasta="$(mktemp -d)"
           {
-            echo "global-arquivo_de_entrada = $PWD/exemplo/teste-01.list"
+            echo "global-arquivo_de_entrada = $pasta/nao-existe.list"
             echo "global-diretorio_de_saida = $pasta/saida"
             echo "global-diretorio_de_armazenamento_de_cvs = $pasta/cache"
           } > "$pasta/ci.config"
@@ -104,7 +107,7 @@ jobs:
           set -e
           echo "código de saída: $codigo"
           cat "$pasta/saida.txt"
-          test "$codigo" -eq 3
+          test "$codigo" -eq 2
           grep -q '\[ERRO\]' "$pasta/saida.txt"
           grep -q 'O que fazer:' "$pasta/saida.txt"
           test ! -s "$pasta/erro.txt"
