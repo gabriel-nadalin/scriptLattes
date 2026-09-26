@@ -1,0 +1,34 @@
+O QUE É ESTA PASTA
+=================
+Relatórios gerados pelo scriptLattes para o grupo "eerp".
+
+POR ONDE COMEÇAR
+================
+1) Abra o arquivo  index.html  neste navegador (ou clique duas vezes nele).
+2) Os relatórios individuais de cada pesquisador estão em  json/  e  *.html.
+
+O QUE TEM AQUI
+==============
+index.html              página inicial com a lista de membros e os relatórios
+*.html                  um relatório por tipo de produção (artigos, congressos, ...)
+json/                   os mesmos dados em formato JSON (para planilhas e programas)
+grafo_de_colaboracoes.gexf   grafo de coautorias (abra no Gephi)
+scriptlattes-log.txt    registro da execução; envie este arquivo ao pedir suporte
+
+COMO RODAR DE NOVO
+==================
+Rode o mesmo comando usado agora. Os currículos já baixados ficam guardados e são
+reaproveitados: a segunda execução é bem mais rápida e funciona sem internet.
+Para mudar o período ou os relatórios, edite o arquivo .config do grupo.
+
+CURRÍCULOS GUARDADOS
+====================
+A pasta de cache (por padrão  cache/ ) guarda uma cópia de cada currículo baixado.
+Faça backup dela: com a pasta em mãos você regenera tudo sem baixar de novo.
+
+AVISO SOBRE DADOS PESSOAIS (LGPD)
+=================================
+Estes relatórios reúnem dados públicos de currículos Lattes de terceiros
+(pesquisadores que não são necessariamente membros do grupo). Use-os para fins
+de pesquisa e gestão; não publique em site aberto nem compartilhe além do
+necessário sem consentimento dos titulares.

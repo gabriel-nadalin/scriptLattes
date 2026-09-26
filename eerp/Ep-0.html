@@ -1,0 +1,97 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>eerp</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"></head><body><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>eerp</h2></div>
+    <link href="css/tabulator_site.min.css" rel="stylesheet" />
+    <link href="css/tabulator-scriplattes.css" rel="stylesheet" />
+    <script src="js/tabulator.min.js"></script>
+    <script src="js/xlsx.full.min.js"></script>
+    
+    <style>
+    /* ellipsis em todas as células */
+    #tabela-publicacoes .tabulator-cell {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    </style>
+    
+    <h3>Total de participação em eventos</h3><br>
+    
+        <div id="grafico-producoes" style="width:100%; margin:1em auto;"></div>
+        <!-- script src="https://code.highcharts.com/highcharts.js"></script -->
+        <script src="./js/highcharts.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            Highcharts.chart('grafico-producoes', {"chart": {"type": "column", "height": 250}, "title": {"text": ""}, "xAxis": {"categories": ["2025", "2026"], "type": "category"}, "yAxis": {"title": {"text": "Quantidade"}}, "legend": {"enabled": false}, "plotOptions": {"column": {"color": "#4A4A4A", "borderRadius": 2, "pointPadding": 0.1, "groupPadding": 0.1}}, "series": [{"name": "Total", "data": [46, 13]}], "credits": {"enabled": false}});
+          });
+        </script>
+        
+    Número total de itens: 59<br>
+    
+    
+    <div class="sl-controls" style="margin-top:.5rem">
+      <button id="pubs-csv">⬇️ CSV</button>
+      <button id="pubs-xlsx">⬇️ XLSX</button>
+    </div>
+    <div id="tabela-publicacoes" class="sl-tabela"></div>
+    
+    <script>
+    const DATA = [{"ano": 2026, "evento": "20º SENADEn e 17º SINADEn", "apresentacao": null, "tipo_de_evento": "Seminário"}, {"ano": 2026, "evento": "2° Congresso Internacional de Especialidades em Enfermagem", "apresentacao": "Aspectos contemporâneos da Liderança em Enfermagem", "tipo_de_evento": "Congresso"}, {"ano": 2026, "evento": "2º Congresso Internacional de Especialidades do Coren-SP", "apresentacao": null, "tipo_de_evento": "Congresso"}, {"ano": 2026, "evento": "Cerimônia de Premiação - Prêmio USP Mães Pesquisadoras 2026", "apresentacao": "Representante da EERP/USP", "tipo_de_evento": "Outra"}, {"ano": 2026, "evento": "Congresso Internacional de Alimentação ao Longo da Vida: Evidências Científicas e Práticas Inovadoras", "apresentacao": null, "tipo_de_evento": "Congresso"}, {"ano": 2026, "evento": "Encontro da Diretoria de Programas e Bolsas no País e a Pró-Reitoria de Pós-Graduação com os Programas de Pós-Graduação", "apresentacao": null, "tipo_de_evento": "Encontro"}, {"ano": 2026, "evento": "I Seminário Nacional de Educação em Enfermagem", "apresentacao": null, "tipo_de_evento": "Seminário"}, {"ano": 2026, "evento": "I Workshop de boas práticas em pesquisa e tradução do conhecimento: produção, divulgação e escrita científica", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2026, "evento": "Oficina pedagógica \"Cuidado como encontro: por que esse referencial importa no currículo?\"", "apresentacao": null, "tipo_de_evento": "Oficina"}, {"ano": 2026, "evento": "Palestra \"Processo de Enfermagem e suas interfaces com a segurança do paciente\"", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2026, "evento": "Reunião de coordenadores de Programas de Pós-graduação da área de Enfermagem/CAPES", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2026, "evento": "Sessão Científica: Diretrizes Curriculares Nacionais (DCN) para o Curso de Enfermagem e Práticas Formativas em Enfermagem", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2026, "evento": "VII Congresso Nacional Multidisciplinar em Enfermagem ? CONAENF", "apresentacao": "A relação da liderança autêntica e a satisfação no trabalho na estratégia da saúde da família", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "\"Florescendo a Consciência: Imersão de Mindfulness\"", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "10º Congresso de Graduação da USP", "apresentacao": "Cuidados com as Estomias de Eliminação: construção de vídeo educativo para apoio ao ensino de Enfermagem Perioperatória", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "17º Congresso Brasileiro de Enfermagem em Centro Cirúrgico, Recuperação Anestésica e Centro de Material e Esterilização", "apresentacao": "Manual interativo sobre Centro de Material e Esterilização para o ensino de graduação em Enfermagem", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "1a Semana Pedagógica para Docentes", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "1º Encontro do Grupo de Estudos e Pesquisa sobre Gerenciamento em Saúde e Enfermagem", "apresentacao": null, "tipo_de_evento": "Encontro"}, {"ano": 2025, "evento": "1º Encontro do Grupo de Estudos e Pesquisa sobre Gerenciamento em Saúde e Enfermagem", "apresentacao": ".Caminhos e perspectivas da pesquisa e extensão em Gestão e Gerenciamento em Saúde", "tipo_de_evento": "Encontro"}, {"ano": 2025, "evento": "2025 NANDA-I Conference Transformative Nursing: Knowledge in Motion, Synergy in Practice", "apresentacao": "Semantic adaptation of the Nursing Diagnosis Accuracy Scale Version - 2 from brazilian portuguese to mexican spanish", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "27º Congresso Brasileiro dos Conselhos de Enfermagem - CBCENF", "apresentacao": "Análise de pareceres da Câmara Técnica do Conselho Regional de Enfermagem", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "6º Congresso Internacional de Produção Científica em Enfermagem", "apresentacao": "Mapeamento do fluxo de valor em procedimentos de setorectomia unilateral", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "75º Congresso Brasileiro de Enfermagem", "apresentacao": "Contribuição da comunicação interpessoal do enferneiro na inteligência emocional e clima de segurança", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "75º Congresso Brasileiro de Enfermagem", "apresentacao": "Eficácia de um programa de capacitação em liderança coaching para enfermeiros: estudo quase-experimental", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "Avaliadora I Fase: 33º SIICUSP - Simpósio Internacional de Iniciação Científica e Tecnológica da USP, realização em 16 outubro", "apresentacao": "Avaliador", "tipo_de_evento": "Simpósio"}, {"ano": 2025, "evento": "Café da Manhã Anahp com BD, sobre o tema: Aspectos clínicos e econômicos na jornada do paciente com indicação de acesso vascular, participação online, em 22 de julho", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Ciclo de Desenvolvimento Profissional Docente - 2º semestre de 2025", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Conferencista na Oficina de Processos de Enfermagem", "apresentacao": "Oficina de Processos de Enfermagem", "tipo_de_evento": "Oficina"}, {"ano": 2025, "evento": "Congresso Brasileiro dos Conselhos de Enfermagem - CBCENF", "apresentacao": "Desempenho dos alunos das instituições de ensino superior da região sudeste no ENADE em 2016-2023", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "Dia de Ação em saúde na comunidade (2025)", "apresentacao": "Tutora de Liga", "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Enfermagem 2023: Liderança em Saúde Global e Desenvolvimento Sustentável na era da COP 30\"", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Evento Teste de Progresso: Impacto na avaliação dos cursos de Enfermagem", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "I Congresso Internacional de Especialidade em Enfermagem do COREN-SP", "apresentacao": null, "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "I Congresso Internacional de Especialidades do COREN-SP", "apresentacao": "ORIENTAÇÕES FUNDAMENTADAS RELACIONADAS À GESTÃO EM SAÚDE DO COREN-SP", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "Mesa redonda: FAPESP, CAPES e CNPq - Perspectivas para a pesquisa em Enfermagem no Brasil\"", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Mesa redonda: FAPESP, CAPES, CNPq, Perspectiva para a Pesquisa em Enfermagem no Brasil, ministrada pelas Professoras Doutoras Regina Szylit, Adriana Cristina de Oliveira e Ana Karina Bezerra Pinheiro, em 19 de agosto", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Oficina para discussão da proposta de atualização do Código de Ética", "apresentacao": "Discussão sobre a atualização do Código de Ética", "tipo_de_evento": "Oficina"}, {"ano": 2025, "evento": "Oficina pedagógica \"Integração e Organização curricular: revisão do oferecimento das disciplinas do Curso de Bacharelado em Enfermagem e do Curso de Bacharelado e Licenciatura em Enfermagem\"", "apresentacao": null, "tipo_de_evento": "Oficina"}, {"ano": 2025, "evento": "Ouvinte na Aula Aberta \"Racionalidades medicas das OICS e a expansão do modelo e da cultura de cuidado\"", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Ouvinte na Oficina Pedagógica \"Atenção Primária à Saúde nas disciplinas de Graduação da EERP: estratégias de integração", "apresentacao": null, "tipo_de_evento": "Oficina"}, {"ano": 2025, "evento": "Ouvinte na Oficina Pedagógica \"Integrando saberes: A Atenção Primária e o Processo Saúde-Doença no currículo da EERP\"", "apresentacao": null, "tipo_de_evento": "Oficina"}, {"ano": 2025, "evento": "Palestra \"Boas práticas no ensino e na pesquisa: uso da inteligência artificial e políticas de Comunicação Científica\"", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Palestra \"Conhecimento, experiencias e senso crítico no uso da Inteligência Artificial na pós-graduação\"", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Palestra Como publicar seu artigo em acesso aberto, sem custo, via acordo CAPES/Wiley", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Palestra O cuidado centrado na vida", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Palestra Termo de Consentimento Livre e Esclarecido", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Palestra: Boas práticas no ensino e na pesquisa: uso da inteligência artificial e políticas de Comunicação Científica, realizada em 17 de novembro", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Palestra: Conhecimento experiência e senso crítico no uso da inteligência artificial na pós-graduação, proferida pela Prof", "apresentacao": "Dr. Dr. Ecivaldo de Souza Matos, em 10 de novembro", "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Roda de Conversa com Funcionários n- Liga de Oncologia (Lonc-FMRP)", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Saúde e Ponto: Auriculoterapia na Escola", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "THInC 2025 - The Healthcare Innovation Conference", "apresentacao": "Lead the Change: Empowering Nurse Leaders to Redesign the Future of Health Systems", "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "Workshop de Simulação em Saúde: Teórico e Prático, promovido pelo pelo Grupo de Trabalho sobre Simulação e Tecnologias de Ensino da Comissão de Graduação da EERP, em 16 de outubro", "apresentacao": null, "tipo_de_evento": "Outra"}, {"ano": 2025, "evento": "XII Simpósio Internacional de Enfermagem - SIEN", "apresentacao": "A influência da comunicação interpessoal entre profissionais de saúde no ambiente de trabalho de instituições hospitalares: revisão de escopo", "tipo_de_evento": "Simpósio"}, {"ano": 2025, "evento": "XII Simpósio Internacional de Enfermagem - SIEN", "apresentacao": "Avaliação das propriedades de medida da versão brasileira da Healthy Work Environment Assessment Tool", "tipo_de_evento": "Simpósio"}, {"ano": 2025, "evento": "XII Simpósio Internacional de Enfermagem - SIEN", "apresentacao": "Avaliação das propriedades de medida da versão brasileira da Healthy Work Environment Assessment Tool", "tipo_de_evento": "Simpósio"}, {"ano": 2025, "evento": "XII Simpósio Internacional de Enfermagem - SIEN", "apresentacao": "Liderança autêntica e ambiente de prática profissional em enfermagem", "tipo_de_evento": "Simpósio"}, {"ano": 2025, "evento": "XV Congresso Brasileiro de Estomaterapia", "apresentacao": "Ansiedade, depressão e estresse percebido em pacientes no perioperatório por câncer colorretal segundo a presença ou ausência de estomia intestinal", "tipo_de_evento": "Congresso"}, {"ano": 2025, "evento": "XVI Encontro de Enfermeiros de Hospitais de Ensino do Estado de São Paulo", "apresentacao": "Comunicação interpessoal: uma competência essencial para os enfermeiros.", "tipo_de_evento": "Encontro"}, {"ano": 2025, "evento": "XVI Encontro de Enfermeiros de Hospitais de Ensino do Estado de São Paulo", "apresentacao": "Eficácia de um programa para aprimoramento da comunicação em enfermeiros: ensaio clínico randomizado", "tipo_de_evento": "Encontro"}];
+    const COLUMNS = [{"title": "Ano", "field": "ano", "hozAlign": "center", "sorter": "number", "headerFilter": "input", "headerFilterParams": {"values": true}, "width": 110, "formatter": "fmtAno", "tooltip": true, "resizable": true, "widthGrow": 0}, {"title": "Evento", "field": "evento", "hozAlign": "left", "sorter": "string", "headerFilter": "input", "tooltip": true, "resizable": true, "minWidth": 200, "widthGrow": 2}, {"title": "Apresentação", "field": "apresentacao", "hozAlign": "left", "sorter": "string", "headerFilter": "input", "tooltip": true, "resizable": true, "minWidth": 200, "widthGrow": 2}, {"title": "Tipo de Evento", "field": "tipo_de_evento", "hozAlign": "left", "sorter": "string", "headerFilter": "input", "tooltip": true, "resizable": true, "minWidth": 100, "widthGrow": 0, "width": 120}];
+    
+    const LANG_PT = {
+      "pt-br": {
+        "pagination": {
+          "first":"«","first_title":"Primeira",
+          "last":"»","last_title":"Última",
+          "prev":"‹","prev_title":"Anterior",
+          "next":"›","next_title":"Próxima"
+        },
+        "headerFilters": { "default":"⎯ Filtrar ⎯" }
+      }
+    };
+    
+    // Ano: mostra "—" quando 0
+    function fmtAno(cell) {
+      const v = cell.getValue() || 0;
+      return v === 0 ? "—" : v;
+    }
+    
+    // DOI → link clicável (aceita "10.xxxx/..." ou "doi:10...." ou já com http/https)
+    function fmtDOI(cell) {
+      let v = cell.getValue();
+      if (!v) return "";
+      v = String(v).trim();
+      let href = v;
+      if (!/^https?:/i.test(v)) {
+        v = v.replace(/^doi:\s*/i, "");
+        href = "https://doi.org/" + v;
+      }
+      const esc = (t) => String(t).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[m]);
+      return `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(v)}</a>`;
+    }
+    
+    // aplica formatter customizado quando marcado como "fmtDOI" em Python
+    COLUMNS.forEach(col => {
+      if (col.formatter === "fmtDOI") col.formatter = fmtDOI;
+    });
+    
+    document.addEventListener("DOMContentLoaded", function(){
+      const table = new Tabulator("#tabela-publicacoes", {
+        data: DATA,
+        layout: "fitColumns",
+        height: (DATA.length < 30 ? "45vh" : "70vh"),
+        responsiveLayout: "collapse",
+        pagination: "local",
+        paginationSize: 100,
+        paginationSizeSelector: [50, 100, 200, 500, 1000],
+        movableColumns: true,
+        headerFilterLiveFilter: true,
+        columns: COLUMNS,
+        locale: true, langs: LANG_PT, locale: "pt-br",
+      });
+    
+      document.getElementById("pubs-csv").onclick  = () => table.download("csv",  "publicacoes.csv",  { bom:true });
+      document.getElementById("pubs-xlsx").onclick = () => table.download("xlsx", "publicacoes.xlsx", { sheetName:"Publicações" });
+    });
+    </script>
+    <br><p><br>(*) Relatório criado com produções desde 2025 até 2026
+<br>Data de processamento: 25/09/2026 02:06:41<br>         <div id="footer">         Relatório gerado por <a href="http://scriptlattes.sourceforge.net/">scriptLattes V.2025.09</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:admin@email.com">admin@email.com</a>         </div> </body></html>

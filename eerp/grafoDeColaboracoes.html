@@ -1,0 +1,565 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>eerp</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"></head><body><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>eerp</h2></div>
+    <h3>Grafo de colaborações</h3>
+    <p>
+      <a href="membros.html">
+        10 currículos Lattes
+      </a> geraram este grafo baseado em <em>Artigos completos publicados em periódicos, Livros publicados/organizados ou edições, Capítulos de livros publicados, Textos em jornais de notícias/revistas, Trabalhos completos publicados em anais de congressos, Resumos expandidos publicados em anais de congressos, Resumos publicados em anais de congressos, Artigos aceitos para publicação, Apresentações de trabalho, Demais tipos de produção bibliográfica, Programas de computador com registro, Programas de computador sem registro, Produtos tecnológicos, Processos ou técnicas, Trabalhos técnicos , Demais tipos de produção técnica, Entrevistas, mesas redondas, programas e comentários na mídia, Produções artísticas</em>.<br>
+      O tamanho do vértice é proporcional ao número de colaboradores. A espessura da aresta é proporcional ao número de colaborações.
+    </p>
+    
+    <style>
+      .viz-wrap { display:flex; gap:1rem; }
+      #info-pane {
+        flex:1; max-height: 1200px; overflow:auto;
+        border:1px solid #ddd; padding:0.75rem; background:#fafafa;
+      }
+      .toolbar {
+        display:flex; gap:0.5rem; align-items:center; margin-bottom:0.5rem; flex-wrap: wrap;
+      }
+      .toolbar input[type="text"] {
+        flex:1; min-width: 220px; padding:0.5rem; border:1px solid #ccc; border-radius:8px;
+      }
+      .toolbar button {
+        padding:0.5rem 0.75rem; border:1px solid #ccc; border-radius:8px; background:#fff; cursor:pointer;
+      }
+      .legend { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
+        font: 14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif; }
+      .legend .title { margin-right:.25rem; }
+      .legend .item { display:inline-flex; align-items:center; gap:.35rem; margin-right:.75rem; }
+      .legend .swatch { width:14px; height:14px; display:inline-block; border-radius:2px; border:1px solid rgba(0,0,0,.2); }
+    
+      #viz-container { flex:3; height: 70vh; min-height: 620px; border:1px solid #ccc; position:relative; }
+      @media (min-width: 1200px) { #viz-container { height: 1200px; } }
+      @media (max-height: 600px) { #viz-container { height: 60vh; } }
+    
+      .node { cursor:grab; }
+      .node:active { cursor:grabbing; }
+      .node.selected circle { stroke:#111; stroke-width:1px; }
+      .dimmed { opacity:0.15; }
+    
+      .label { font: 5px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif; pointer-events:none; }
+      .edge-label { font-size: 3px; line-height: 1; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif; fill:#555; }
+      .edge { stroke:#aaa; stroke-opacity:0.85; }
+      .edge.highlight { stroke:#333; }
+      .hidden { display:none !important; }
+    
+      /* Ellipsis + tooltip nas tabelas (aplicado quando Tabulator monta) */
+      #tabela-vertices .tabulator-cell,
+      #tabela-arestas  .tabulator-cell {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    </style>
+    
+    <div class="viz-wrap">
+      <div style="flex:3; display:flex; flex-direction:column;">
+        <div class="toolbar">
+          <div id="legend" class="legend">
+            <span class="title">As cores representam os seguintes rótulos:</span>
+          </div>
+          <button id="btnToggleLabels" title="Mostrar/ocultar rótulos (vértices e arestas)">Ocultar rótulos</button>
+          <input id="searchBox" type="text" placeholder="Buscar pesquisador (nome ou ID)..." />
+          <button id="btnSearch">Buscar</button>
+          <button id="btnClear">Limpar seleção</button>
+        </div>
+    
+        <div id="viz-container">
+          <svg id="viz" width="100%" height="100%"></svg>
+        </div>
+      </div>
+    
+      <div id="info-pane">
+        <h4>Informação do Pesquisador</h4>
+        <p>Clique em um nó (ou use a busca) para ver detalhes aqui.</p>
+      </div>
+    </div>
+    
+    <p>Você pode baixar o grafo em formato GEXF:
+      <a href="grafo_de_colaboracoes.gexf" download="grafo_de_colaboracoes.gexf">grafo_de_colaboracoes.gexf</a>
+    </p>
+    
+    <!-- D3 global (sem módulos) -->
+    <script src="js/d3.min.js"></script>
+    
+    <script>
+      // ======= dados =======
+      var graphData = {"directed": false, "multigraph": false, "graph": {}, "nodes": [{"label": "Luciana Kusumota", "url": "http://lattes.cnpq.br/6541228840967312", "publicacoesEmCoautoria": 0, "atualizacaoCV": "03/08/2026", "resumo": "Graduação (1997), Mestrado (2001), Doutorado (2005) e Livre docente (2020) pela Escola de Enfermagem de Ribeirão Preto - USP. Pós Doutorado pela Universidade de Alberta - Canadá (2013). Atualmente é Professora Associada do Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto - USP. Líder do Núcleo de Pesquisa em Geriatria e Gerontologia (NUPEGG) do Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto - USP. Atuou como enfermeira assistencial na área de Nefrologia. Tem desenvolvido projetos de ensino, pesquisa e extensão, principalmente com os temas: saúde do idoso, enfermagem em nefrologia e qualidade de vida relacionada à saúde de adultos e idosos.(https://orcid.org/0000-0001-9290-3722) (Texto informado pelo autor)", "rotulo": "* Sem rótulo", "periodo": "", "nomePrimeiraGrandeArea": "Ciências da Saúde", "nomePrimeiraArea": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto", "enderecoProfissional": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto. Av. Bandeirantes 3900 Sala 65 Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33150534 Ramal: 3398 URL da Homepage: http://www.eerp.usp.br", "artigosPeriodicos": 4, "artigosEventos": 0, "capitulosDeLivros": 0, "livros": 0, "color": "#33a02c", "fontColor": "#ffffff", "viz": {"color": {"r": 51, "g": 160, "b": 44, "a": 1.0}}, "degree": 0, "x": 0.29574329724932724, "y": 0.7, "size": 2, "id": 0}, {"label": "Andrea Bernardes", "url": "http://lattes.cnpq.br/8267735570131241", "publicacoesEmCoautoria": 0, "atualizacaoCV": "07/08/2026", "resumo": "Professora Titular (MS-6) da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP/USP), Centro Colaborador da OPAS/OMS para o Desenvolvimento da Pesquisa em Enfermagem, e Professora Adjunta Associada da Faculty of Nursing, University of Alberta (FoN/UAlberta) (2021-Atual). Graduada em Enfermagem (1993) pela EERP/USP. Mestre (2000) e Doutora (2005) em Ciências pelo Programa de Pós-Graduação em Enfermagem Fundamental (PPGEF) da EERP/USP. Concluiu Livre-Docência em Enfermagem (2015) pela EERP/USP e Pós-Doutorado na University of Alberta, Canadá (2010 e 2020). Vice-Presidente da Comissão de Pós-graduação (2026-Atual); Coordenadora (2020-2024) e Vice-Coordenadora (2024-Atual) do Programa de Pós-Graduação em Enfermagem Fundamental (PPGEF) (Conceito Capes 7); Coordenadora do MBA Gestão em Saúde (2014-Atual) e Coordenadora do Núcleo de Pesquisa em Liderança, Gestão e Gerenciamento de Serviços de Saúde (NAP-LIGGESS) da EERP/USP. Líder do Grupo de Pesquisa em Liderança, Gestão e Gerenciamento em Serviços de Saúde e Educação e Enfermagem (LIGGEEN) da EERP/USP. Pesquisadora do CLEAR Outcomes (Connecting Leadership Education and Research Outcomes) da University of Alberta, Canadá (2010-Atual). Membro do Conselho Consultivo da Rede Internacional da Gestão do Cuidado em Enfermagem (RIGCE) Brasil desde 2024. Atua como Editora Científica da Revista Latino-Americana de Enfermagem (RLAE). Membro do Núcleo de Educação Permanente da Direção Regional de Saúde XIII (DRS XIII). Colaboradora do Conselho Regional de Enfermagem de São Paulo (COREn-SP), integra a Câmara Técnica de Educação e Pesquisa (CTEP) (2024-Atual). Realizou Estágios de Pesquisa na qualidade de Professor Visitante Sênior na FoN/UAlberta, Canadá, por meio do Programa CAPES-PrInt (11/2019-03/2020 e 06/2022-07/2022). Compõe o Banco de Avaliadores do Sistema Nacional de Avaliação da Educação Superior (BASIs) do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP) do Ministério da Educação. Desenvolve pesquisas em parceria com colaboradores da Austrália, Canadá, Estados Unidos, Finlândia e Turquia. Tem experiência na área de Ciências da Saúde e Enfermagem, com ênfase em Liderança, Gestão e Gerenciamento de Serviços de Saúde. E-mail: andreab@eerp.usp.br (Texto informado pelo autor)", "rotulo": "* Sem rótulo", "periodo": "", "nomePrimeiraGrandeArea": "Ciências da Saúde", "nomePrimeiraArea": "Enfermagem", "instituicao": "Escola de Enfermagem de Ribeirão Preto Usp, Escola de Enfermagem de Ribeirão Preto", "enderecoProfissional": "Escola de Enfermagem de Ribeirão Preto Usp, Escola de Enfermagem de Ribeirão Preto. Av: Bandeirantes, 3900 Campus da USP 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153471 URL da Homepage: http://www.eerp.usp.br", "artigosPeriodicos": 6, "artigosEventos": 0, "capitulosDeLivros": 1, "livros": 0, "color": "#33a02c", "fontColor": "#ffffff", "viz": {"color": {"r": 51, "g": 160, "b": 44, "a": 1.0}}, "degree": 0, "x": 0.6774944969810697, "y": 0.24991558300886868, "size": 2, "id": 1}, {"label": "Carina Aparecida Marosti Dessotte", "url": "http://lattes.cnpq.br/7908727257671488", "publicacoesEmCoautoria": 0, "atualizacaoCV": "30/07/2026", "resumo": "Professora Associada (Livre-Docente) do Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP-USP). Graduada em Enfermagem pela EERP-USP (2002), com Residência em Enfermagem Clínico-Cirúrgica Área de Cardiologia (2005) e Doutorado em Ciências na Área de Enfermagem Fundamental (2010), pela mesma instituição. Atualmente é Presidente do Centro de Apoio à Pesquisa (CENAPq) da EERP-USP e orientadora credenciada nos níveis de Mestrado e Doutorado no Programa de Pós-Graduação em Enfermagem Fundamental. Possui sólida experiência assistencial em enfermagem em cuidados críticos, com atuação na Unidade Pós-Operatória de Cirurgia Torácica e Cardiovascular do Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto da USP e na área de Bioética e Ética em Pesquisa. Na graduação, desenvolve atividades de ensino na área de Enfermagem Perioperatória e, na pós-graduação stricto sensu, ministra disciplinas relacionadas ao planejamento de estudos quantitativos, métodos de pesquisa, avaliação de desfechos relatados pelos pacientes (Patient-Reported Outcomes PRO) e desenvolvimento, adaptação transcultural e validação psicométrica de instrumentos de medida em saúde. É Líder do Grupo de Investigação e Reabilitação em Qualidade de Vida (GIRQ) e desenvolve pesquisas na área de Enfermagem Cirúrgica, com ênfase na recuperação e reabilitação de pessoas com doenças cardiovasculares submetidas a cirurgias cardíacas e implantes de dispositivos cardíacos eletrônicos implantáveis. Suas investigações concentram-se na avaliação da qualidade de vida, qualidade de vida relacionada à saúde, desfechos relatados pelos pacientes, estresse perioperatório, ansiedade, depressão e tecnologias educativas voltadas ao autocuidado e à reabilitação. Também atua na construção, adaptação transcultural e validação de instrumentos de medida em saúde, contribuindo para o fortalecimento da prática baseada em evidências e da pesquisa metodológica em enfermagem. Sua atuação integra ensino, pesquisa, inovação e extensão universitária, orientada pela qualificação do cuidado em saúde, pela valorização dos determinantes sociais da saúde e pelos princípios da Agenda 2030, especialmente o Objetivo de Desenvolvimento Sustentável 3 (Saúde e Bem-Estar). (Texto informado pelo autor)", "rotulo": "* Sem rótulo", "periodo": "", "nomePrimeiraGrandeArea": "Ciências da Saúde", "nomePrimeiraArea": "Enfermagem", "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP", "enderecoProfissional": "Escola de Enfermagem de Ribeirão Preto - USP. Escola de Enfermagem de Ribeirão Preto - USP Vila Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153410 URL da Homepage: www.eerp.usp.br", "artigosPeriodicos": 2, "artigosEventos": 0, "capitulosDeLivros": 0, "livros": 0, "color": "#33a02c", "fontColor": "#ffffff", "viz": {"color": {"r": 51, "g": 160, "b": 44, "a": 1.0}}, "degree": 0, "x": -0.6316686806676022, "y": -0.4465994138160008, "size": 2, "id": 2}, {"label": "Renata Karina Reis", "url": "http://lattes.cnpq.br/2569298609941547", "publicacoesEmCoautoria": 5, "atualizacaoCV": "12/08/2026", "resumo": "Graduada em Enfermagem pela Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP-USP) (2001), Mestrado em Enfermagem pela EERP-USP (2004), Doutorado Sanduíche na Universitdade de Coimbra, Portugal, pelo Programa de Enfermagem Fundamental da EERP-USP (2008). Realizou Pós-Doutorado na Aix-Marseille Université, França (2017), bolsista FAPESP, e Livre-Docência (2018). Atualmente é Professor Titular da Universidade de São Paulo, na EERP, Centro Colaborador da Organização Mundial de Saúde para o Desenvolvimento da Pesquisa em Enfermagem. Durante sua carreira acadêmica, foi Presidente do Cento de Apoio à Pesquisa por dois mandatos consecutivos (CENAPq) da EERP-USP (2020-2022 e 2022 a 2022-2024), foi membro do Comitê de Governança do Capítulo Rho Upsilon da Sociedade Honorífica de Enfermagem Sigma Theta Tau Internacional. Atua na Comissão de Pesquisa como membro efetivo da Escola de Enfermagem de Ribeirão Preto desde 2015. Vice-Presidente da Comissão de Pesquisa e Inovação da EERP-USP desde 2022. É membro da International AIDS Society (IAS). Foi membro do conselho editorial da Journal of the International AIDS Society (2013-2016). É membro da Rede de Enfermagem Nacional em AIDS e DST (RENAIDST). Membro da Diretoria da Sociedde Brasileira de infecções sexualmente transmissíveis - Regional São Paulo, É bolsista produtividade em pesquisa do CNPq, nível 2. É líder do Grupo de Pesquisa Núcleo de Aids e Doenças Sexualmente Transmissíveis cadastrado no diretório de pesquisa do CNPq, e membro de grupos de pesquisa nacionais e internacional. É consultora ad-hoc de vários periódicos nacionais e internacionais. Desenvolve projetos colaborativos com cooperação estrangeira com pesquisadores da França, Estados Unidos, Portugal e Espanha. Integra a equipe de pesquisadores do convênio nacional entre a EERP-USP e a Univeridade Federal do Pará e Universidade Federal do Rio Grande do Norte (2018-2021). Tem experiência na área de Enfermagem, com ênfase em Saúde do Adulto e Enfermagem Clínica, atuando principalmente nos seguintes temas: enfermagem na prevenção e controle das infecções sexualmente transmissíveis/HIV/aids, condições crônicas, qualidade de vida, tecnologias educativas, cuidado das pessoas que vivem com o HIV/aids, enfermagem em infectologia, e estudos com casais que vivem no contexto da infecção pelo HIV. (Texto informado pelo autor)", "rotulo": "* Sem rótulo", "periodo": "", "nomePrimeiraGrandeArea": "Ciências da Saúde", "nomePrimeiraArea": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto", "enderecoProfissional": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto. Av. Bandeirantes 3900 Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (016) 33150534 Fax: (016) 36020518", "artigosPeriodicos": 25, "artigosEventos": 0, "capitulosDeLivros": 0, "livros": 0, "color": "#33a02c", "fontColor": "#ffffff", "viz": {"color": {"r": 51, "g": 160, "b": 44, "a": 1.0}}, "degree": 3, "x": -0.24428080624970366, "y": 0.20470211881794728, "size": 4, "id": 3}, {"label": "Cristina Mara Zamarioli", "url": "http://lattes.cnpq.br/2208888423045747", "publicacoesEmCoautoria": 1, "atualizacaoCV": "30/07/2026", "resumo": "Graduada em Enfermagem (2001) pela Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo - EERP USP; Mestre e Doutora em Ciências (2014, 2018) também pela EERP-USP; Residência em Oncologia Clínica pelo Instituto Nacional de Câncer - INCA (2004); Especialização em Auditoria em Sistemas de Saúde pela União Social Camiliana - Faculdade São Camilo (2006); MBA Executivo em Saúde pela Fundação Getúlio Vargas (2008) e Especialização em Gestão de Saúde pela Universidade Estadual do Rio de Janeiro - UERJ (2011). Foi Coordenadora de Estudos Clínicos no INCA de 2004 a 2006; administrou uma Clínica de Onco-Hematologia de 2006 a 2011. Atualmente exerce o cargo de Professora Doutora, junto ao Departamento de Enfermagem Geral e Especializada (DEGE) da EERP-USP, Centro Colaborador da OMS para o Desenvolvimento da Pesquisa em Enfermagem e é Líder do Grupo de Pesquisa Enfermagem, Comunicação e Ensino. Está credenciada como orientadora de Pós-Graduação nos Programas de Pós-Graduação em Enfermagem Fundamental e Mestrado Profissional Tecnologia e Inovação em Enfermagem. É membro da Sigma Theta Tau International Honor Society of Nursing (2000), Rho Upsilon Chapter University of São Paulo (2020) e membro do Comitê de Governança do Capítulo Rho Upsilon (2024-2026). Integra Rede de Pesquisa em Processo de Enfermagem PePPE (2023); consultora ad-hoc de periódicos nacionais e internacionais. Tem experiência na área de Enfermagem, com ênfase em Oncologia, Raciocínio Clínico, Processo de Enfermagem e Pesquisa Clínica. ORCID: 0000-0002-4757-7611 RESEARCH ID: O-9685-2018 (Texto informado pelo autor)", "rotulo": "* Sem rótulo", "periodo": "", "nomePrimeiraGrandeArea": "Ciências da Saúde", "nomePrimeiraArea": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto", "enderecoProfissional": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto. Avenida dos Bandeirantes, 3900, Laboratório 151 Vila Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153475", "artigosPeriodicos": 7, "artigosEventos": 0, "capitulosDeLivros": 0, "livros": 0, "color": "#33a02c", "fontColor": "#ffffff", "viz": {"color": {"r": 51, "g": 160, "b": 44, "a": 1.0}}, "degree": 1, "x": -0.21577218868227374, "y": 0.21016453150088155, "size": 2, "id": 4}, {"label": "Elucir Gir", "url": "http://lattes.cnpq.br/2381136403879304", "publicacoesEmCoautoria": 3, "atualizacaoCV": "26/11/2025", "resumo": "Graduada em Enfermagem pela Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (1981), Especialização Em Educação Sexual pelo Centro Universitário Fundação Santo André (1995), Mestrado (1988) e Doutorado em Enfermagem pela Universidade de São Paulo (1994). Obteve o título de Livre docente pela Universidade de São Paulo (1997). Desde 2004 é Professor Titular junto ao Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EGE-EERP/USP). Consultora da CAPES, CNPq, FAPESP. É membro do conselho editorial ou consultor de periódicos científicos editados no Brasil e no exterior. Membro da Diretoria da Associação Brasileira para o Controle das Doenças Sexualmente Transmissíveis - Regional São Paulo, enquanto Presidente (2017-2019 e 2019-2021); 1. tesoureira (2021-2023). Membro da diretoria do SINDHOSP (2017-2023). Tem experiência na área de Enfermagem, com ênfase em Enfermagem em Doenças Infecciosas, atuando principalmente nos temas: HIV/AIDS, sífilis, infecções sexualmente transmissíveis, Infecção Hospitalar e Biossegurança. Líder do Grupo de Pesquisa NAIDST. Coordenadora da Rede de Enfermagem Nacional em AIDS e DST (RENAIDST). Coordenadora do Programa de Pós-Graduação em Enfermagem Fundamental da EERP-USP (2018-2020). Docente permanente e orientadora do Programa de Pós-Graduação em Enfermagem Fundamental (Mestrado e Doutorado) da EERP/USP (Conceito 7 junto CAPES) nas linhas de pesquisa: 1. Cuidar de adultos e idosos, 2. Fundamentação Teórica, Metodológica e Tecnológica do Processo de Cuidar. Bolsista em Produtividade em Pesquisa junto ao CNPq . Presidente da Comissão de Pós-Graduação da Escola de Enfermagem de Ribeirão Preto-USP (2018-2022). Atualmente é Vice-Diretora (2022-2026) da Escola de Enfermagem de Ribeirão Preto - USP. Tem parcerias e desenvolveu ou coordena projetos de pesquisa com pesquisadores da China, Equador, Estados Unidos, Reino Unido, Suécia, Portugal. (Texto informado pelo autor)", "rotulo": "* Sem rótulo", "periodo": "", "nomePrimeiraGrandeArea": "Ciências da Saúde", "nomePrimeiraArea": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto, Departamento de Enfermagem Geral e Especializada", "enderecoProfissional": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto, Departamento de Enfermagem Geral e Especializada. AVENIDA BANDEIRANTES, 3900 MONTE ALEGRE 14040902 - Ribeirão Preto, SP - Brasil - Caixa-postal: 14040902 Telefone: (16) 997056164", "artigosPeriodicos": 3, "artigosEventos": 0, "capitulosDeLivros": 0, "livros": 0, "color": "#33a02c", "fontColor": "#ffffff", "viz": {"color": {"r": 51, "g": 160, "b": 44, "a": 1.0}}, "degree": 1, "x": -0.2560312940032783, "y": 0.21956919852696113, "size": 2, "id": 5}, {"label": "Fabiana Bolela de Souza", "url": "http://lattes.cnpq.br/1737583784229958", "publicacoesEmCoautoria": 0, "atualizacaoCV": "20/06/2026", "resumo": "Professora Doutora junto ao Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP-USP), Centro Colaborador da OMS/OPAS para Pesquisa em Enfermagem. Bacharel em Enfermagem pela EERP-USP (2002), Especialista em Terapia Intensiva pela Faculdade de Medicina de São José do Rio Preto (2004), Mestre em Enfermagem (2008) e Doutora em Ciências (2013) pela EERP-USP, pós-graduada em Cuidados Paliativos pelo Instituto Pallium Latinoamerica - Argentina (2017). Membro da Red Internacional de Enfermería en Cuidados Paliativos (RIENCUPA) e líder do Grupo de Estudos em Cuidados Paliativos (GECUPA), cadastrado no Diretório de Grupos de Pesquisa do CNPq. Tutora da Liga Interdisciplinar de Cuidados Paliativos (LICP) da EERP-USP. Possui experiência na área de Enfermagem, com ênfase na assistência a pacientes críticos e cuidados paliativos. Atua principalmente nos seguintes temas: Terapia subcutânea e hipodermóclise, Controle de sintomas em cuidados paliativos e Cuidados de fim de vida. Email: fbolela@usp.br (Texto informado pelo autor)", "rotulo": "* Sem rótulo", "periodo": "", "nomePrimeiraGrandeArea": "Ciências da Saúde", "nomePrimeiraArea": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto", "enderecoProfissional": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto. Avenida dos Bandeirantes, 3900 Campus Universitário - Bairro Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153381 Ramal: 3401", "artigosPeriodicos": 4, "artigosEventos": 0, "capitulosDeLivros": 1, "livros": 0, "color": "#33a02c", "fontColor": "#ffffff", "viz": {"color": {"r": 51, "g": 160, "b": 44, "a": 1.0}}, "degree": 0, "x": 0.6377808973192645, "y": -0.3111412710841602, "size": 2, "id": 6}, {"label": "Fernanda Ludmilla Rossi Rocha", "url": "http://lattes.cnpq.br/8058597226308063", "publicacoesEmCoautoria": 2, "atualizacaoCV": "12/08/2026", "resumo": "Possui Graduação em Enfermagem pela Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo - EERP/USP (1999); Mestrado em Enfermagem (2002) e Doutorado em Enfermagem (2007) pela EERP/USP, com Doutorado Sanduíche na University of Michigan; Pós-Doutorado Sênior (2019) na Faculdade de Ciências Farmacêuticas de Araraquara/UNESP e no Instituto Universitário de Ciências Psicológicas, Sociais e da Vida ISPA/IU de Lisboa, Portugal. Atua como Professora Associada III do Departamento de Enfermagem Geral e Especializada da EERP/USP. É Coordenadora da Rede da Enfermagem em Saúde Ocupacional RedENSO Brasil e Vice-Líder do Núcleo de Estudos sobre Saúde e Trabalho - NUESAT. Foi Coordenadora do Programa Mestrado Profissional Tecnologia e Inovação em Enfermagem da EERP/USP (2020-2024). Possui formação em Reiki Usui nível III. Áreas de ensino, pesquisa e extensão: Saúde do Trabalhador; Organização e Gestão dos Serviços de Saúde e Enfermagem; Validação de Instrumentos Psicométricos; Reiki e Promoção da Saúde no Trabalho. (Texto informado pelo autor)", "rotulo": "* Sem rótulo", "periodo": "", "nomePrimeiraGrandeArea": "Ciências da Saúde", "nomePrimeiraArea": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto", "enderecoProfissional": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto. Av.Bandeirantes, 3900 CidUniversitária 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153382 Ramal: 3417 URL da Homepage: http://www.eerp.usp.br", "artigosPeriodicos": 9, "artigosEventos": 0, "capitulosDeLivros": 0, "livros": 0, "color": "#33a02c", "fontColor": "#ffffff", "viz": {"color": {"r": 51, "g": 160, "b": 44, "a": 1.0}}, "degree": 1, "x": -0.012138573380957106, "y": -0.5013036402085209, "size": 2, "id": 7}, {"label": "Renata Cristina de Campos Pereira Silveira", "url": "http://lattes.cnpq.br/2030116667358851", "publicacoesEmCoautoria": 1, "atualizacaoCV": "10/08/2026", "resumo": "Graduada em Enfermagem pela Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (2000), Mestre (2005) e Doutora (2008) em Enfermagem pelo Programa de Pós-Graduação em Enfermagem Fundamental da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP/USP) e Livre-Docente (2018) pela Universidade de São Paulo. Atualmente é Professora Associado (MS-5.3) do departamento EGE da EERP/USP, admitida em (2006-Atual). Vice-Chefe do Departamento de Enfermagem Geral e Especializada (2026-atual). Bolsista de Produtividade em Pesquisa do CNPq - Nível C (2025-atual). Credenciada nos Programas de Pós-Graduação em Enfermagem Fundamental (PPGEF-EERP/USP) - Nota 7 CAPES (2009-Atual) e no Programa de Pós-Graduação Mestrado Profissional de Tecnologia e Inovação em Enfermagem (PPMPTIE-EERP/USP) Nota 4 CAPES (2013-Atual). Vice-Coordenadora da Comissão Coordenadora do Programa de Pós-Graduação em Enfermagem Fundamental (2022-2024). Líder do Grupo de Pesquisa Prática Baseada em Evidências na Saúde (2008-Atual). Tutora da Liga de Transplante de Órgãos e Tecidos da EERP/USP (2009-Atual). Revisora de Periódicos de grande impacto. Membro do corpo Editorial da Revista Texto Contexto - Enfermagem (2021-2023). Possui experiência na área de Enfermagem, com ênfase na Prática Baseada em Evidências (PBE) desenvolvendo pesquisas que sumarizam conhecimento com métodos de revisão. Mentora em PBE certificada, por Helene Fuld Health Trust National Institute for Evidence-based Practice in Nursing and Healthcare, The Ohio State of University, College of Nursing. Certificada pela JBI Collaboration em métodos de revisão sistemática e revisão de escopo. Desenvolve pesquisas em parceria com colaboradores da Austrália, Canadá, Dinamarca, Estados Unidos e Portugal. (Texto informado pelo autor)", "rotulo": "* Sem rótulo", "periodo": "", "nomePrimeiraGrandeArea": "Ciências da Saúde", "nomePrimeiraArea": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto, Departamento de Enfermagem Geral e Especializada", "enderecoProfissional": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto, Departamento de Enfermagem Geral e Especializada. Avenida Bandeirantes, 3900 Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153434 URL da Homepage: http://www.eerp.usp.br", "artigosPeriodicos": 7, "artigosEventos": 0, "capitulosDeLivros": 0, "livros": 0, "color": "#33a02c", "fontColor": "#ffffff", "viz": {"color": {"r": 51, "g": 160, "b": 44, "a": 1.0}}, "degree": 1, "x": -0.2567560926360615, "y": 0.17844797233638623, "size": 2, "id": 8}, {"label": "Andre Aparecido da Silva Teles", "url": "http://lattes.cnpq.br/6738061485505129", "publicacoesEmCoautoria": 2, "atualizacaoCV": "11/08/2026", "resumo": "Doutor em Ciências pelo Programa de Pós-Graduação Enfermagem Fundamental da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP-USP). Especialista em Docência (Senac), Preceptoria Multiprofissional na Área da Saúde (HMV - Proadi-SUS) e Estomaterapia (FAMERP); Bacharel em Enfermagem pela Universidade Paulista. Experiência clínica como Enfermeiro, responsável técnico, no gerenciamento e na assistência de enfermagem aos pacientes em cirurgias ambulatoriais, centro cirúrgico e em unidades de internação (pré e pós-operatórios) de cirurgias de médio e grande portes e em pesquisa clínica. Temática de pesquisa na área de Enfermagem Perioperatória e Oncologia, com ênfase nos temas: assistência de enfermagem perioperatória, assistência de enfermagem perioperatória aos pacientes Oncológicos, Câncer Colorretal (CCR), Doenças Inflamatórias Intestinais (DII), Estomias e reabilitação de pacientes cirúrgicos e oncológicos. Integrante do Grupo de Estudo da Reabilitação de Pacientes Cirúrgicos Oncológicos, da EERP-USP, cadastrado no Diretório de Grupos de Pesquisa do CNPq. É membro da Associação Brasileira de Enfermeiros de Centro Cirúrgico, Recuperação Anestésica e Centro de Material e Esterilização (SOBECC), Association of periOperative Registered Nurses (AORN), American Nurses Association (ANA) e da Associação Brasileira de Estomaterapia (SOBEST). Atualmente é Professor Doutor I da EERP-USP, na Área de Enfermagem Cirúrgica. (Texto informado pelo autor)", "rotulo": "* Sem rótulo", "periodo": "", "nomePrimeiraGrandeArea": "Ciências da Saúde", "nomePrimeiraArea": "Enfermagem", "instituicao": "Escola de Enfermagem da Universidade de São Paulo Campus Ribeirão Preto", "enderecoProfissional": "Escola de Enfermagem da Universidade de São Paulo Campus Ribeirão Preto. Escola de Enfermagem de Ribeirão Preto - USP Vila Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153410 Ramal: 3410", "artigosPeriodicos": 9, "artigosEventos": 1, "capitulosDeLivros": 0, "livros": 0, "color": "#33a02c", "fontColor": "#ffffff", "viz": {"color": {"r": 51, "g": 160, "b": 44, "a": 1.0}}, "degree": 1, "x": 0.005628944070215115, "y": -0.5037550790823627, "size": 2, "id": 9}], "links": [{"weight": 1.0, "source": 3, "target": 4}, {"weight": 3.0, "source": 3, "target": 5}, {"weight": 1.0, "source": 3, "target": 8}, {"weight": 2.0, "source": 7, "target": 9}]};
+      var nodes = graphData.nodes.map(function(n,i){
+        return {
+          id: (n.id != null ? n.id : String(i)),
+          label: (n.label != null ? n.label : (n.id != null ? n.id : String(i))),
+          size: (n.size != null ? n.size : (4 + (n.degree || 0) * 0.6)),
+          color: (n.color != null ? n.color : "#1f77b4"),
+          instituicao: n.instituicao,
+          url: n.url,
+          atualizacaoCV: n.atualizacaoCV,
+          periodo: n.periodo,
+          rotulo: n.rotulo,
+          nomePrimeiraGrandeArea: n.nomePrimeiraGrandeArea,
+          nomePrimeiraArea: n.nomePrimeiraArea,
+          publicacoesEmCoautoria: n.publicacoesEmCoautoria,
+          degree: n.degree,
+          artigosPeriodicos: n.artigosPeriodicos,
+          artigosEventos: n.artigosEventos,
+          capitulosDeLivros: n.capitulosDeLivros,
+          livros: n.livros,
+          enderecoProfissional: n.enderecoProfissional
+        };
+      });
+      var links = graphData.links.map(function(e){
+        return { source:e.source, target:e.target, weight:(e.weight||1), color:(e.color||"#aaa") };
+      });
+    
+      // ======= dados para a TABELA (vértices) =======
+      window.__VERTEX_TABLE_DATA__ = nodes.map(function(n){
+        var m = (n.atualizacaoCV||"").toString().match(/(\d{2})\/(\d{2})\/(\d{4})/);
+        var ymd = m ? (parseInt(m[3])*10000 + parseInt(m[2]) * 100 + parseInt(m[1])) : 0;
+        return {
+          id: n.id,
+          nome: n.label,
+          instituicao: n.instituicao || "",
+          url: n.url || "",
+          atualizacao: n.atualizacaoCV || "",
+          atualizacao_num: ymd,
+          periodo: n.periodo || "",
+          rotulo: n.rotulo || "",
+          grande_area: n.nomePrimeiraGrandeArea || "",
+          area: n.nomePrimeiraArea || "",
+          publicacoesEmCoautoria: +n.publicacoesEmCoautoria || 0,
+          degree: +n.degree || 0,
+          artigosPeriodicos: +n.artigosPeriodicos || 0,
+          artigosEventos: +n.artigosEventos || 0,
+          capitulosDeLivros: +n.capitulosDeLivros || 0,
+          livros: +n.livros || 0,
+          enderecoProfissional: n.enderecoProfissional || ""
+        };
+      });
+    
+      // ======= TABELA (arestas) – pares de membros (únicos, peso >= 1) =======
+      (function buildEdgeTableData(){
+        var byId = new Map(nodes.map(function(n){ return [String(n.id), n]; }));
+        function normId(x){ return (typeof x === "object" && x !== null) ? String(x.id) : String(x); }
+    
+        // vizinhanças
+        var neigh = new Map();
+        nodes.forEach(function(n){ neigh.set(String(n.id), new Set()); });
+        links.forEach(function(e){
+          var s = normId(e.source), t = normId(e.target);
+          if (!neigh.has(s)) neigh.set(s, new Set());
+          if (!neigh.has(t)) neigh.set(t, new Set());
+          neigh.get(s).add(t); neigh.get(t).add(s);
+        });
+    
+        var seen = new Set();
+        var rows = [];
+        links.forEach(function(e){
+          var s = normId(e.source), t = normId(e.target);
+          var w = +e.weight || 0;
+          if (w < 1) return;
+          var a = s < t ? s : t, b = s < t ? t : s; // par único
+          var key = a + "||" + b;
+          if (seen.has(key)) return;
+          seen.add(key);
+    
+          var nA = byId.get(a), nB = byId.get(b);
+          if (!nA || !nB) return;
+    
+          // colaboradores em comum (interseção, excluindo o próprio par)
+          var neighA = new Set(neigh.get(a) || []);
+          var neighB = new Set(neigh.get(b) || []);
+          var comuns = 0;
+          neighA.forEach(function(x){
+            if (x === a || x === b) return;
+            if (neighB.has(x)) comuns += 1;
+          });
+    
+          rows.push({
+            aresta: [nA.label, nB.label].sort(function(x,y){ return String(x).localeCompare(String(y)); }).join(", "),
+            colabs:  w,
+            comuns:  comuns
+          });
+        });
+    
+        // ordena: colabs desc, comuns desc, aresta asc
+        rows.sort(function(r1, r2){
+          if (r2.colabs !== r1.colabs) return r2.colabs - r1.colabs;
+          if (r2.comuns !== r1.comuns) return r2.comuns - r1.comuns;
+          return r1.aresta.localeCompare(r2.aresta);
+        });
+    
+        window.__EDGE_TABLE_DATA__ = rows;
+      })();
+    
+      // ======= D3: simulação/zoom/legenda =======
+      var svg = d3.select("#viz"),
+          g = svg.append("g"),
+          zoom = d3.zoom().scaleExtent([0.2, 5]).on("zoom", function(ev){ g.attr("transform", ev.transform); });
+      svg.call(zoom);
+    
+      function getBox() { return document.getElementById("viz-container").getBoundingClientRect(); }
+      var box = getBox();
+      var width = box.width, height = box.height;
+    
+      var weights = links.map(function(d){ return +d.weight || 0; });
+      var minW = d3.min(weights), maxW = d3.max(weights);
+      var edgeWidth = d3.scaleLinear().domain([minW, maxW]).range([1.2, 10]).clamp(true);
+      var edgeOpacity = d3.scaleLinear().domain([minW, maxW]).range([0.56,0.79]).clamp(true);
+    
+      var degrees = nodes.map(function(d){ return +d.degree || 0; });
+      var minD = d3.min(degrees) || 0;
+      var maxD = d3.max(degrees) || 1;
+      var nodeRadius = d3.scaleSqrt().domain([minD, maxD]).range([6, 11]).clamp(true);
+      function R(d){ return nodeRadius(+d.degree || 0); }
+    
+      var edgeLayer = g.append("g").attr("class","edges");
+      var nodeLayer = g.append("g").attr("class","nodes");
+      var labelLayer = g.append("g").attr("class","labels");
+      var edgeLabelLayer = g.append("g").attr("class","edge-labels");
+    
+      var edge = edgeLayer.selectAll("path")
+        .data(links).join("path")
+        .attr("class","edge")
+        .attr("id", function(_,i){ return "e"+i; })
+        .attr("stroke", function(d){ return d.color; })
+        .attr("stroke-width", function(d){ return edgeWidth(+d.weight || 0); })
+        .attr("fill","none")
+        .attr("stroke-opacity", function(d){ return edgeOpacity(+d.weight || 0); });
+    
+      var edgeLabels = edgeLabelLayer.selectAll("text")
+        .data(links).join("text")
+        .attr("class","edge-label")
+        .append("textPath")
+        .attr("href", function(_,i){ return "#e"+i; })
+        .attr("startOffset","50%")
+        .attr("text-anchor","middle")
+        .text(function(d){ return d.weight ? String(d.weight) : ""; });
+    
+      var node = nodeLayer.selectAll("g.node")
+        .data(nodes, function(d){ return d.id; })
+        .join(function(enter){
+          var g = enter.append("g").attr("class","node");
+          g.append("circle")
+            .attr("r", function(d){ return R(d); })
+            .attr("fill", function(d){ return d.color; })
+            .attr("stroke", "#333")
+            .attr("stroke-width", 0.17);
+          return g;
+        });
+    
+      var labels = labelLayer.selectAll("text")
+        .data(nodes, function(d){ return d.id; })
+        .join("text")
+        .attr("class","label")
+        .attr("text-anchor","middle")
+        .attr("dy","-0.05em")
+        .text(function(d){ return d.label; });
+    
+      var centerForce = d3.forceCenter(width/2, height/2);
+      var sim = d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(function(d){return d.id;}).distance(40).strength(0.6))
+        .force("charge", d3.forceManyBody().strength(-60))
+        .force("collide", d3.forceCollide().radius(function(d){ return R(d)+6; }).iterations(2))
+        .force("center", centerForce)
+        .on("tick", ticked)
+        .on("end", maybeFit);
+    
+      var fitted = false, fitTimeout = setTimeout(function(){ maybeFit(); }, 1000);
+    
+      function ticked(){
+        edge.attr("d", function(d){ return "M"+d.source.x+","+d.source.y+" L"+d.target.x+","+d.target.y; });
+        node.attr("transform", function(d){ return "translate("+d.x+", "+d.y+")"; });
+        labels.attr("x", function(d){ return d.x; }).attr("y", function(d){ return d.y; });
+      }
+    
+      function maybeFit(){
+        if (fitted) return;
+        fitted = true; clearTimeout(fitTimeout);
+        var xs = nodes.map(function(d){ return d.x; }), ys = nodes.map(function(d){ return d.y; });
+        var minX = Math.min.apply(null, xs), maxX = Math.max.apply(null, xs);
+        var minY = Math.min.apply(null, ys), maxY = Math.max.apply(null, ys);
+        var w = Math.max(1, maxX - minX), h = Math.max(1, maxY - minY);
+        var margin = 40;
+        var kx = (width  - margin*2) / w;
+        var ky = (height - margin*2) / h;
+        var scale = Math.max(0.2, Math.min(3, Math.min(kx, ky)));
+        var tx = (width  - scale*(minX + maxX)) / 2;
+        var ty = (height - scale*(minY + maxY)) / 2;
+        svg.transition().duration(600)
+          .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+      }
+    
+      node.call(d3.drag()
+        .on("start", function(ev, d){ if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+        .on("drag",  function(ev, d){ d.fx = ev.x; d.fy = ev.y; })
+        .on("end",   function(ev, d){ if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; })
+      );
+    
+      var selectedId = null;
+      function neighborSet(id){
+        var nei = new Set([id]);
+        links.forEach(function(e){
+          var s = (typeof e.source === 'object') ? e.source.id : e.source;
+          var t = (typeof e.target === 'object') ? e.target.id : e.target;
+          if (s === id) nei.add(t);
+          if (t === id) nei.add(s);
+        });
+        return nei;
+      }
+    
+      function renderSelection(){
+        if (!selectedId){
+          node.classed("selected", false);
+          node.classed("dimmed", false);
+          labels.classed("dimmed", false);
+          edge.classed("highlight", false).classed("dimmed", false);
+          edgeLabels.classed("dimmed", false);
+          return;
+        }
+        var keep = neighborSet(selectedId);
+        node.classed("selected", function(d){ return d.id === selectedId; })
+            .classed("dimmed", function(d){ return !keep.has(d.id); });
+        labels.classed("dimmed", function(d){ return !keep.has(d.id); });
+        edge.classed("highlight", function(d){
+              var s = (typeof d.source === 'object') ? d.source.id : d.source;
+              var t = (typeof d.target === 'object') ? d.target.id : d.target;
+              return s === selectedId || t === selectedId;
+            })
+            .classed("dimmed", function(d){
+              var s = (typeof d.source === 'object') ? d.source.id : d.source;
+              var t = (typeof d.target === 'object') ? d.target.id : d.target;
+              return !(s === selectedId || t === selectedId);
+            });
+        edgeLabels.classed("dimmed", function(d){
+          var s = (typeof d.source === 'object') ? d.source.id : d.source;
+          var t = (typeof d.target === 'object') ? d.target.id : d.target;
+          return !(s === selectedId || t === selectedId);
+        });
+      }
+    
+      function fillInfo(d){
+        var pane = document.getElementById("info-pane");
+        var campos = {
+          "Nome": d.label,
+          "Instituição": d.instituicao,
+          "CV": d.url,
+          "Atualização do CV": d.atualizacaoCV,
+          "Período": d.periodo,
+          "Rótulo": d.rotulo,
+          "Primeira Grande Área": d.nomePrimeiraGrandeArea,
+          "Primeira Área": d.nomePrimeiraArea,
+          "Publicações em coautoria": d.publicacoesEmCoautoria,
+          "Número de colaboradores": d.degree,
+          "Artigos em periódicos": d.artigosPeriodicos,
+          "Artigos em eventos": d.artigosEventos,
+          "Capítulos de livro": d.capitulosDeLivros,
+          "Livros": d.livros,
+          "Endereço": d.enderecoProfissional
+        };
+        var html = "<h4>"+(d.label || d.id)+"</h4><ul>";
+        Object.keys(campos).forEach(function(k){
+          var v = campos[k];
+          if (v === undefined || v === null || v === "") return;
+          if (k === "CV"){
+            html += "<li><strong>"+k+":</strong> <a href=\""+v+"\" target=\"_blank\" rel=\"noopener\">"+v+"</a></li>";
+          } else {
+            html += "<li><strong>"+k+":</strong> "+v+"</li>";
+          }
+        });
+        html += "</ul>";
+        pane.innerHTML = html;
+      }
+    
+      function selectNodeById(id){
+        var d = nodes.find(function(n){ return n.id === id; });
+        if (!d) return;
+        selectedId = d.id; fillInfo(d); renderSelection();
+        var t = d3.zoomTransform(svg.node());
+        var scale = Math.max(1.2, t.k);
+        var x = width/2 - d.x * scale;
+        var y = height/2 - d.y * scale;
+        svg.transition().duration(600).call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(scale));
+      }
+      node.on("click", function(_, d){ selectNodeById(d.id); });
+    
+      function norm(s){ return (s||"").toString().normalize("NFD").replace(/\p{Diacritic}/gu,"").toLowerCase().trim(); }
+      function searchAndSelect(q){
+        var nq = norm(q); if (!nq) return;
+        var hit = nodes.find(function(n){ return norm(n.label) === nq || norm(n.id) === nq; });
+        if (!hit) hit = nodes.find(function(n){ return norm(n.label).indexOf(nq) >= 0; });
+        if (hit) selectNodeById(hit.id);
+      }
+      document.getElementById("btnSearch").addEventListener("click", function(){
+        searchAndSelect(document.getElementById("searchBox").value);
+      });
+      document.getElementById("searchBox").addEventListener("keydown", function(ev){
+        if (ev.key === "Enter") searchAndSelect(ev.target.value);
+      });
+      document.getElementById("btnClear").addEventListener("click", function(){
+        selectedId = null; renderSelection();
+        document.getElementById("info-pane").innerHTML =
+          "<h4>Informação do Pesquisador</h4><p>Clique em um nó (ou use a busca) para ver detalhes aqui.</p>";
+      });
+    
+      var labelsVisible = true;
+      var btnToggle = document.getElementById("btnToggleLabels");
+      function applyLabelsVisibility(){
+        labelLayer.classed("hidden", !labelsVisible);
+        d3.select(".edge-labels").classed("hidden", !labelsVisible);
+      }
+      btnToggle.addEventListener("click", function(){
+        labelsVisible = !labelsVisible;
+        btnToggle.textContent = labelsVisible ? "Ocultar rótulos" : "Mostrar rótulos";
+        applyLabelsVisibility();
+      });
+      applyLabelsVisibility();
+    
+      // legenda (cores por rótulo)
+      var byRotulo = d3.rollup(nodes, function(v){ return v[0].color; }, function(d){ return d.rotulo || "Sem rótulo"; });
+      var legendData = Array.from(byRotulo, function(entry){ return {rotulo: entry[0], color: entry[1]}; });
+      var legend = d3.select("#legend");
+      legend.selectAll("span.item")
+        .data(legendData)
+        .join("span")
+        .attr("class","item")
+        .html(function(d){ return '<span class="swatch" style="background:'+d.color+'"></span>'+d.rotulo; });
+    
+      // refit ao redimensionar
+      var ro = new ResizeObserver(function(){
+        var b = getBox();
+        width = b.width; height = b.height;
+        centerForce = d3.forceCenter(width/2, height/2);
+        sim.force("center", centerForce).alpha(0.05).restart();
+        fitted = false; maybeFit();
+      });
+      ro.observe(document.getElementById("viz-container"));
+    </script>
+    
+    <hr style="margin:1.25rem 0">
+    
+    <h3>Vértices</h3>
+    <p>Esta tabela lista todos os atributos usados para compor os vértices do grafo acima.</p>
+    <div class="sl-controls">
+      <button id="vert-csv">⬇️ CSV</button>
+      <button id="vert-xlsx">⬇️ XLSX</button>
+    </div>
+    <div id="tabela-vertices" class="sl-tabela"></div>
+    
+    <h3 style="margin-top:1.5rem;">Arestas (pares de membros)</h3>
+    <p>Veja quais pares de membros mais colaboram e quantos colaboradores em comum possuem.</p>
+    <div class="sl-controls">
+      <button id="edge-csv">⬇️ CSV</button>
+      <button id="edge-xlsx">⬇️ XLSX</button>
+    </div>
+    <div id="tabela-arestas" class="sl-tabela"></div>
+    
+    <!-- Tabulator -->
+    <link href="css/tabulator_site.min.css" rel="stylesheet" />
+    <link href="css/tabulator-scriplattes.css" rel="stylesheet" />
+    <script src="js/tabulator.min.js"></script>
+    <script src="js/xlsx.full.min.js"></script>
+    
+    <script>
+      // Dados vindos dos blocos anteriores
+      var DATA_VERT  = (window.__VERTEX_TABLE_DATA__ || []);
+      var DATA_EDGES = (window.__EDGE_TABLE_DATA__  || []);
+    
+      // Heurística de altura (evita rolagem infinita)
+      function heightFor(n){
+        if (n <= 12) return "auto";
+        if (n <= 60) return "40vh";
+        return "60vh";
+      }
+      var HEIGHT_VERT = heightFor(DATA_VERT.length);
+      var HEIGHT_EDG  = heightFor(DATA_EDGES.length);
+    
+      const LANG_PT = {
+        "pt-br": {
+          "pagination": {
+            "first":"«","first_title":"Primeira",
+            "last":"»","last_title":"Última",
+            "prev":"‹","prev_title":"Anterior",
+            "next":"›","next_title":"Próxima"
+          },
+          "headerFilters": { "default":"⎯ Filtrar ⎯" }
+        }
+      };
+    
+      // Ordenação por data BR via campo auxiliar yyyymmdd
+      function sortDateBR(a, b, aRow, bRow) {
+        var av = (aRow && aRow.getData && aRow.getData().atualizacao_num) || 0;
+        var bv = (bRow && bRow.getData && bRow.getData().atualizacao_num) || 0;
+        return av - bv;
+      }
+    
+      // Formatter de link com title (tooltip no <a>) — usado na coluna "Nome" dos vértices
+      function linkWithTitle(cell) {
+        const data = cell.getData();
+        const url = String(data.url || "#");
+        const label = String(cell.getValue() ?? "");
+        const a = document.createElement("a");
+        a.href = url; a.textContent = label; a.target = "_blank"; a.rel = "noopener"; a.title = label;
+        return a;
+      }
+    
+      // Helper para criar Tabulator com tooltips + ellipsis
+      function createTable(el, data, columns, initialSort, height){
+        const base = {
+          data,
+          layout: "fitColumns",
+          responsiveLayout: "collapse",
+          pagination: "local",
+          paginationSize: 50,
+          paginationSizeSelector: [10, 25, 50, 100, 200, 500],
+          movableColumns: true,
+          initialSort,
+          headerFilterLiveFilter: true,
+          columns,
+          locale: true, langs: LANG_PT, locale: "pt-br",
+          tooltips: true
+        };
+        if (height !== "auto") base.height = height;
+        return new Tabulator(el, base);
+      }
+    
+      // === VÉRTICES ===
+      (function(){
+        const columns = [
+          { title:"ID", field:"id", headerFilter:"input", tooltip:true },
+          { title:"Nome", field:"nome", formatter: linkWithTitle,
+            headerFilter:"input", widthGrow:2, tooltip:true },
+          { title:"Instituição", field:"instituicao", headerFilter:"input", tooltip:true },
+          { title:"Atualização CV", field:"atualizacao", headerFilter:"input", sorter: sortDateBR, tooltip:true },
+          { title:"Período", field:"periodo", headerFilter:"input", tooltip:true },
+          { title:"Rótulo", field:"rotulo", headerFilter:"input", tooltip:true },
+          { title:"Grande área", field:"grande_area", headerFilter:"input", tooltip:true },
+          { title:"Área", field:"area", headerFilter:"input", tooltip:true },
+          { title:"Publicações em coautoria", field:"publicacoesEmCoautoria", hozAlign:"right", sorter:"number", headerFilter:"input", tooltip:true },
+          { title:"Nº colaboradores (grau)", field:"degree", hozAlign:"right", sorter:"number", headerFilter:"input", tooltip:true },
+          { title:"Artigos em periódicos", field:"artigosPeriodicos", hozAlign:"right", sorter:"number", headerFilter:"input", tooltip:true },
+          { title:"Artigos em eventos", field:"artigosEventos", hozAlign:"right", sorter:"number", headerFilter:"input", tooltip:true },
+          { title:"Capítulos de livro", field:"capitulosDeLivros", hozAlign:"right", sorter:"number", headerFilter:"input", tooltip:true },
+          { title:"Livros", field:"livros", hozAlign:"right", sorter:"number", headerFilter:"input", tooltip:true },
+          { title:"Endereço", field:"enderecoProfissional", headerFilter:"input", widthGrow:2, tooltip:true }
+        ];
+        const sort = [{ column:"degree", dir:"desc" }];
+        const t = createTable("#tabela-vertices", DATA_VERT, columns, sort, HEIGHT_VERT);
+        document.getElementById("vert-csv").onclick  = () => t.download("csv",  "vertices_campos.csv", { bom:true });
+        document.getElementById("vert-xlsx").onclick = () => t.download("xlsx", "vertices_campos.xlsx", { sheetName:"Vértices" });
+      })();
+    
+      // === ARESTAS (coluna única "Aresta") ===
+      (function(){
+        const columns = [
+          { title:"Aresta", field:"aresta", headerFilter:"input", widthGrow:3, tooltip:true },
+          { title:"Número de colaborações", field:"colabs", hozAlign:"right", sorter:"number", headerFilter:"input", tooltip:true },
+          { title:"Nº de colaboradores em comum", field:"comuns", hozAlign:"right", sorter:"number", headerFilter:"input", tooltip:true }
+        ];
+        const sort = [{ column:"colabs", dir:"desc" }, { column:"comuns", dir:"desc" }];
+        const t = createTable("#tabela-arestas", DATA_EDGES, columns, sort, HEIGHT_EDG);
+        document.getElementById("edge-csv").onclick  = () => t.download("csv",  "arestas_colaboracoes.csv", { bom:true });
+        document.getElementById("edge-xlsx").onclick = () => t.download("xlsx", "arestas_colaboracoes.xlsx", { sheetName:"Arestas" });
+      })();
+    </script>
+    <br><p><br>(*) Relatório criado com produções desde 2025 até 2026
+<br>Data de processamento: 25/09/2026 02:06:41<br>         <div id="footer">         Relatório gerado por <a href="http://scriptlattes.sourceforge.net/">scriptLattes V.2025.09</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:admin@email.com">admin@email.com</a>         </div> </body></html>

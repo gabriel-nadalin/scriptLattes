@@ -1,0 +1,2443 @@
+{
+  "informacoes_pessoais": {
+    "id_lattes": "7908727257671488",
+    "nome_completo": "Carina Aparecida Marosti Dessotte",
+    "nome_citacoes": "MAROSTI, C. A.;Dessotte, Carina Aparecida Marosti;DESSOTTE, CARINA A.M.;DESSOTTE, C.A.M.;Carina Aparecida Marosti Dessote;Dessote, Carina Aparecida Marosti;Marosti Dessotte, Carina Aparecida",
+    "sexo": "Masculino",
+    "rotulo": "* Sem rótulo",
+    "periodo": "",
+    "bolsa_produtividade": "",
+    "endereco_profissional": "Escola de Enfermagem de Ribeirão Preto - USP. Escola de Enfermagem de Ribeirão Preto - USP Vila Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153410 URL da Homepage: www.eerp.usp.br",
+    "atualizacao_cv": "30/07/2026",
+    "url": "http://lattes.cnpq.br/7908727257671488",
+    "texto_resumo": "Professora Associada (Livre-Docente) do Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP-USP). Graduada em Enfermagem pela EERP-USP (2002), com Residência em Enfermagem Clínico-Cirúrgica Área de Cardiologia (2005) e Doutorado em Ciências na Área de Enfermagem Fundamental (2010), pela mesma instituição. Atualmente é Presidente do Centro de Apoio à Pesquisa (CENAPq) da EERP-USP e orientadora credenciada nos níveis de Mestrado e Doutorado no Programa de Pós-Graduação em Enfermagem Fundamental. Possui sólida experiência assistencial em enfermagem em cuidados críticos, com atuação na Unidade Pós-Operatória de Cirurgia Torácica e Cardiovascular do Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto da USP e na área de Bioética e Ética em Pesquisa. Na graduação, desenvolve atividades de ensino na área de Enfermagem Perioperatória e, na pós-graduação stricto sensu, ministra disciplinas relacionadas ao planejamento de estudos quantitativos, métodos de pesquisa, avaliação de desfechos relatados pelos pacientes (Patient-Reported Outcomes PRO) e desenvolvimento, adaptação transcultural e validação psicométrica de instrumentos de medida em saúde. É Líder do Grupo de Investigação e Reabilitação em Qualidade de Vida (GIRQ) e desenvolve pesquisas na área de Enfermagem Cirúrgica, com ênfase na recuperação e reabilitação de pessoas com doenças cardiovasculares submetidas a cirurgias cardíacas e implantes de dispositivos cardíacos eletrônicos implantáveis. Suas investigações concentram-se na avaliação da qualidade de vida, qualidade de vida relacionada à saúde, desfechos relatados pelos pacientes, estresse perioperatório, ansiedade, depressão e tecnologias educativas voltadas ao autocuidado e à reabilitação. Também atua na construção, adaptação transcultural e validação de instrumentos de medida em saúde, contribuindo para o fortalecimento da prática baseada em evidências e da pesquisa metodológica em enfermagem. Sua atuação integra ensino, pesquisa, inovação e extensão universitária, orientada pela qualificação do cuidado em saúde, pela valorização dos determinantes sociais da saúde e pelos princípios da Agenda 2030, especialmente o Objetivo de Desenvolvimento Sustentável 3 (Saúde e Bem-Estar). (Texto informado pelo autor)"
+  },
+  "formacao_academica": [
+    {
+      "tipo": "Doutorado em Doutorado direto",
+      "nome_instituicao": "Escola de Enfermagem de Ribeirão Preto - USP, EERP, Brasil",
+      "ano_inicio": "2006",
+      "ano_conclusao": "2010",
+      "descricao": "Título: Avaliação da qualidade de vida relacionada à saúde de pacientes infartados e com angina., Ano de obtenção: 2010. Orientador: Rosana Aparecida Spadoti Dantas. Palavras-chave: coronariopatia; qualidade de vida. Grande área: Ciências da Saúde / Área: Enfermagem. Setores de atividade: Cuidado À Saúde das Pessoas."
+    },
+    {
+      "tipo": "Graduação em Enfermagem",
+      "nome_instituicao": "Escola de Enfermagem de Ribeirão Preto - USP, EERP - USP, Brasil",
+      "ano_inicio": "1999",
+      "ano_conclusao": "2002",
+      "descricao": ""
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil.",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "2013 - Atual",
+      "ano_inicio": "2013",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor público",
+      "enquadramento": "Professor Doutor",
+      "regime": "Dedicação exclusiva",
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil.",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "2012 - 2013",
+      "ano_inicio": "2012",
+      "ano_fim": "2013",
+      "vinculo": "Servidor público",
+      "enquadramento": "Professor Doutor Temporário",
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil.",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "2011 - 2011",
+      "ano_inicio": "2011",
+      "ano_fim": "2011",
+      "vinculo": "Professor Doutor Temporário",
+      "enquadramento": "Professor Doutor Temporário",
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil.",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "2009 - 2010",
+      "ano_inicio": "2009",
+      "ano_fim": "2010",
+      "vinculo": "Monitor em Saúde",
+      "enquadramento": "Bolsa Institucional - EERP",
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "05/2026 - Atual",
+      "ano_inicio": "2026",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2026 - Atual",
+      "ano_inicio": "2026",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "03/2025 - Atual",
+      "ano_inicio": "2025",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "01/2025 - Atual",
+      "ano_inicio": "2025",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "09/2022 - Atual",
+      "ano_inicio": "2022",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2021 - Atual",
+      "ano_inicio": "2021",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2021 - Atual",
+      "ano_inicio": "2021",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "09/2018 - Atual",
+      "ano_inicio": "2018",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "02/2018 - Atual",
+      "ano_inicio": "2018",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "02/2018 - Atual",
+      "ano_inicio": "2018",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2014 - Atual",
+      "ano_inicio": "2014",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "07/2013 - Atual",
+      "ano_inicio": "2013",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "07/2013 - Atual",
+      "ano_inicio": "2013",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "01/2007 - Atual",
+      "ano_inicio": "2007",
+      "ano_fim": "Atual",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Pesquisa e desenvolvimento, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "12/2018 - 12/2025",
+      "ano_inicio": "2018",
+      "ano_fim": "2025",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2023 - 04/2025",
+      "ano_inicio": "2023",
+      "ano_fim": "2025",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "12/2018 - 12/2024",
+      "ano_inicio": "2018",
+      "ano_fim": "2024",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "05/2023 - 06/2023",
+      "ano_inicio": "2023",
+      "ano_fim": "2023",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Faculdade de Enfermagem da Universidade Estadual de Campinas."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2021 - 04/2023",
+      "ano_inicio": "2021",
+      "ano_fim": "2023",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2022 - 12/2022",
+      "ano_inicio": "2022",
+      "ano_fim": "2022",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "10/2019 - 10/2022",
+      "ano_inicio": "2019",
+      "ano_fim": "2022",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "10/2016 - 10/2022",
+      "ano_inicio": "2016",
+      "ano_fim": "2022",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "06/2022 - 07/2022",
+      "ano_inicio": "2022",
+      "ano_fim": "2022",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Faculdade de Enfermagem da Universidade Estadual de Campinas."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "03/2022 - 06/2022",
+      "ano_inicio": "2022",
+      "ano_fim": "2022",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2021 - 12/2021",
+      "ano_inicio": "2021",
+      "ano_fim": "2021",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2018 - 08/2021",
+      "ano_inicio": "2018",
+      "ano_fim": "2021",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "05/2018 - 07/2021",
+      "ano_inicio": "2018",
+      "ano_fim": "2021",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "03/2021 - 06/2021",
+      "ano_inicio": "2021",
+      "ano_fim": "2021",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "01/2016 - 05/2021",
+      "ano_inicio": "2016",
+      "ano_fim": "2021",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Direção e administração, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "01/2016 - 05/2021",
+      "ano_inicio": "2016",
+      "ano_fim": "2021",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Direção e administração, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "01/2016 - 05/2021",
+      "ano_inicio": "2016",
+      "ano_fim": "2021",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Direção e administração, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2020 - 12/2020",
+      "ano_inicio": "2020",
+      "ano_fim": "2020",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2020 - 12/2020",
+      "ano_inicio": "2020",
+      "ano_fim": "2020",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2020 - 12/2020",
+      "ano_inicio": "2020",
+      "ano_fim": "2020",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2020 - 08/2020",
+      "ano_inicio": "2020",
+      "ano_fim": "2020",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "07/2016 - 10/2019",
+      "ano_inicio": "2016",
+      "ano_fim": "2019",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2017 - 04/2019",
+      "ano_inicio": "2017",
+      "ano_fim": "2019",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2018 - 12/2018",
+      "ano_inicio": "2018",
+      "ano_fim": "2018",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "01/2017 - 12/2018",
+      "ano_inicio": "2017",
+      "ano_fim": "2018",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "09/2018 - 10/2018",
+      "ano_inicio": "2018",
+      "ano_fim": "2018",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "10/2014 - 10/2018",
+      "ano_inicio": "2014",
+      "ano_fim": "2018",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "05/2018 - 06/2018",
+      "ano_inicio": "2018",
+      "ano_fim": "2018",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Faculdade de Enfermagem da Universidade Estadual de Campinas."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "09/2017 - 06/2018",
+      "ano_inicio": "2017",
+      "ano_fim": "2018",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "05/2017 - 05/2018",
+      "ano_inicio": "2017",
+      "ano_fim": "2018",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "03/2018 - 04/2018",
+      "ano_inicio": "2018",
+      "ano_fim": "2018",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2015 - 03/2018",
+      "ano_inicio": "2015",
+      "ano_fim": "2018",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "11/2017 - 12/2017",
+      "ano_inicio": "2017",
+      "ano_fim": "2017",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2017 - 12/2017",
+      "ano_inicio": "2017",
+      "ano_fim": "2017",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2017 - 12/2017",
+      "ano_inicio": "2017",
+      "ano_fim": "2017",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "11/2017 - 11/2017",
+      "ano_inicio": "2017",
+      "ano_fim": "2017",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "09/2017 - 10/2017",
+      "ano_inicio": "2017",
+      "ano_fim": "2017",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "06/2017 - 06/2017",
+      "ano_inicio": "2017",
+      "ano_fim": "2017",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2015 - 04/2017",
+      "ano_inicio": "2015",
+      "ano_fim": "2017",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2015 - 04/2017",
+      "ano_inicio": "2015",
+      "ano_fim": "2017",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "11/2016 - 12/2016",
+      "ano_inicio": "2016",
+      "ano_fim": "2016",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "01/2014 - 12/2016",
+      "ano_inicio": "2014",
+      "ano_fim": "2016",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "07/2016 - 11/2016",
+      "ano_inicio": "2016",
+      "ano_fim": "2016",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "07/2016 - 11/2016",
+      "ano_inicio": "2016",
+      "ano_fim": "2016",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "07/2016 - 11/2016",
+      "ano_inicio": "2016",
+      "ano_fim": "2016",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2016 - 09/2016",
+      "ano_inicio": "2016",
+      "ano_fim": "2016",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "02/2016 - 02/2016",
+      "ano_inicio": "2016",
+      "ano_fim": "2016",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "10/2014 - 10/2015",
+      "ano_inicio": "2014",
+      "ano_fim": "2015",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "10/2014 - 04/2015",
+      "ano_inicio": "2014",
+      "ano_fim": "2015",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "10/2014 - 04/2015",
+      "ano_inicio": "2014",
+      "ano_fim": "2015",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "02/2015 - 02/2015",
+      "ano_inicio": "2015",
+      "ano_fim": "2015",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "07/2013 - 08/2014",
+      "ano_inicio": "2013",
+      "ano_fim": "2014",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "07/2013 - 08/2014",
+      "ano_inicio": "2013",
+      "ano_fim": "2014",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "03/2014 - 06/2014",
+      "ano_inicio": "2014",
+      "ano_fim": "2014",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "03/2014 - 06/2014",
+      "ano_inicio": "2014",
+      "ano_fim": "2014",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "02/2014 - 02/2014",
+      "ano_inicio": "2014",
+      "ano_fim": "2014",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "01/2014 - 01/2014",
+      "ano_inicio": "2014",
+      "ano_fim": "2014",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "12/2013 - 01/2014",
+      "ano_inicio": "2013",
+      "ano_fim": "2014",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "11/2013 - 12/2013",
+      "ano_inicio": "2013",
+      "ano_fim": "2013",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Escola de Enfermagem de Ribeirão Preto."
+      ]
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "11/2013 - 11/2013",
+      "ano_inicio": "2013",
+      "ano_fim": "2013",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "05/2012 - 06/2013",
+      "ano_inicio": "2012",
+      "ano_fim": "2013",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "05/2012 - 06/2013",
+      "ano_inicio": "2012",
+      "ano_fim": "2013",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2011 - 09/2011",
+      "ano_inicio": "2011",
+      "ano_fim": "2011",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "04/2011 - 09/2011",
+      "ano_inicio": "2011",
+      "ano_fim": "2011",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Escola de Enfermagem de Ribeirão Preto, EERP, Brasil",
+      "instituicao_nome": "Escola de Enfermagem de Ribeirão Preto",
+      "instituicao_sigla": "EERP",
+      "instituicao_pais": "Brasil",
+      "periodo": "03/2009 - 02/2010",
+      "ano_inicio": "2009",
+      "ano_fim": "2010",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP, HCFMRP- USP, Brasil.",
+      "instituicao_nome": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP",
+      "instituicao_sigla": "HCFMRP- USP",
+      "instituicao_pais": "Brasil",
+      "periodo": "2004 - 2013",
+      "ano_inicio": "2004",
+      "ano_fim": "2013",
+      "vinculo": null,
+      "enquadramento": "Enfermeira",
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP, HCFMRP- USP, Brasil",
+      "instituicao_nome": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP",
+      "instituicao_sigla": "HCFMRP- USP",
+      "instituicao_pais": "Brasil",
+      "periodo": "2011-2013",
+      "ano_inicio": "2011",
+      "ano_fim": "2013",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP, HCFMRP- USP, Brasil",
+      "instituicao_nome": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP",
+      "instituicao_sigla": "HCFMRP- USP",
+      "instituicao_pais": "Brasil",
+      "periodo": "06/2011 - 07/2013",
+      "ano_inicio": "2011",
+      "ano_fim": "2013",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional",
+      "atividades": [
+        "Conselhos, Comissões e Consultoria, Comitê de Ética em Pesquisa do Hospital das Clínicas."
+      ]
+    },
+    {
+      "instituicao": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP, HCFMRP- USP, Brasil",
+      "instituicao_nome": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP",
+      "instituicao_sigla": "HCFMRP- USP",
+      "instituicao_pais": "Brasil",
+      "periodo": "08/2009 - 09/2009",
+      "ano_inicio": "2009",
+      "ano_fim": "2009",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP, HCFMRP- USP, Brasil",
+      "instituicao_nome": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP",
+      "instituicao_sigla": "HCFMRP- USP",
+      "instituicao_pais": "Brasil",
+      "periodo": "10/2008 - 10/2008",
+      "ano_inicio": "2008",
+      "ano_fim": "2008",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP, HCFMRP- USP, Brasil",
+      "instituicao_nome": "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto - USP",
+      "instituicao_sigla": "HCFMRP- USP",
+      "instituicao_pais": "Brasil",
+      "periodo": "09/2007 - 12/2007",
+      "ano_inicio": "2007",
+      "ano_fim": "2007",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Faculdades São Luiz de Jaboticabal, FSLJ, Brasil.",
+      "instituicao_nome": "Faculdades São Luiz de Jaboticabal",
+      "instituicao_sigla": "FSLJ",
+      "instituicao_pais": "Brasil",
+      "periodo": "2005 - 2005",
+      "ano_inicio": "2005",
+      "ano_fim": "2005",
+      "vinculo": "Supervisora de estágio",
+      "enquadramento": "Professora",
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Faculdades São Luiz de Jaboticabal, FSLJ, Brasil",
+      "instituicao_nome": "Faculdades São Luiz de Jaboticabal",
+      "instituicao_sigla": "FSLJ",
+      "instituicao_pais": "Brasil",
+      "periodo": null,
+      "ano_inicio": null,
+      "ano_fim": null,
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    },
+    {
+      "instituicao": "Faculdades São Luiz de Jaboticabal, FSLJ, Brasil",
+      "instituicao_nome": "Faculdades São Luiz de Jaboticabal",
+      "instituicao_sigla": "FSLJ",
+      "instituicao_pais": "Brasil",
+      "periodo": "02/2005 - 06/2005",
+      "ano_inicio": "2005",
+      "ano_fim": "2005",
+      "vinculo": null,
+      "enquadramento": null,
+      "regime": null,
+      "cargo_funcao": null,
+      "tipo": "Atuação profissional"
+    }
+  ],
+  "projetos_pesquisa": [
+    {
+      "nome": "Efeito de uma tecnologia educacional pré-operatória sobre a percepção de estressores e a ocorrência de complicações pós-operatórias em pacientes submetidos à cirurgia cardíaca: estudo quase-experimental",
+      "ano_inicio": "2026",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Este projeto tem como objetivo avaliar o efeito de uma intervenção educativa pré-operatória voltada ao preparo de pacientes submetidos à cirurgia cardíaca para o procedimento cirúrgico e para a permanência na Unidade de Terapia Intensiva (UTI), considerando a percepção de estressores e a ocorrência de complicações no pós-operatório imediato. O estudo fundamenta-se na premissa de que a educação em saúde constitui uma estratégia capaz de reduzir o impacto psicológico do processo cirúrgico, favorecer o enfrentamento dos estressores perioperatórios e contribuir para melhores desfechos clínicos.Trata-se de um estudo quase-experimental, com delineamento de séries temporais e grupo de comparação não equivalente, desenvolvido em hospital universitário de alta complexidade. Os participantes do grupo intervenção recebem, além do cuidado habitual, um programa educativo estruturado no período pré-operatório, enquanto os participantes do grupo comparação recebem exclusivamente as orientações rotineiras do serviço. Os principais desfechos avaliados são a percepção de estressores relacionados à permanência na UTI, mensurada por instrumento validado, e a ocorrência de complicações clínicas no pós-operatório imediato.O projeto integra a linha de pesquisa em Enfermagem Perioperatória e Cardiovascular, contribuindo para o desenvolvimento e a avaliação de tecnologias cuidativo-educacionais voltadas ao preparo cirúrgico de pacientes submetidos a procedimentos cardíacos de grande porte. Os resultados poderão subsidiar a implementação de intervenções educativas baseadas em evidências, fortalecer a prática assistencial centrada no paciente e qualificar o cuidado de enfermagem no período perioperatório, com potencial para reduzir o estresse, minimizar complicações e favorecer a recuperação clínica e a reabilitação cardiovascular.. Situação: Em andamento; Natureza: Pesquisa. Alunos envolvidos: Mestrado acadêmico: (1) . Integrantes: Carina Aparecida Marosti Dessotte - Coordenador / Marcella Eduarda Scanavini - Integrante."
+      ],
+      "tipo": "Projeto de pesquisa",
+      "integrantes": [
+        {
+          "nome": "Carina Aparecida Marosti Dessotte",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Marcella Eduarda Scanavini",
+          "papel": "Integrante"
+        }
+      ]
+    },
+    {
+      "nome": "Qualidade de vida de pacientes antes e após o procedimento de implante percutâneo de valva aórtica",
+      "ano_inicio": "2025",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Este projeto tem como objetivo analisar a evolução da qualidade de vida e o impacto da valvopatia no cotidiano de pacientes submetidos ao Implante Percutâneo de Valva Aórtica (Transcatheter Aortic Valve Implantation TAVI). O estudo fundamenta-se no crescente uso dessa tecnologia minimamente invasiva para o tratamento da estenose aórtica grave e na necessidade de produzir evidências sobre desfechos relatados pelos pacientes (Patient-Reported Outcomes PRO), considerando que a melhora da sobrevida deve ser acompanhada da avaliação dos benefícios percebidos pelos indivíduos em sua qualidade de vida e funcionalidade.Trata-se de um estudo observacional, analítico e prospectivo, desenvolvido em hospital universitário de alta complexidade, com avaliações realizadas antes do procedimento e no seguimento ambulatorial entre quatro semanas e três meses após o TAVI. Além da caracterização sociodemográfica e clínica dos participantes, são avaliados a qualidade de vida, por meio do instrumento WHOQOL-bref, e o impacto da valvopatia no cotidiano, utilizando o Instrumento de Impacto da Doença no Cotidiano do Valvopata (IDCV), possibilitando a análise longitudinal das repercussões físicas, psicológicas, sociais e funcionais decorrentes da intervenção.O projeto contribui para o fortalecimento da pesquisa em Enfermagem Cardiovascular ao produzir evidências sobre a experiência de pacientes submetidos ao TAVI em um cenário de crescente incorporação dessa tecnologia no Sistema Único de Saúde. Os resultados poderão subsidiar a qualificação do acompanhamento clínico e da reabilitação cardiovascular, apoiar o planejamento de intervenções centradas no paciente e fortalecer a prática baseada em evidências, ampliando o conhecimento sobre os benefícios clínicos e humanísticos do tratamento percutâneo das valvopatias.. Situação: Em andamento; Natureza: Pesquisa. Alunos envolvidos: Graduação: (1) / Mestrado acadêmico: (1) . Integrantes: Carina Aparecida Marosti Dessotte - Coordenador / Aline Oliveira Mariano - Integrante / Thayná Cristina Xavier Raymundo - Integrante."
+      ],
+      "tipo": "Projeto de pesquisa",
+      "integrantes": [
+        {
+          "nome": "Carina Aparecida Marosti Dessotte",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Aline Oliveira Mariano",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Thayná Cristina Xavier Raymundo",
+          "papel": "Integrante"
+        }
+      ]
+    },
+    {
+      "nome": "PROJETO COM COOPERAÇÃO ESTRANGEIRA - PROF. DR. ANDRÉ NOVO. Efeito de uma tecnologia educativa no conhecimento sobre anticoagulação oral em pacientes com implante de válvula cardíaca mecânica: estudo quase-experimental",
+      "ano_inicio": "2025",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Este projeto tem como objetivo avaliar o efeito de uma tecnologia educacional estruturada sobre o conhecimento em terapia de anticoagulação oral em pacientes submetidos à cirurgia de troca valvar cardíaca com implante de prótese mecânica. A pesquisa fundamenta-se na necessidade de qualificar o autocuidado e o manejo da terapia anticoagulante oral, reconhecendo que o conhecimento insuficiente sobre o tratamento está associado à baixa adesão, ao controle inadequado da anticoagulação, ao aumento de complicações tromboembólicas e hemorrágicas e à pior qualidade de vida relacionada à saúde.Trata-se de um estudo quase-experimental, com delineamento de séries temporais, desenvolvido com pacientes em início de terapia com varfarina no pós-operatório de cirurgia valvar cardíaca. A intervenção educativa é realizada em três momentos (pré-operatório, pós-operatório e primeiro retorno ambulatorial), sendo comparada ao cuidado habitual do serviço. Os desfechos avaliados incluem conhecimento sobre a terapia de anticoagulação oral, qualidade de vida relacionada à saúde, adesão ao tratamento e controle da anticoagulação, mensurado pela porcentagem de tempo em faixa terapêutica do International Normalized Ratio (Time in Therapeutic Range TTR). Para a avaliação dos desfechos são utilizados instrumentos validados, incluindo o Instrumento de Avaliação do Conhecimento sobre Anticoagulante Oral (IACACO), o HeartQoL e o Escore de Adesão para Usuários de Anticoagulantes Orais.O projeto contribui para o desenvolvimento e a avaliação de tecnologias educacionais voltadas ao cuidado perioperatório e à reabilitação cardiovascular, produzindo evidências para subsidiar a implementação de estratégias de educação em saúde capazes de melhorar a adesão ao tratamento, a segurança do paciente e os resultados clínicos de pessoas em uso de anticoagulação oral após cirurgia cardíaca. Os resultados têm potencial para apoiar a incorporação de intervenções educativas baseadas em evidências na prática da Enfermagem Cardiovascular, fortalecendo a assistência centrada no paciente e a qualificação do cuidado.. Situação: Em andamento; Natureza: Pesquisa. Alunos envolvidos: Graduação: (1) / Doutorado: (1) . Integrantes: Carina Aparecida Marosti Dessotte - Coordenador / Marcos Eduardo dos Santos Alves - Integrante / kavya Kavya - Integrante."
+      ],
+      "tipo": "Projeto de pesquisa",
+      "integrantes": [
+        {
+          "nome": "Carina Aparecida Marosti Dessotte",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Marcos Eduardo dos Santos Alves",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "kavya Kavya",
+          "papel": "Integrante"
+        }
+      ]
+    },
+    {
+      "nome": "Validação do Health-Related Quality of Life Questionnaire HeartQoL com pacientes no pré-operatório de cirurgia de correção de valvopatia",
+      "ano_inicio": "2025",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Este projeto tem como objetivo analisar as propriedades psicométricas da versão brasileira do Health-Related Quality of Life Questionnaire (HeartQoL) em pacientes no período pré-operatório de cirurgias para correção de valvopatias. O estudo busca ampliar as evidências de validade e confiabilidade do instrumento em um contexto clínico distinto daquele previamente investigado, contribuindo para a qualificação da avaliação da qualidade de vida relacionada à saúde (QVRS) de pessoas com valvopatias antes da intervenção cirúrgica.Trata-se de um estudo metodológico, desenvolvido com pacientes adultos em pré-operatório de plastia e/ou substituição valvar em hospital universitário de alta complexidade. Considerando que o HeartQoL já foi adaptado transculturalmente para o contexto brasileiro, o projeto concentra-se na investigação de suas propriedades psicométricas, por meio da obtenção de evidências de validade de construto convergente, validade estrutural e confiabilidade, utilizando procedimentos fundamentados na Teoria Clássica dos Testes e em modelos de equações estruturais, incluindo análise fatorial confirmatória. A validade convergente será examinada pela correlação entre os escores do HeartQoL e do SF-36, enquanto a estrutura interna será avaliada quanto à adequação do modelo original do instrumento à população estudada.Os resultados contribuirão para o fortalecimento da pesquisa metodológica em Enfermagem e Ciências da Saúde, ampliando a disponibilidade de instrumentos com propriedades psicométricas robustas para mensuração de desfechos relatados pelos pacientes (Patient-Reported Outcomes PRO). Espera-se que as evidências produzidas apoiem pesquisas clínicas futuras e qualifiquem a avaliação da qualidade de vida relacionada à saúde no cuidado perioperatório de pacientes com valvopatias, favorecendo a prática baseada em evidências e a tomada de decisão clínica centrada no paciente.. Situação: Em andamento; Natureza: Pesquisa. Alunos envolvidos: Doutorado: (1) . Integrantes: Carina Aparecida Marosti Dessotte - Coordenador / Eduarda Moioli Henriques - Integrante."
+      ],
+      "tipo": "Projeto de pesquisa",
+      "integrantes": [
+        {
+          "nome": "Carina Aparecida Marosti Dessotte",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Eduarda Moioli Henriques",
+          "papel": "Integrante"
+        }
+      ]
+    },
+    {
+      "nome": "Risco de lesão por posicionamento cirúrgico em pacientes submetidos a cirurgia robótica eletiva de grande porte",
+      "ano_inicio": "2025",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Este projeto tem como objetivo avaliar o risco de desenvolvimento de lesões decorrentes do posicionamento cirúrgico em pacientes adultos submetidos a cirurgias robóticas eletivas de grande porte nas especialidades de cirurgia torácica, urologia, neurocirurgia e ortopedia. O estudo fundamenta-se no crescente emprego da cirurgia robótica e na necessidade de produzir evidências científicas que subsidiem a prevenção de eventos adversos relacionados ao posicionamento cirúrgico, considerando as particularidades desse tipo de procedimento, caracterizado por longos tempos cirúrgicos, posicionamentos extremos e elevada complexidade tecnológica.Trata-se de um estudo observacional, longitudinal e prospectivo, desenvolvido em hospital universitário de alta complexidade, utilizando a Escala de Avaliação de Risco para o Desenvolvimento de Lesões Decorrentes do Posicionamento Cirúrgico (ELPO) para mensurar o risco de lesões relacionadas ao posicionamento intraoperatório. Além da aplicação da ELPO, são coletados dados sociodemográficos, clínicos, anestésicos e cirúrgicos, possibilitando a caracterização do perfil dos pacientes submetidos à cirurgia robótica e a identificação dos principais fatores associados ao risco de lesões.Os resultados contribuirão para o fortalecimento da prática baseada em evidências na Enfermagem Perioperatória, ampliando o conhecimento sobre a aplicabilidade da ELPO no contexto da cirurgia robótica e subsidiando o planejamento de estratégias preventivas voltadas à segurança do paciente, à qualificação da assistência de enfermagem e ao desenvolvimento de protocolos assistenciais para procedimentos cirúrgicos de alta complexidade.. Situação: Em andamento; Natureza: Pesquisa. Alunos envolvidos: Doutorado: (1) . Integrantes: Carina Aparecida Marosti Dessotte - Coordenador / Marja Rany Rigotti Baltor - Integrante."
+      ],
+      "tipo": "Projeto de pesquisa",
+      "integrantes": [
+        {
+          "nome": "Carina Aparecida Marosti Dessotte",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Marja Rany Rigotti Baltor",
+          "papel": "Integrante"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "areas_de_atuacao": [
+    {
+      "grande_area": "Ciências da Saúde",
+      "area": "Enfermagem",
+      "subarea": "",
+      "especialidade": "",
+      "descricao_completa": "Grande área: Ciências da Saúde / Área: Enfermagem."
+    },
+    {
+      "grande_area": "Outros",
+      "area": "Bioética",
+      "subarea": "bioética",
+      "especialidade": "",
+      "descricao_completa": "Grande área: Outros / Área: Bioética / Subárea: bioética."
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "compreende": "Bem",
+      "fala": "Bem",
+      "le": "Bem",
+      "escreve": "Bem",
+      "proficiencia_completa": "Compreende Bem, Fala Bem, Lê Bem, Escreve Bem."
+    },
+    {
+      "nome": "Espanhol",
+      "compreende": "Pouco",
+      "fala": "Pouco",
+      "le": "Razoavelmente",
+      "escreve": "Pouco",
+      "proficiencia_completa": "Compreende Pouco, Fala Pouco, Lê Razoavelmente, Escreve Pouco."
+    }
+  ],
+  "premios_titulos": [],
+  "linhas_de_pesquisa": [
+    {
+      "nome": "O cuidar de adultos e idosos",
+      "objetivo": "Ementa: processo de cuidar de adultos e idosos com problemas clínicos e cirúrgicos, visando promoção da saúde e controle de doença (reabilitação). Investigações acerca do processo de sexualidade humana no continuum saúde-doença.. Palavras-chave: cirurgia cardíaca; coronariopatia; estressores; depressão; síndrome coronariana aguda; qualidade de vida."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Autocuidado e fadiga em indivíduos internados com insuficiência cardíaca descompensada durante a pandemia da COVID-19: estudo transversal",
+        "ano": 2026,
+        "autores": "ARAUJO, L. S. ; FERRAR, K. L. P. ; TONETTO, P. P. F. A. ; ZANETTI, D. V. M. C. ; DESSOTTE, C.A.M. ; DANTAS, R. A. S.",
+        "revista": "Revista Latino-Americana de Enfermagem",
+        "volume": "34",
+        "numero": "",
+        "paginas": "1-11",
+        "issn": "1518-8345",
+        "doi": "",
+        "periodico_canonico": ""
+      },
+      {
+        "titulo": "Qualidade de vida de pacientes antes e apósimplante   de   cardioversor   desfibriladorimplantável: um estudo longitudinal",
+        "ano": 2025,
+        "autores": "FERNANDES, P. A. ; MAIER, S. R. O. ; DESSOTTE, C.A.M.",
+        "revista": "Advanced Nursing Health",
+        "volume": "7",
+        "numero": "",
+        "paginas": "13-13",
+        "issn": "2675-1798",
+        "doi": "",
+        "periodico_canonico": ""
+      }
+    ],
+    "livros_publicados": [],
+    "capitulos_livros": [],
+    "trabalhos_completos_congressos": [],
+    "resumos_expandidos": [],
+    "resumos_congressos": [],
+    "artigos_aceitos": [
+      {
+        "titulo": "Avaliação do risco para lesões decorrentes do posicionamento e incidência de neuropatia e lesões tegumentares",
+        "ano": 2026,
+        "autores": "FONSECA, R. E. P. ; GATTO, T. C. ; Dessotte, Carina Aparecida Marosti",
+        "revista": "REVISTA BRASILEIRA DE ENFERMAGEM",
+        "volume": "",
+        "numero": "",
+        "paginas": "",
+        "issn": "",
+        "doi": ""
+      },
+      {
+        "titulo": "Avaliação da percepção dos pacientes sobre o uso de dispositivo eletrônico cardíaco implantável",
+        "ano": 2026,
+        "autores": "OLIVEIRA, I. S. ; FONSECA, R. E. P. ; FRANCISCO, J. A. T. M. ; MAIER, S. R. O. ; NOVO, A. F. M. P. ; DESSOTTE, C.A.M.",
+        "revista": "REVISTA BRASILEIRA DE ENFERMAGEM",
+        "volume": "",
+        "numero": "",
+        "paginas": "",
+        "issn": "",
+        "doi": ""
+      },
+      {
+        "titulo": "Adaptação cultural e validação da versão brasileira em português do Health-related quality of life questionnaire com pacientes após intervenção cirúrgica valvar",
+        "ano": 2026,
+        "autores": "MAIER, S. R. O. ; TONETTO, P. P. F. A. ; MARTINS, L. M. ; Marosti Dessotte, Carina Aparecida",
+        "revista": "Revista Latino-Americana de Enfermagem",
+        "volume": "",
+        "numero": "",
+        "paginas": "",
+        "issn": "",
+        "doi": ""
+      },
+      {
+        "titulo": "Qualidade de vida relacionada à saúde de sobreviventes da COVID-19: revisão integrativa",
+        "ano": 2026,
+        "autores": "CONSANI, A. A. ; MAIER, S. R. O. ; Dessotte, Carina Aparecida Marosti",
+        "revista": "REVISTA ELETRÔNICA DE ENFERMAGEM",
+        "volume": "",
+        "numero": "",
+        "paginas": "",
+        "issn": "",
+        "doi": ""
+      }
+    ],
+    "apresentacoes_trabalhos": [],
+    "textos_jornais": [],
+    "outras_producoes": []
+  },
+  "producao_tecnica": {
+    "softwares_com_patente": [],
+    "softwares_sem_patente": [],
+    "produtos_tecnologicos": [],
+    "processos_tecnicas": [],
+    "trabalhos_tecnicos": [],
+    "outras_producoes_tecnicas": [
+      {
+        "titulo": "Semiologia e Semiotécnica Cardiovascular (adulto) e Semiologia e Semiotécnica Respiratória",
+        "ano": 0,
+        "autores": "Dessotte, Carina Aparecida Marosti",
+        "tipo": "Demais tipos de produção técnica",
+        "natureza": "adulto"
+      },
+      {
+        "titulo": "Semiologia e Semiotécnica Cardiovascular (adulto) e Semiologia e Semiotécnica Respiratória",
+        "ano": 0,
+        "autores": "Dessotte, Carina Aparecida Marosti",
+        "tipo": "Demais tipos de produção técnica",
+        "natureza": "adulto"
+      }
+    ],
+    "entrevistas": []
+  },
+  "patentes_registros": {
+    "patentes": [],
+    "programas_computador": [],
+    "desenhos_industriais": []
+  },
+  "producao_artistica": [],
+  "orientacoes": {
+    "em_andamento": {
+      "pos_doutorado": [],
+      "doutorado": [
+        {
+          "ano_inicio": 2025,
+          "titulo": "Efeito de uma intervenção educativa no conhecimento sobre Terapia de Anticoagulação Oral em pacientes submetidos à cirurgia cardíaca de troca de válvula: estudo quase-experimental",
+          "orientando": "Marcos Eduardo dos Santos Alves",
+          "tipo_trabalho": "Tese",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto usp",
+          "instituicao_canonica": "",
+          "curso": "Doutorado em Enfermagem em Pós-graduação em Enfermagem Fundamental",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": "Coordenação de Aperfeiçoamento de Pessoal de Nível Superior"
+        },
+        {
+          "ano_inicio": 2025,
+          "titulo": "Risco de lesão por posicionamento cirúrgico e incidência de lesões: comparação entre cirurgias robóticas e cirurgias convencionais",
+          "orientando": "Marja Rany Rigotti Baltor",
+          "tipo_trabalho": "Tese",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto usp",
+          "instituicao_canonica": "",
+          "curso": "Doutorado em Enfermagem em Pós-graduação em Enfermagem Fundamental",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        },
+        {
+          "ano_inicio": 2025,
+          "titulo": "Validação do Health-Related Quality of Life Questionnaire ? HeartQoL com indivíduos brasileiros no pré-operatório de cirurgica de correção de valvopatia",
+          "orientando": "Eduarda Moioli Henriques",
+          "tipo_trabalho": "Tese",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto usp",
+          "instituicao_canonica": "",
+          "curso": "Doutorado em Enfermagem em Pós-graduação em Enfermagem Fundamental",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        }
+      ],
+      "mestrado": [
+        {
+          "ano_inicio": 2026,
+          "titulo": "Efeito de uma intervenção educativa pré-operatória sobre a percepção de estressores e a ocorrência de complicações pós-operatórias em pacientes submetidos à cirurgia cardíaca: estudo quase-experimental",
+          "orientando": "Marcella Eduarda Scanavini",
+          "tipo_trabalho": "Dissertação",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto",
+          "instituicao_canonica": "",
+          "curso": "Mestrado em Enfermagem Fundamental",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": "Coordenação de Aperfeiçoamento de Pessoal de Nível Superior"
+        },
+        {
+          "ano_inicio": 2025,
+          "titulo": "Qualidade de vida de pacientes submetidos ao Implante Percutâneo de Valva Aórtica",
+          "orientando": "Aline Oliveira Mariano",
+          "tipo_trabalho": "Dissertação",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto usp",
+          "instituicao_canonica": "",
+          "curso": "Mestrado em Programa de Pós-Graduação Enfermagem Fundamental",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        }
+      ],
+      "especializacao": [],
+      "tcc": [
+        {
+          "ano_inicio": 2025,
+          "titulo": "Cuidados de enfermagem após cirurgias cardíacas para correção de doenças da aorta",
+          "orientando": "Nicole Rocha dos Santos",
+          "tipo_trabalho": "Trabalho de Conclusão de Curso",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto",
+          "instituicao_canonica": "",
+          "curso": "Graduação em Bacharelado em Enfermagem - EERP",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        }
+      ],
+      "iniciacao_cientifica": [
+        {
+          "ano_inicio": 2026,
+          "titulo": "Evolução clínica e complicações de pacientes após implante percutâneo de válvula aórtica: seguimento de um ano",
+          "orientando": "Thayná Cristina Xavier Raymundo",
+          "tipo_trabalho": "Iniciação científica",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto usp",
+          "instituicao_canonica": "",
+          "curso": "Graduando em Bacharelado em Enfermagem",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        },
+        {
+          "ano_inicio": 2026,
+          "titulo": "Construção e validação de tecnologia cuidativo-educacional para pacientes em uso de anticoagulante oral pós-implante de valva mecânica",
+          "orientando": "Kavya Kavya",
+          "tipo_trabalho": "Iniciação científica",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto",
+          "instituicao_canonica": "",
+          "curso": "Graduando em Bacharelado em Enfermagem - EERP",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        },
+        {
+          "ano_inicio": 2025,
+          "titulo": "Participação Do Paciente Valvopata Na Tomada de Decisão Compartilhada Para Escolha Da Prótese Valvar Cardíaca: Protocolo de Revisão De Escopo",
+          "orientando": "Felipe Yuri Ferreira dos Santos",
+          "tipo_trabalho": "Iniciação científica",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto",
+          "instituicao_canonica": "",
+          "curso": "Graduando em Bacharelado em Enfermagem - EERP",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        }
+      ],
+      "outros": []
+    },
+    "concluidas": {
+      "pos_doutorado": [
+        {
+          "ano_conclusao": 2025,
+          "titulo": "",
+          "orientando": "RENATA ELIZABETE PAGOTTI DA FONSECA",
+          "tipo_trabalho": "",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto",
+          "instituicao_canonica": "",
+          "curso": "",
+          "tipo_orientacao": "Supervisor",
+          "agencia_fomento": ""
+        }
+      ],
+      "doutorado": [],
+      "mestrado": [
+        {
+          "ano_conclusao": 2026,
+          "titulo": "CORRELAÇÃO DO CONHECIMENTO SOBRE A TERAPIA DE ANTICOAGULAÇÃO ORAL E QUALIDADE DE VIDA RELACIONADA À SAÚDE DE PACIENTES APÓS CIRURGIA CARDÍACA PARA IMPLANTE DE VALVA METÁLICA",
+          "orientando": "Camila de Souza Sanaiotte",
+          "tipo_trabalho": "Dissertação",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto usp",
+          "instituicao_canonica": "",
+          "curso": "Mestrado em Programa de Pós-Graduação Enfermagem Fundamental",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        },
+        {
+          "ano_conclusao": 2026,
+          "titulo": "Percepção dos estressores em uma Unidade de Terapia Intensiva Pós-Operatória: diferenças entre pacientes cirúrgicos críticos e equipe de enfermagem",
+          "orientando": "Caroline Rodrigues de Souza",
+          "tipo_trabalho": "Dissertação",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto",
+          "instituicao_canonica": "",
+          "curso": "Mestrado em Enfermagem Fundamental",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        },
+        {
+          "ano_conclusao": 2025,
+          "titulo": "Desenvolvimento e validação de website para promoção de saúde e qualidade de vida em doenças cardiovasculares",
+          "orientando": "CAROLINA RODRIGUES MILHORINI",
+          "tipo_trabalho": "Dissertação",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto usp",
+          "instituicao_canonica": "",
+          "curso": "Mestrado em Programa de Pós-Graduação Enfermagem Fundamental",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        },
+        {
+          "ano_conclusao": 2025,
+          "titulo": "AVALIAÇÃO DA QUALIDADE DE VIDA E QUALIDADE DE VIDA RELACIONADA À SAÚDE DE PACIENTES APÓS TRATAMENTO PERCUTÂNEO POR CATETER PARA CORREÇÃO DE VALVOPATIAS",
+          "orientando": "Marcos Eduardo dos Santos Alves",
+          "tipo_trabalho": "Dissertação",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto usp",
+          "instituicao_canonica": "",
+          "curso": "Mestrado em Programa de Pós-Graduação Enfermagem Fundamental",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": "Coordenação de Aperfeiçoamento de Pessoal de Nível Superior"
+        }
+      ],
+      "especializacao": [
+        {
+          "ano_conclusao": 2025,
+          "titulo": "Impacto da Fibrilação atrial pós-operatória na sobrevida de pacientes submetidos à cirurgia de revascularização miocárdica ? 5 anos de seguimento no registro REPLICCAR",
+          "orientando": "Adnaldo da Silveira Maia",
+          "tipo_trabalho": "Monografia",
+          "instituicao": "MBA Gestão em Saúde",
+          "instituicao_chave": "mba gestao em saude",
+          "instituicao_canonica": "",
+          "curso": "Aperfeiçoamento/Especialização em MBA Gestão em Saúde",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        },
+        {
+          "ano_conclusao": 2025,
+          "titulo": "Impacto das tecnologias e intervenções de enfermagem na recuperação do paciente cirúrgico adulto: revisão integrativa",
+          "orientando": "NARAIAMMA OLIVEIRA BOTAZINI",
+          "tipo_trabalho": "Monografia",
+          "instituicao": "MBA Gestão em Saúde",
+          "instituicao_chave": "mba gestao em saude",
+          "instituicao_canonica": "",
+          "curso": "Aperfeiçoamento/Especialização em MBA Gestão em Saúde",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        },
+        {
+          "ano_conclusao": 2025,
+          "titulo": "Oclusão do apêndice atrial esquerdo na prevenção de AVC na fibrilação atrial: eficácia, segurança e implicações econômicas para o sistema de saúde",
+          "orientando": "JÚLIA SANTOS BATISTA",
+          "tipo_trabalho": "Monografia",
+          "instituicao": "MBA Gestão em Saúde",
+          "instituicao_chave": "mba gestao em saude",
+          "instituicao_canonica": "",
+          "curso": "Aperfeiçoamento/Especialização em MBA Gestão em Saúde",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        },
+        {
+          "ano_conclusao": 2025,
+          "titulo": "Seguimento de Pacientes Submetidos a Troca de Válvula Cardíaca Minimamente Invasiva: Revisão Narrativa",
+          "orientando": "KELLY CRISTINA DE OLIVEIRA ABUD",
+          "tipo_trabalho": "Monografia",
+          "instituicao": "MBA Gestão em Saúde",
+          "instituicao_chave": "mba gestao em saude",
+          "instituicao_canonica": "",
+          "curso": "Aperfeiçoamento/Especialização em MBA Gestão em Saúde",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        },
+        {
+          "ano_conclusao": 2025,
+          "titulo": "Implementação de programa de melhoria de qualidade de vida para trabalhadores da indústria do Mato Grosso: relato de experiência",
+          "orientando": "GABRIELA D'ÁVILA LAURITO",
+          "tipo_trabalho": "Monografia",
+          "instituicao": "MBA Gestão em Saúde",
+          "instituicao_chave": "mba gestao em saude",
+          "instituicao_canonica": "",
+          "curso": "Aperfeiçoamento/Especialização em MBA Gestão em Saúde",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        }
+      ],
+      "tcc": [
+        {
+          "ano_conclusao": 2025,
+          "titulo": "Avaliação da percepção dos estressores em uma Unidade de Terapia Intensiva Pós-operatória (UTIPO), de pacientes adultos submetidos a cirurgias eletivas de grande porte",
+          "orientando": "Marcella Eduarda Scanavini",
+          "tipo_trabalho": "Trabalho de Conclusão de Curso",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto usp",
+          "instituicao_canonica": "",
+          "curso": "Graduação em Bacharelado e Licenciatura em Enfermagem",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        }
+      ],
+      "iniciacao_cientifica": [
+        {
+          "ano_conclusao": 2026,
+          "titulo": "Avaliação do nível de ansiedade relacionada à presença do Cardioversor Desfibrilador Implantável e aos choques aplicados pelo dispositivo",
+          "orientando": "Maria Julia Martins Claudio",
+          "tipo_trabalho": "Trabalho de Conclusão de Curso",
+          "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP",
+          "instituicao_chave": "escola de enfermagem de ribeirao preto usp",
+          "instituicao_canonica": "",
+          "curso": "Graduando em Bacharelado em Enfermagem",
+          "tipo_orientacao": "Orientador",
+          "agencia_fomento": ""
+        }
+      ],
+      "outros": []
+    }
+  },
+  "eventos": {
+    "participacoes": [],
+    "organizacoes": [
+      {
+        "autores": "Marosti Dessotte, Carina Aparecida. Palestra: Termo de Consentimento Livre Esclarecido (TCLE). Palestrante: Profª Drª Carina Ap. Marosti Dessotte. 2024. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Plataforma Brasil. Palestrante: Profª Drª Rosane Pilot Pessa. 2024. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Instrumento de coleta de dados / Escolha de instrumentos de coleta de dados. Palestrante: Profª Drª Rosana Aparecida Spadoti Dantas. 2024. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Métodos de Revisão. Palestrante: Profª Drª Karina Dal Sasso Mendes. 2024. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Novas normas ABNT. Palestrante: Maria Cristina M. Ferreira. 2024. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Ferramentas e fontes de informação e levantamento bibliográfico. Palestrante:. 2024. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: A Pesquisa Qualitativa em saúde. Palestrante Internacional: Fernando Mitano. 2024. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: A Análise de Discurso: Referencial Teórico-Metodológico. Palestrante Internacional: Fernando Mitano. 2024. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Bolsa Produtividade: da elaboração da proposta ao sucesso da captação. Palestrante: Profª Drª Fabiana Faleiros. 2024. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Chamada Universal: da elaboração da proposta ao sucesso da captação. Palestrante: Profª Drª Renata Karina Reis. 2024. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Mini-curso: Tipos de delineamento de estudos. Palestrante Internacional: Profa. Dra. Márcia A. Ciol",
+        "evento": "2023",
+        "ano": 0,
+        "natureza": "Outro",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "2023",
+        "evento_serie": "2023",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Mini-curso: Análise fatorial: exploratória e confirmatória. Palestrante Internacional: Profa. Dra. Márcia A. Ciol",
+        "evento": "2023",
+        "ano": 0,
+        "natureza": "Outro",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "2023",
+        "evento_serie": "2023",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Estudos experimentais. Palestrante Internacional: Profa. Dra. Márcia A. Ciol",
+        "evento": "2023",
+        "ano": 0,
+        "natureza": "Outro",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "2023",
+        "evento_serie": "2023",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Elaboração do Termo de Consentimento Livre e Esclarecido. Palestrante: Profª Drª Carina Ap. Marosti Dessotte. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Plataforma Brasil. Palestrante: Prof. Dr. Ronildo Alves dos Santo. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Métodos de síntese de conhecimento. Palestrante: Profª Drª Karina Dal Sasso Mendes. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Possibilidades do uso de softwares na pesquisa qualitativa - Atlas Ti. Palestrante: Profª Drª Jaqueline G. de Almeida Ballestero. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Workshop: REDCap: como construir instrumentos de coleta prática (mandar lista de participantes conforme o modelo de planilha que ele já enviou, para assim gerar os usuários no REDCap). Palestrante: Carlos Alberto Siqueira de Lima Júnior. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Métodos de síntese de conhecimento: Revisão Sistemática de Intervenção em Saúde. Palestrante: Profª Drª Renata Crisitina de C. Pereira Silveira. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Workshop: Rayyan: software para seleção de estudos em métodos de síntese de conhecimento. Palestrante: Profª Drª Karina Dal Sasso Mendes. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Prevenção de plágio acadêmico e uso da plataforma Turnitin. Palestrante: Márcia dos Santos - Bibliotecária. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Cadastramento ORCid e Preenchimento do Currículo Lattes. Palestrante: Profª Drª Ednéia Silva Santos Rocha. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. WORKSHOP INTERNACIONAL: Evaluating care and preparing research protocols: key universal guidelines in patient-centred research. Palestrante: Dra. Mevhibe Hocaoglu. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Marosti Dessotte, Carina Aparecida. Oficina: Uso do software Atlas.TI como ferramenta de organização de dados qualitativos. Palestrante: Profª Drª Jaqueline Ballestero. 2023. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Ferramentas e fontes de informação para pesquisa bibliográfica e elaboração do trabalho acadêmico. Palestrante: Márcia dos Santos - Bibliotecária. 2022. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Plágio acadêmico e uso da plataforma Turnitin. Palestrante: Márcia dos Santos - Bibliotecária. 2022. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "Dessotte, Carina Aparecida Marosti. Palestra: Letramento estatístico: contribuições para o cuidado em saúde. Palestrante: Profª Drª Cláudia B. dos Santos. 2022. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      },
+      {
+        "autores": "DESSOTTE, C.A.M.. Boas práticas em pesquisa. 2020. (Outro).",
+        "evento": "",
+        "ano": 0,
+        "natureza": "",
+        "tipo": "Organização de evento",
+        "evento_sigla": "",
+        "evento_edicao": "",
+        "evento_local": "",
+        "evento_veiculo": "",
+        "evento_chave": "",
+        "evento_serie": "",
+        "evento_nome_canonico": ""
+      }
+    ]
+  },
+  "bancas": {
+    "mestrado": [
+      {
+        "descricao": "CARVALHO, A. R. S.; Marosti Dessotte, Carina Aparecida; RODRIGUES, R. M.. Participação em banca de Ana Elisabete Fontana de Paula. Adaptação transcultural e validação psicométrica do instrumento. 2025. Dissertação (Mestrado em Biociências e Saúde) - Universidade Estadual do Oeste do Paraná.",
+        "ano": 2025,
+        "tipo": "Mestrado",
+        "aluno": "Ana Elisabete Fontana de Paula",
+        "membros_banca": [
+          "CARVALHO, A. R. S.",
+          "Marosti Dessotte, Carina Aparecida",
+          "RODRIGUES, R. M."
+        ],
+        "titulo_trabalho": "Adaptação transcultural e validação psicométrica do instrumento",
+        "curso": "Dissertação (Mestrado em Biociências e Saúde)",
+        "universidade": "Universidade Estadual do Oeste do Paraná"
+      }
+    ],
+    "doutorado": [],
+    "qualificacao_doutorado": [],
+    "qualificacao_mestrado": [
+      {
+        "descricao": "BOLELA, Fabiana; Marosti Dessotte, Carina Aparecida; MESQUITA, A. C.. Participação em banca de Thais Giansante. Adaptação transcultural e análise das propriedades psicométricas da Total Pain Scale. 2025. Exame de qualificação (Mestrando em Enfermagem Fundamental) - Escola de Enfermagem de Ribeirão Preto.",
+        "ano": 2025,
+        "tipo": "Qualificação de Mestrado",
+        "aluno": "Thais Giansante",
+        "membros_banca": [
+          "BOLELA, Fabiana",
+          "Marosti Dessotte, Carina Aparecida",
+          "MESQUITA, A. C."
+        ],
+        "titulo_trabalho": "Adaptação transcultural e análise das propriedades psicométricas da Total Pain Scale",
+        "curso": "Exame de qualificação (Mestrando em Enfermagem Fundamental)",
+        "universidade": "Escola de Enfermagem de Ribeirão Preto"
+      }
+    ],
+    "graduacao": [],
+    "outras": []
+  },
+  "estatisticas": {
+    "total_artigos_periodicos": 2,
+    "total_livros": 0,
+    "total_capitulos": 0,
+    "total_trabalhos_congressos": 0,
+    "total_projetos_pesquisa": 5,
+    "total_projetos_extensao": 0,
+    "total_projetos_desenvolvimento": 0,
+    "total_orientacoes_concluidas": 6,
+    "total_orientacoes_andamento": 8
+  }
+}

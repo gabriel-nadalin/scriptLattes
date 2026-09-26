@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-09-25">
+    <creator>NetworkX 3.5</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <attributes mode="static" class="node">
+      <attribute id="0" title="url" type="string" />
+      <attribute id="1" title="publicacoesEmCoautoria" type="long" />
+      <attribute id="2" title="atualizacaoCV" type="string" />
+      <attribute id="3" title="resumo" type="string" />
+      <attribute id="4" title="rotulo" type="string" />
+      <attribute id="5" title="periodo" type="string" />
+      <attribute id="6" title="nomePrimeiraGrandeArea" type="string" />
+      <attribute id="7" title="nomePrimeiraArea" type="string" />
+      <attribute id="8" title="instituicao" type="string" />
+      <attribute id="9" title="enderecoProfissional" type="string" />
+      <attribute id="10" title="artigosPeriodicos" type="long" />
+      <attribute id="11" title="artigosEventos" type="long" />
+      <attribute id="12" title="capitulosDeLivros" type="long" />
+      <attribute id="13" title="livros" type="long" />
+      <attribute id="14" title="color" type="string" />
+      <attribute id="15" title="fontColor" type="string" />
+      <attribute id="16" title="degree" type="long" />
+      <attribute id="17" title="x" type="double" />
+      <attribute id="18" title="y" type="double" />
+      <attribute id="19" title="size" type="long" />
+    </attributes>
+    <nodes>
+      <node id="0" label="Luciana Kusumota">
+        <viz:color r="51" g="160" b="44" a="1.0" />
+        <attvalues>
+          <attvalue for="0" value="http://lattes.cnpq.br/6541228840967312" />
+          <attvalue for="1" value="0" />
+          <attvalue for="2" value="03/08/2026" />
+          <attvalue for="3" value="Graduação (1997), Mestrado (2001), Doutorado (2005) e Livre docente (2020) pela Escola de Enfermagem de Ribeirão Preto - USP. Pós Doutorado pela Universidade de Alberta - Canadá (2013). Atualmente é Professora Associada do Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto - USP. Líder do Núcleo de Pesquisa em Geriatria e Gerontologia (NUPEGG) do Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto - USP. Atuou como enfermeira assistencial na área de Nefrologia. Tem desenvolvido projetos de ensino, pesquisa e extensão, principalmente com os temas: saúde do idoso, enfermagem em nefrologia e qualidade de vida relacionada à saúde de adultos e idosos.(https://orcid.org/0000-0001-9290-3722) (Texto informado pelo autor)" />
+          <attvalue for="4" value="* Sem rótulo" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="Ciências da Saúde" />
+          <attvalue for="7" value="Enfermagem" />
+          <attvalue for="8" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto" />
+          <attvalue for="9" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto. Av. Bandeirantes 3900 Sala 65 Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33150534 Ramal: 3398 URL da Homepage: http://www.eerp.usp.br" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+          <attvalue for="12" value="0" />
+          <attvalue for="13" value="0" />
+          <attvalue for="14" value="#33a02c" />
+          <attvalue for="15" value="#ffffff" />
+          <attvalue for="16" value="0" />
+          <attvalue for="17" value="0.29574329724932724" />
+          <attvalue for="18" value="0.7" />
+          <attvalue for="19" value="2" />
+        </attvalues>
+      </node>
+      <node id="1" label="Andrea Bernardes">
+        <viz:color r="51" g="160" b="44" a="1.0" />
+        <attvalues>
+          <attvalue for="0" value="http://lattes.cnpq.br/8267735570131241" />
+          <attvalue for="1" value="0" />
+          <attvalue for="2" value="07/08/2026" />
+          <attvalue for="3" value="Professora Titular (MS-6) da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP/USP), Centro Colaborador da OPAS/OMS para o Desenvolvimento da Pesquisa em Enfermagem, e Professora Adjunta Associada da Faculty of Nursing, University of Alberta (FoN/UAlberta) (2021-Atual). Graduada em Enfermagem (1993) pela EERP/USP. Mestre (2000) e Doutora (2005) em Ciências pelo Programa de Pós-Graduação em Enfermagem Fundamental (PPGEF) da EERP/USP. Concluiu Livre-Docência em Enfermagem (2015) pela EERP/USP e Pós-Doutorado na University of Alberta, Canadá (2010 e 2020). Vice-Presidente da Comissão de Pós-graduação (2026-Atual); Coordenadora (2020-2024) e Vice-Coordenadora (2024-Atual) do Programa de Pós-Graduação em Enfermagem Fundamental (PPGEF) (Conceito Capes 7); Coordenadora do MBA Gestão em Saúde (2014-Atual) e Coordenadora do Núcleo de Pesquisa em Liderança, Gestão e Gerenciamento de Serviços de Saúde (NAP-LIGGESS) da EERP/USP. Líder do Grupo de Pesquisa em Liderança, Gestão e Gerenciamento em Serviços de Saúde e Educação e Enfermagem (LIGGEEN) da EERP/USP. Pesquisadora do CLEAR Outcomes (Connecting Leadership Education and Research Outcomes) da University of Alberta, Canadá (2010-Atual). Membro do Conselho Consultivo da Rede Internacional da Gestão do Cuidado em Enfermagem (RIGCE) Brasil desde 2024. Atua como Editora Científica da Revista Latino-Americana de Enfermagem (RLAE). Membro do Núcleo de Educação Permanente da Direção Regional de Saúde XIII (DRS XIII). Colaboradora do Conselho Regional de Enfermagem de São Paulo (COREn-SP), integra a Câmara Técnica de Educação e Pesquisa (CTEP) (2024-Atual). Realizou Estágios de Pesquisa na qualidade de Professor Visitante Sênior na FoN/UAlberta, Canadá, por meio do Programa CAPES-PrInt (11/2019-03/2020 e 06/2022-07/2022). Compõe o Banco de Avaliadores do Sistema Nacional de Avaliação da Educação Superior (BASIs) do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP) do Ministério da Educação. Desenvolve pesquisas em parceria com colaboradores da Austrália, Canadá, Estados Unidos, Finlândia e Turquia. Tem experiência na área de Ciências da Saúde e Enfermagem, com ênfase em Liderança, Gestão e Gerenciamento de Serviços de Saúde. E-mail: andreab@eerp.usp.br (Texto informado pelo autor)" />
+          <attvalue for="4" value="* Sem rótulo" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="Ciências da Saúde" />
+          <attvalue for="7" value="Enfermagem" />
+          <attvalue for="8" value="Escola de Enfermagem de Ribeirão Preto Usp, Escola de Enfermagem de Ribeirão Preto" />
+          <attvalue for="9" value="Escola de Enfermagem de Ribeirão Preto Usp, Escola de Enfermagem de Ribeirão Preto. Av: Bandeirantes, 3900 Campus da USP 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153471 URL da Homepage: http://www.eerp.usp.br" />
+          <attvalue for="10" value="6" />
+          <attvalue for="11" value="0" />
+          <attvalue for="12" value="1" />
+          <attvalue for="13" value="0" />
+          <attvalue for="14" value="#33a02c" />
+          <attvalue for="15" value="#ffffff" />
+          <attvalue for="16" value="0" />
+          <attvalue for="17" value="0.6774944969810697" />
+          <attvalue for="18" value="0.24991558300886868" />
+          <attvalue for="19" value="2" />
+        </attvalues>
+      </node>
+      <node id="2" label="Carina Aparecida Marosti Dessotte">
+        <viz:color r="51" g="160" b="44" a="1.0" />
+        <attvalues>
+          <attvalue for="0" value="http://lattes.cnpq.br/7908727257671488" />
+          <attvalue for="1" value="0" />
+          <attvalue for="2" value="30/07/2026" />
+          <attvalue for="3" value="Professora Associada (Livre-Docente) do Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP-USP). Graduada em Enfermagem pela EERP-USP (2002), com Residência em Enfermagem Clínico-Cirúrgica Área de Cardiologia (2005) e Doutorado em Ciências na Área de Enfermagem Fundamental (2010), pela mesma instituição. Atualmente é Presidente do Centro de Apoio à Pesquisa (CENAPq) da EERP-USP e orientadora credenciada nos níveis de Mestrado e Doutorado no Programa de Pós-Graduação em Enfermagem Fundamental. Possui sólida experiência assistencial em enfermagem em cuidados críticos, com atuação na Unidade Pós-Operatória de Cirurgia Torácica e Cardiovascular do Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto da USP e na área de Bioética e Ética em Pesquisa. Na graduação, desenvolve atividades de ensino na área de Enfermagem Perioperatória e, na pós-graduação stricto sensu, ministra disciplinas relacionadas ao planejamento de estudos quantitativos, métodos de pesquisa, avaliação de desfechos relatados pelos pacientes (Patient-Reported Outcomes PRO) e desenvolvimento, adaptação transcultural e validação psicométrica de instrumentos de medida em saúde. É Líder do Grupo de Investigação e Reabilitação em Qualidade de Vida (GIRQ) e desenvolve pesquisas na área de Enfermagem Cirúrgica, com ênfase na recuperação e reabilitação de pessoas com doenças cardiovasculares submetidas a cirurgias cardíacas e implantes de dispositivos cardíacos eletrônicos implantáveis. Suas investigações concentram-se na avaliação da qualidade de vida, qualidade de vida relacionada à saúde, desfechos relatados pelos pacientes, estresse perioperatório, ansiedade, depressão e tecnologias educativas voltadas ao autocuidado e à reabilitação. Também atua na construção, adaptação transcultural e validação de instrumentos de medida em saúde, contribuindo para o fortalecimento da prática baseada em evidências e da pesquisa metodológica em enfermagem. Sua atuação integra ensino, pesquisa, inovação e extensão universitária, orientada pela qualificação do cuidado em saúde, pela valorização dos determinantes sociais da saúde e pelos princípios da Agenda 2030, especialmente o Objetivo de Desenvolvimento Sustentável 3 (Saúde e Bem-Estar). (Texto informado pelo autor)" />
+          <attvalue for="4" value="* Sem rótulo" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="Ciências da Saúde" />
+          <attvalue for="7" value="Enfermagem" />
+          <attvalue for="8" value="Escola de Enfermagem de Ribeirão Preto - USP" />
+          <attvalue for="9" value="Escola de Enfermagem de Ribeirão Preto - USP. Escola de Enfermagem de Ribeirão Preto - USP Vila Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153410 URL da Homepage: www.eerp.usp.br" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+          <attvalue for="12" value="0" />
+          <attvalue for="13" value="0" />
+          <attvalue for="14" value="#33a02c" />
+          <attvalue for="15" value="#ffffff" />
+          <attvalue for="16" value="0" />
+          <attvalue for="17" value="-0.6316686806676022" />
+          <attvalue for="18" value="-0.4465994138160008" />
+          <attvalue for="19" value="2" />
+        </attvalues>
+      </node>
+      <node id="3" label="Renata Karina Reis">
+        <viz:color r="51" g="160" b="44" a="1.0" />
+        <attvalues>
+          <attvalue for="0" value="http://lattes.cnpq.br/2569298609941547" />
+          <attvalue for="1" value="5" />
+          <attvalue for="2" value="12/08/2026" />
+          <attvalue for="3" value="Graduada em Enfermagem pela Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP-USP) (2001), Mestrado em Enfermagem pela EERP-USP (2004), Doutorado Sanduíche na Universitdade de Coimbra, Portugal, pelo Programa de Enfermagem Fundamental da EERP-USP (2008). Realizou Pós-Doutorado na Aix-Marseille Université, França (2017), bolsista FAPESP, e Livre-Docência (2018). Atualmente é Professor Titular da Universidade de São Paulo, na EERP, Centro Colaborador da Organização Mundial de Saúde para o Desenvolvimento da Pesquisa em Enfermagem. Durante sua carreira acadêmica, foi Presidente do Cento de Apoio à Pesquisa por dois mandatos consecutivos (CENAPq) da EERP-USP (2020-2022 e 2022 a 2022-2024), foi membro do Comitê de Governança do Capítulo Rho Upsilon da Sociedade Honorífica de Enfermagem Sigma Theta Tau Internacional. Atua na Comissão de Pesquisa como membro efetivo da Escola de Enfermagem de Ribeirão Preto desde 2015. Vice-Presidente da Comissão de Pesquisa e Inovação da EERP-USP desde 2022. É membro da International AIDS Society (IAS). Foi membro do conselho editorial da Journal of the International AIDS Society (2013-2016). É membro da Rede de Enfermagem Nacional em AIDS e DST (RENAIDST). Membro da Diretoria da Sociedde Brasileira de infecções sexualmente transmissíveis - Regional São Paulo, É bolsista produtividade em pesquisa do CNPq, nível 2. É líder do Grupo de Pesquisa Núcleo de Aids e Doenças Sexualmente Transmissíveis cadastrado no diretório de pesquisa do CNPq, e membro de grupos de pesquisa nacionais e internacional. É consultora ad-hoc de vários periódicos nacionais e internacionais. Desenvolve projetos colaborativos com cooperação estrangeira com pesquisadores da França, Estados Unidos, Portugal e Espanha. Integra a equipe de pesquisadores do convênio nacional entre a EERP-USP e a Univeridade Federal do Pará e Universidade Federal do Rio Grande do Norte (2018-2021). Tem experiência na área de Enfermagem, com ênfase em Saúde do Adulto e Enfermagem Clínica, atuando principalmente nos seguintes temas: enfermagem na prevenção e controle das infecções sexualmente transmissíveis/HIV/aids, condições crônicas, qualidade de vida, tecnologias educativas, cuidado das pessoas que vivem com o HIV/aids, enfermagem em infectologia, e estudos com casais que vivem no contexto da infecção pelo HIV. (Texto informado pelo autor)" />
+          <attvalue for="4" value="* Sem rótulo" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="Ciências da Saúde" />
+          <attvalue for="7" value="Enfermagem" />
+          <attvalue for="8" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto" />
+          <attvalue for="9" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto. Av. Bandeirantes 3900 Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (016) 33150534 Fax: (016) 36020518" />
+          <attvalue for="10" value="25" />
+          <attvalue for="11" value="0" />
+          <attvalue for="12" value="0" />
+          <attvalue for="13" value="0" />
+          <attvalue for="14" value="#33a02c" />
+          <attvalue for="15" value="#ffffff" />
+          <attvalue for="16" value="3" />
+          <attvalue for="17" value="-0.24428080624970366" />
+          <attvalue for="18" value="0.20470211881794728" />
+          <attvalue for="19" value="4" />
+        </attvalues>
+      </node>
+      <node id="4" label="Cristina Mara Zamarioli">
+        <viz:color r="51" g="160" b="44" a="1.0" />
+        <attvalues>
+          <attvalue for="0" value="http://lattes.cnpq.br/2208888423045747" />
+          <attvalue for="1" value="1" />
+          <attvalue for="2" value="30/07/2026" />
+          <attvalue for="3" value="Graduada em Enfermagem (2001) pela Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo - EERP USP; Mestre e Doutora em Ciências (2014, 2018) também pela EERP-USP; Residência em Oncologia Clínica pelo Instituto Nacional de Câncer - INCA (2004); Especialização em Auditoria em Sistemas de Saúde pela União Social Camiliana - Faculdade São Camilo (2006); MBA Executivo em Saúde pela Fundação Getúlio Vargas (2008) e Especialização em Gestão de Saúde pela Universidade Estadual do Rio de Janeiro - UERJ (2011). Foi Coordenadora de Estudos Clínicos no INCA de 2004 a 2006; administrou uma Clínica de Onco-Hematologia de 2006 a 2011. Atualmente exerce o cargo de Professora Doutora, junto ao Departamento de Enfermagem Geral e Especializada (DEGE) da EERP-USP, Centro Colaborador da OMS para o Desenvolvimento da Pesquisa em Enfermagem e é Líder do Grupo de Pesquisa Enfermagem, Comunicação e Ensino. Está credenciada como orientadora de Pós-Graduação nos Programas de Pós-Graduação em Enfermagem Fundamental e Mestrado Profissional Tecnologia e Inovação em Enfermagem. É membro da Sigma Theta Tau International Honor Society of Nursing (2000), Rho Upsilon Chapter University of São Paulo (2020) e membro do Comitê de Governança do Capítulo Rho Upsilon (2024-2026). Integra Rede de Pesquisa em Processo de Enfermagem PePPE (2023); consultora ad-hoc de periódicos nacionais e internacionais. Tem experiência na área de Enfermagem, com ênfase em Oncologia, Raciocínio Clínico, Processo de Enfermagem e Pesquisa Clínica. ORCID: 0000-0002-4757-7611 RESEARCH ID: O-9685-2018 (Texto informado pelo autor)" />
+          <attvalue for="4" value="* Sem rótulo" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="Ciências da Saúde" />
+          <attvalue for="7" value="Enfermagem" />
+          <attvalue for="8" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto" />
+          <attvalue for="9" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto. Avenida dos Bandeirantes, 3900, Laboratório 151 Vila Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153475" />
+          <attvalue for="10" value="7" />
+          <attvalue for="11" value="0" />
+          <attvalue for="12" value="0" />
+          <attvalue for="13" value="0" />
+          <attvalue for="14" value="#33a02c" />
+          <attvalue for="15" value="#ffffff" />
+          <attvalue for="16" value="1" />
+          <attvalue for="17" value="-0.21577218868227374" />
+          <attvalue for="18" value="0.21016453150088155" />
+          <attvalue for="19" value="2" />
+        </attvalues>
+      </node>
+      <node id="5" label="Elucir Gir">
+        <viz:color r="51" g="160" b="44" a="1.0" />
+        <attvalues>
+          <attvalue for="0" value="http://lattes.cnpq.br/2381136403879304" />
+          <attvalue for="1" value="3" />
+          <attvalue for="2" value="26/11/2025" />
+          <attvalue for="3" value="Graduada em Enfermagem pela Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (1981), Especialização Em Educação Sexual pelo Centro Universitário Fundação Santo André (1995), Mestrado (1988) e Doutorado em Enfermagem pela Universidade de São Paulo (1994). Obteve o título de Livre docente pela Universidade de São Paulo (1997). Desde 2004 é Professor Titular junto ao Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EGE-EERP/USP). Consultora da CAPES, CNPq, FAPESP. É membro do conselho editorial ou consultor de periódicos científicos editados no Brasil e no exterior. Membro da Diretoria da Associação Brasileira para o Controle das Doenças Sexualmente Transmissíveis - Regional São Paulo, enquanto Presidente (2017-2019 e 2019-2021); 1. tesoureira (2021-2023). Membro da diretoria do SINDHOSP (2017-2023). Tem experiência na área de Enfermagem, com ênfase em Enfermagem em Doenças Infecciosas, atuando principalmente nos temas: HIV/AIDS, sífilis, infecções sexualmente transmissíveis, Infecção Hospitalar e Biossegurança. Líder do Grupo de Pesquisa NAIDST. Coordenadora da Rede de Enfermagem Nacional em AIDS e DST (RENAIDST). Coordenadora do Programa de Pós-Graduação em Enfermagem Fundamental da EERP-USP (2018-2020). Docente permanente e orientadora do Programa de Pós-Graduação em Enfermagem Fundamental (Mestrado e Doutorado) da EERP/USP (Conceito 7 junto CAPES) nas linhas de pesquisa: 1. Cuidar de adultos e idosos, 2. Fundamentação Teórica, Metodológica e Tecnológica do Processo de Cuidar. Bolsista em Produtividade em Pesquisa junto ao CNPq . Presidente da Comissão de Pós-Graduação da Escola de Enfermagem de Ribeirão Preto-USP (2018-2022). Atualmente é Vice-Diretora (2022-2026) da Escola de Enfermagem de Ribeirão Preto - USP. Tem parcerias e desenvolveu ou coordena projetos de pesquisa com pesquisadores da China, Equador, Estados Unidos, Reino Unido, Suécia, Portugal. (Texto informado pelo autor)" />
+          <attvalue for="4" value="* Sem rótulo" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="Ciências da Saúde" />
+          <attvalue for="7" value="Enfermagem" />
+          <attvalue for="8" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto, Departamento de Enfermagem Geral e Especializada" />
+          <attvalue for="9" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto, Departamento de Enfermagem Geral e Especializada. AVENIDA BANDEIRANTES, 3900 MONTE ALEGRE 14040902 - Ribeirão Preto, SP - Brasil - Caixa-postal: 14040902 Telefone: (16) 997056164" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+          <attvalue for="12" value="0" />
+          <attvalue for="13" value="0" />
+          <attvalue for="14" value="#33a02c" />
+          <attvalue for="15" value="#ffffff" />
+          <attvalue for="16" value="1" />
+          <attvalue for="17" value="-0.2560312940032783" />
+          <attvalue for="18" value="0.21956919852696113" />
+          <attvalue for="19" value="2" />
+        </attvalues>
+      </node>
+      <node id="6" label="Fabiana Bolela de Souza">
+        <viz:color r="51" g="160" b="44" a="1.0" />
+        <attvalues>
+          <attvalue for="0" value="http://lattes.cnpq.br/1737583784229958" />
+          <attvalue for="1" value="0" />
+          <attvalue for="2" value="20/06/2026" />
+          <attvalue for="3" value="Professora Doutora junto ao Departamento de Enfermagem Geral e Especializada da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP-USP), Centro Colaborador da OMS/OPAS para Pesquisa em Enfermagem. Bacharel em Enfermagem pela EERP-USP (2002), Especialista em Terapia Intensiva pela Faculdade de Medicina de São José do Rio Preto (2004), Mestre em Enfermagem (2008) e Doutora em Ciências (2013) pela EERP-USP, pós-graduada em Cuidados Paliativos pelo Instituto Pallium Latinoamerica - Argentina (2017). Membro da Red Internacional de Enfermería en Cuidados Paliativos (RIENCUPA) e líder do Grupo de Estudos em Cuidados Paliativos (GECUPA), cadastrado no Diretório de Grupos de Pesquisa do CNPq. Tutora da Liga Interdisciplinar de Cuidados Paliativos (LICP) da EERP-USP. Possui experiência na área de Enfermagem, com ênfase na assistência a pacientes críticos e cuidados paliativos. Atua principalmente nos seguintes temas: Terapia subcutânea e hipodermóclise, Controle de sintomas em cuidados paliativos e Cuidados de fim de vida. Email: fbolela@usp.br (Texto informado pelo autor)" />
+          <attvalue for="4" value="* Sem rótulo" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="Ciências da Saúde" />
+          <attvalue for="7" value="Enfermagem" />
+          <attvalue for="8" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto" />
+          <attvalue for="9" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto. Avenida dos Bandeirantes, 3900 Campus Universitário - Bairro Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153381 Ramal: 3401" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+          <attvalue for="12" value="1" />
+          <attvalue for="13" value="0" />
+          <attvalue for="14" value="#33a02c" />
+          <attvalue for="15" value="#ffffff" />
+          <attvalue for="16" value="0" />
+          <attvalue for="17" value="0.6377808973192645" />
+          <attvalue for="18" value="-0.3111412710841602" />
+          <attvalue for="19" value="2" />
+        </attvalues>
+      </node>
+      <node id="7" label="Fernanda Ludmilla Rossi Rocha">
+        <viz:color r="51" g="160" b="44" a="1.0" />
+        <attvalues>
+          <attvalue for="0" value="http://lattes.cnpq.br/8058597226308063" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="12/08/2026" />
+          <attvalue for="3" value="Possui Graduação em Enfermagem pela Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo - EERP/USP (1999); Mestrado em Enfermagem (2002) e Doutorado em Enfermagem (2007) pela EERP/USP, com Doutorado Sanduíche na University of Michigan; Pós-Doutorado Sênior (2019) na Faculdade de Ciências Farmacêuticas de Araraquara/UNESP e no Instituto Universitário de Ciências Psicológicas, Sociais e da Vida ISPA/IU de Lisboa, Portugal. Atua como Professora Associada III do Departamento de Enfermagem Geral e Especializada da EERP/USP. É Coordenadora da Rede da Enfermagem em Saúde Ocupacional RedENSO Brasil e Vice-Líder do Núcleo de Estudos sobre Saúde e Trabalho - NUESAT. Foi Coordenadora do Programa Mestrado Profissional Tecnologia e Inovação em Enfermagem da EERP/USP (2020-2024). Possui formação em Reiki Usui nível III. Áreas de ensino, pesquisa e extensão: Saúde do Trabalhador; Organização e Gestão dos Serviços de Saúde e Enfermagem; Validação de Instrumentos Psicométricos; Reiki e Promoção da Saúde no Trabalho. (Texto informado pelo autor)" />
+          <attvalue for="4" value="* Sem rótulo" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="Ciências da Saúde" />
+          <attvalue for="7" value="Enfermagem" />
+          <attvalue for="8" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto" />
+          <attvalue for="9" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto. Av.Bandeirantes, 3900 CidUniversitária 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153382 Ramal: 3417 URL da Homepage: http://www.eerp.usp.br" />
+          <attvalue for="10" value="9" />
+          <attvalue for="11" value="0" />
+          <attvalue for="12" value="0" />
+          <attvalue for="13" value="0" />
+          <attvalue for="14" value="#33a02c" />
+          <attvalue for="15" value="#ffffff" />
+          <attvalue for="16" value="1" />
+          <attvalue for="17" value="-0.012138573380957106" />
+          <attvalue for="18" value="-0.5013036402085209" />
+          <attvalue for="19" value="2" />
+        </attvalues>
+      </node>
+      <node id="8" label="Renata Cristina de Campos Pereira Silveira">
+        <viz:color r="51" g="160" b="44" a="1.0" />
+        <attvalues>
+          <attvalue for="0" value="http://lattes.cnpq.br/2030116667358851" />
+          <attvalue for="1" value="1" />
+          <attvalue for="2" value="10/08/2026" />
+          <attvalue for="3" value="Graduada em Enfermagem pela Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (2000), Mestre (2005) e Doutora (2008) em Enfermagem pelo Programa de Pós-Graduação em Enfermagem Fundamental da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP/USP) e Livre-Docente (2018) pela Universidade de São Paulo. Atualmente é Professora Associado (MS-5.3) do departamento EGE da EERP/USP, admitida em (2006-Atual). Vice-Chefe do Departamento de Enfermagem Geral e Especializada (2026-atual). Bolsista de Produtividade em Pesquisa do CNPq - Nível C (2025-atual). Credenciada nos Programas de Pós-Graduação em Enfermagem Fundamental (PPGEF-EERP/USP) - Nota 7 CAPES (2009-Atual) e no Programa de Pós-Graduação Mestrado Profissional de Tecnologia e Inovação em Enfermagem (PPMPTIE-EERP/USP) Nota 4 CAPES (2013-Atual). Vice-Coordenadora da Comissão Coordenadora do Programa de Pós-Graduação em Enfermagem Fundamental (2022-2024). Líder do Grupo de Pesquisa Prática Baseada em Evidências na Saúde (2008-Atual). Tutora da Liga de Transplante de Órgãos e Tecidos da EERP/USP (2009-Atual). Revisora de Periódicos de grande impacto. Membro do corpo Editorial da Revista Texto Contexto - Enfermagem (2021-2023). Possui experiência na área de Enfermagem, com ênfase na Prática Baseada em Evidências (PBE) desenvolvendo pesquisas que sumarizam conhecimento com métodos de revisão. Mentora em PBE certificada, por Helene Fuld Health Trust National Institute for Evidence-based Practice in Nursing and Healthcare, The Ohio State of University, College of Nursing. Certificada pela JBI Collaboration em métodos de revisão sistemática e revisão de escopo. Desenvolve pesquisas em parceria com colaboradores da Austrália, Canadá, Dinamarca, Estados Unidos e Portugal. (Texto informado pelo autor)" />
+          <attvalue for="4" value="* Sem rótulo" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="Ciências da Saúde" />
+          <attvalue for="7" value="Enfermagem" />
+          <attvalue for="8" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto, Departamento de Enfermagem Geral e Especializada" />
+          <attvalue for="9" value="Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto, Departamento de Enfermagem Geral e Especializada. Avenida Bandeirantes, 3900 Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153434 URL da Homepage: http://www.eerp.usp.br" />
+          <attvalue for="10" value="7" />
+          <attvalue for="11" value="0" />
+          <attvalue for="12" value="0" />
+          <attvalue for="13" value="0" />
+          <attvalue for="14" value="#33a02c" />
+          <attvalue for="15" value="#ffffff" />
+          <attvalue for="16" value="1" />
+          <attvalue for="17" value="-0.2567560926360615" />
+          <attvalue for="18" value="0.17844797233638623" />
+          <attvalue for="19" value="2" />
+        </attvalues>
+      </node>
+      <node id="9" label="Andre Aparecido da Silva Teles">
+        <viz:color r="51" g="160" b="44" a="1.0" />
+        <attvalues>
+          <attvalue for="0" value="http://lattes.cnpq.br/6738061485505129" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="11/08/2026" />
+          <attvalue for="3" value="Doutor em Ciências pelo Programa de Pós-Graduação Enfermagem Fundamental da Escola de Enfermagem de Ribeirão Preto da Universidade de São Paulo (EERP-USP). Especialista em Docência (Senac), Preceptoria Multiprofissional na Área da Saúde (HMV - Proadi-SUS) e Estomaterapia (FAMERP); Bacharel em Enfermagem pela Universidade Paulista. Experiência clínica como Enfermeiro, responsável técnico, no gerenciamento e na assistência de enfermagem aos pacientes em cirurgias ambulatoriais, centro cirúrgico e em unidades de internação (pré e pós-operatórios) de cirurgias de médio e grande portes e em pesquisa clínica. Temática de pesquisa na área de Enfermagem Perioperatória e Oncologia, com ênfase nos temas: assistência de enfermagem perioperatória, assistência de enfermagem perioperatória aos pacientes Oncológicos, Câncer Colorretal (CCR), Doenças Inflamatórias Intestinais (DII), Estomias e reabilitação de pacientes cirúrgicos e oncológicos. Integrante do Grupo de Estudo da Reabilitação de Pacientes Cirúrgicos Oncológicos, da EERP-USP, cadastrado no Diretório de Grupos de Pesquisa do CNPq. É membro da Associação Brasileira de Enfermeiros de Centro Cirúrgico, Recuperação Anestésica e Centro de Material e Esterilização (SOBECC), Association of periOperative Registered Nurses (AORN), American Nurses Association (ANA) e da Associação Brasileira de Estomaterapia (SOBEST). Atualmente é Professor Doutor I da EERP-USP, na Área de Enfermagem Cirúrgica. (Texto informado pelo autor)" />
+          <attvalue for="4" value="* Sem rótulo" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="Ciências da Saúde" />
+          <attvalue for="7" value="Enfermagem" />
+          <attvalue for="8" value="Escola de Enfermagem da Universidade de São Paulo Campus Ribeirão Preto" />
+          <attvalue for="9" value="Escola de Enfermagem da Universidade de São Paulo Campus Ribeirão Preto. Escola de Enfermagem de Ribeirão Preto - USP Vila Monte Alegre 14040902 - Ribeirão Preto, SP - Brasil Telefone: (16) 33153410 Ramal: 3410" />
+          <attvalue for="10" value="9" />
+          <attvalue for="11" value="1" />
+          <attvalue for="12" value="0" />
+          <attvalue for="13" value="0" />
+          <attvalue for="14" value="#33a02c" />
+          <attvalue for="15" value="#ffffff" />
+          <attvalue for="16" value="1" />
+          <attvalue for="17" value="0.005628944070215115" />
+          <attvalue for="18" value="-0.5037550790823627" />
+          <attvalue for="19" value="2" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="3" target="4" id="0" weight="1.0" />
+      <edge source="3" target="5" id="1" weight="3.0" />
+      <edge source="3" target="8" id="2" weight="1.0" />
+      <edge source="7" target="9" id="3" weight="2.0" />
+    </edges>
+  </graph>
+</gexf>

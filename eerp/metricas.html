@@ -1,0 +1,171 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>eerp</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"></head><body><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>eerp</h2></div>
+    <link href="css/tabulator_site.min.css" rel="stylesheet" />
+    <link href="css/tabulator-scriplattes.css" rel="stylesheet" />
+    <script src="js/tabulator.min.js"></script>
+    <script src="js/xlsx.full.min.js"></script>
+    
+    <style>
+    /* Ellipsis nas três tabelas */
+    #tabela-producao .tabulator-cell,
+    #tabela-orientacoes .tabulator-cell,
+    #tabela-projetos .tabulator-cell {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    </style>
+    
+    <h3>Métricas: Produções bibliográficas, técnicas e artísticas</h3>
+    <div class="sl-controls">
+      <button id="prod-csv">⬇️ CSV</button>
+      <button id="prod-xlsx">⬇️ XLSX</button>
+    </div>
+    <div id="tabela-producao" class="sl-tabela"></div>
+    
+    <h3>Métricas: Orientações concluídas e em andamento</h3>
+    <div class="sl-controls">
+      <button id="ori-csv">⬇️ CSV</button>
+      <button id="ori-xlsx">⬇️ XLSX</button>
+    </div>
+    <div id="tabela-orientacoes" class="sl-tabela"></div>
+    
+    <h3>Métricas: Projetos, prêmios e eventos</h3>
+    <div class="sl-controls">
+      <button id="proj-csv">⬇️ CSV</button>
+      <button id="proj-xlsx">⬇️ XLSX</button>
+    </div>
+    <div id="tabela-projetos" class="sl-tabela"></div>
+    <script>
+const DATA = {"producao": [{"nome": "Luciana Kusumota", "url": "membro-6541228840967312.html", "rotulo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "03/08/2026", "atualizacao_num": 20260803, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "pb_total": 5, "periodicos": 4, "livros": 0, "capitulos": 0, "congressos": 0, "resumos": 0, "aceitos": 1, "tec_total": 0, "art_total": 0}, {"nome": "Andrea Bernardes", "url": "membro-8267735570131241.html", "rotulo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "07/08/2026", "atualizacao_num": 20260807, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "pb_total": 14, "periodicos": 6, "livros": 0, "capitulos": 1, "congressos": 0, "resumos": 3, "aceitos": 4, "tec_total": 8, "art_total": 0}, {"nome": "Carina Aparecida Marosti Dessotte", "url": "membro-7908727257671488.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "30/07/2026", "atualizacao_num": 20260730, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "pb_total": 6, "periodicos": 2, "livros": 0, "capitulos": 0, "congressos": 0, "resumos": 0, "aceitos": 4, "tec_total": 2, "art_total": 0}, {"nome": "Renata Karina Reis", "url": "membro-2569298609941547.html", "rotulo": "* Sem rótulo", "bolsa": "Nível B", "periodo": "", "atualizacao": "12/08/2026", "atualizacao_num": 20260812, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "pb_total": 25, "periodicos": 25, "livros": 0, "capitulos": 0, "congressos": 0, "resumos": 0, "aceitos": 0, "tec_total": 0, "art_total": 0}, {"nome": "Cristina Mara Zamarioli", "url": "membro-2208888423045747.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "30/07/2026", "atualizacao_num": 20260730, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "pb_total": 14, "periodicos": 7, "livros": 0, "capitulos": 0, "congressos": 0, "resumos": 3, "aceitos": 4, "tec_total": 19, "art_total": 0}, {"nome": "Elucir Gir", "url": "membro-2381136403879304.html", "rotulo": "* Sem rótulo", "bolsa": "Nível B", "periodo": "", "atualizacao": "26/11/2025", "atualizacao_num": 20251126, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "pb_total": 3, "periodicos": 3, "livros": 0, "capitulos": 0, "congressos": 0, "resumos": 0, "aceitos": 0, "tec_total": 0, "art_total": 0}, {"nome": "Fabiana Bolela de Souza", "url": "membro-1737583784229958.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "20/06/2026", "atualizacao_num": 20260620, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "pb_total": 5, "periodicos": 4, "livros": 0, "capitulos": 1, "congressos": 0, "resumos": 0, "aceitos": 0, "tec_total": 4, "art_total": 0}, {"nome": "Fernanda Ludmilla Rossi Rocha", "url": "membro-8058597226308063.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "12/08/2026", "atualizacao_num": 20260812, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "pb_total": 12, "periodicos": 9, "livros": 0, "capitulos": 0, "congressos": 0, "resumos": 0, "aceitos": 3, "tec_total": 2, "art_total": 0}, {"nome": "Renata Cristina de Campos Pereira Silveira", "url": "membro-2030116667358851.html", "rotulo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "10/08/2026", "atualizacao_num": 20260810, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "pb_total": 9, "periodicos": 7, "livros": 0, "capitulos": 0, "congressos": 0, "resumos": 0, "aceitos": 2, "tec_total": 9, "art_total": 0}, {"nome": "Andre Aparecido da Silva Teles", "url": "membro-6738061485505129.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "11/08/2026", "atualizacao_num": 20260811, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "pb_total": 16, "periodicos": 9, "livros": 0, "capitulos": 0, "congressos": 1, "resumos": 6, "aceitos": 0, "tec_total": 0, "art_total": 0}], "orientacoes": [{"nome": "Luciana Kusumota", "url": "membro-6541228840967312.html", "rotulo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "03/08/2026", "atualizacao_num": 20260803, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "concl_total": 1, "concl_posdoc": 0, "concl_dout": 0, "concl_mest": 1, "concl_espec": 0, "concl_tcc": 0, "concl_ic": 0, "and_total": 7, "and_posdoc": 1, "and_dout": 3, "and_mest": 0, "and_espec": 0, "and_tcc": 0, "and_ic": 3}, {"nome": "Andrea Bernardes", "url": "membro-8267735570131241.html", "rotulo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "07/08/2026", "atualizacao_num": 20260807, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "concl_total": 5, "concl_posdoc": 0, "concl_dout": 1, "concl_mest": 2, "concl_espec": 2, "concl_tcc": 0, "concl_ic": 0, "and_total": 4, "and_posdoc": 0, "and_dout": 0, "and_mest": 1, "and_espec": 0, "and_tcc": 0, "and_ic": 3}, {"nome": "Carina Aparecida Marosti Dessotte", "url": "membro-7908727257671488.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "30/07/2026", "atualizacao_num": 20260730, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "concl_total": 12, "concl_posdoc": 1, "concl_dout": 0, "concl_mest": 4, "concl_espec": 5, "concl_tcc": 1, "concl_ic": 1, "and_total": 9, "and_posdoc": 0, "and_dout": 3, "and_mest": 2, "and_espec": 0, "and_tcc": 1, "and_ic": 3}, {"nome": "Renata Karina Reis", "url": "membro-2569298609941547.html", "rotulo": "* Sem rótulo", "bolsa": "Nível B", "periodo": "", "atualizacao": "12/08/2026", "atualizacao_num": 20260812, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "concl_total": 13, "concl_posdoc": 1, "concl_dout": 4, "concl_mest": 0, "concl_espec": 0, "concl_tcc": 5, "concl_ic": 3, "and_total": 4, "and_posdoc": 0, "and_dout": 0, "and_mest": 3, "and_espec": 0, "and_tcc": 0, "and_ic": 1}, {"nome": "Cristina Mara Zamarioli", "url": "membro-2208888423045747.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "30/07/2026", "atualizacao_num": 20260730, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "concl_total": 3, "concl_posdoc": 0, "concl_dout": 1, "concl_mest": 0, "concl_espec": 0, "concl_tcc": 2, "concl_ic": 0, "and_total": 9, "and_posdoc": 0, "and_dout": 0, "and_mest": 6, "and_espec": 0, "and_tcc": 1, "and_ic": 2}, {"nome": "Elucir Gir", "url": "membro-2381136403879304.html", "rotulo": "* Sem rótulo", "bolsa": "Nível B", "periodo": "", "atualizacao": "26/11/2025", "atualizacao_num": 20251126, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "concl_total": 0, "concl_posdoc": 0, "concl_dout": 0, "concl_mest": 0, "concl_espec": 0, "concl_tcc": 0, "concl_ic": 0, "and_total": 0, "and_posdoc": 0, "and_dout": 0, "and_mest": 0, "and_espec": 0, "and_tcc": 0, "and_ic": 0}, {"nome": "Fabiana Bolela de Souza", "url": "membro-1737583784229958.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "20/06/2026", "atualizacao_num": 20260620, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "concl_total": 1, "concl_posdoc": 0, "concl_dout": 0, "concl_mest": 0, "concl_espec": 1, "concl_tcc": 0, "concl_ic": 0, "and_total": 5, "and_posdoc": 0, "and_dout": 1, "and_mest": 2, "and_espec": 0, "and_tcc": 0, "and_ic": 2}, {"nome": "Fernanda Ludmilla Rossi Rocha", "url": "membro-8058597226308063.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "12/08/2026", "atualizacao_num": 20260812, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "concl_total": 2, "concl_posdoc": 1, "concl_dout": 0, "concl_mest": 0, "concl_espec": 0, "concl_tcc": 0, "concl_ic": 1, "and_total": 3, "and_posdoc": 0, "and_dout": 1, "and_mest": 1, "and_espec": 0, "and_tcc": 0, "and_ic": 1}, {"nome": "Renata Cristina de Campos Pereira Silveira", "url": "membro-2030116667358851.html", "rotulo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "10/08/2026", "atualizacao_num": 20260810, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "concl_total": 8, "concl_posdoc": 0, "concl_dout": 3, "concl_mest": 1, "concl_espec": 0, "concl_tcc": 2, "concl_ic": 2, "and_total": 7, "and_posdoc": 0, "and_dout": 3, "and_mest": 2, "and_espec": 0, "and_tcc": 0, "and_ic": 2}, {"nome": "Andre Aparecido da Silva Teles", "url": "membro-6738061485505129.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "11/08/2026", "atualizacao_num": 20260811, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "concl_total": 6, "concl_posdoc": 0, "concl_dout": 0, "concl_mest": 0, "concl_espec": 5, "concl_tcc": 1, "concl_ic": 0, "and_total": 0, "and_posdoc": 0, "and_dout": 0, "and_mest": 0, "and_espec": 0, "and_tcc": 0, "and_ic": 0}], "projetos": [{"nome": "Luciana Kusumota", "url": "membro-6541228840967312.html", "rotulo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "03/08/2026", "atualizacao_num": 20260803, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "projetos": 1, "premios": 0, "part_event": 4, "org_event": 25}, {"nome": "Andrea Bernardes", "url": "membro-8267735570131241.html", "rotulo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "07/08/2026", "atualizacao_num": 20260807, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "projetos": 0, "premios": 1, "part_event": 28, "org_event": 41}, {"nome": "Carina Aparecida Marosti Dessotte", "url": "membro-7908727257671488.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "30/07/2026", "atualizacao_num": 20260730, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "projetos": 5, "premios": 0, "part_event": 0, "org_event": 28}, {"nome": "Renata Karina Reis", "url": "membro-2569298609941547.html", "rotulo": "* Sem rótulo", "bolsa": "Nível B", "periodo": "", "atualizacao": "12/08/2026", "atualizacao_num": 20260812, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "projetos": 0, "premios": 0, "part_event": 0, "org_event": 25}, {"nome": "Cristina Mara Zamarioli", "url": "membro-2208888423045747.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "30/07/2026", "atualizacao_num": 20260730, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "projetos": 0, "premios": 1, "part_event": 14, "org_event": 12}, {"nome": "Elucir Gir", "url": "membro-2381136403879304.html", "rotulo": "* Sem rótulo", "bolsa": "Nível B", "periodo": "", "atualizacao": "26/11/2025", "atualizacao_num": 20251126, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "projetos": 0, "premios": 0, "part_event": 0, "org_event": 7}, {"nome": "Fabiana Bolela de Souza", "url": "membro-1737583784229958.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "20/06/2026", "atualizacao_num": 20260620, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "projetos": 0, "premios": 0, "part_event": 0, "org_event": 11}, {"nome": "Fernanda Ludmilla Rossi Rocha", "url": "membro-8058597226308063.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "12/08/2026", "atualizacao_num": 20260812, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "projetos": 2, "premios": 1, "part_event": 0, "org_event": 6}, {"nome": "Renata Cristina de Campos Pereira Silveira", "url": "membro-2030116667358851.html", "rotulo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "10/08/2026", "atualizacao_num": 20260810, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "projetos": 1, "premios": 0, "part_event": 7, "org_event": 26}, {"nome": "Andre Aparecido da Silva Teles", "url": "membro-6738061485505129.html", "rotulo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "11/08/2026", "atualizacao_num": 20260811, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "projetos": 1, "premios": 1, "part_event": 10, "org_event": 1}]};
+const TABLE_HEIGHT = "auto";
+const LANG_PT = {
+  "pt-br": {
+    "pagination": {
+      "first":"«","first_title":"Primeira",
+      "last":"»","last_title":"Última",
+      "prev":"‹","prev_title":"Anterior",
+      "next":"›","next_title":"Próxima"
+    },
+    "headerFilters": { "default":"⎯ Filtrar ⎯" }
+  }
+};
+
+// Ordenação por data BR via campo auxiliar yyyymmdd
+function sortDateBR(a, b, aRow, bRow, column, dir, sorterParams) {
+  const av = aRow?.getData()?.atualizacao_num ?? 0;
+  const bv = bRow?.getData()?.atualizacao_num ?? 0;
+  return av - bv;
+}
+
+// Link com title (tooltip no <a>)
+function linkWithTitle(cell) {
+  const data = cell.getData();
+  const url = data && data.url ? String(data.url) : '#';
+  const label = String(cell.getValue() ?? '');
+  const a = document.createElement('a');
+  a.href = url; a.textContent = label; a.target = '_blank'; a.rel = 'noopener'; a.title = label;
+  return a;
+}
+
+function createTable(el, data, columns, initialSort) {
+  const base = {
+    data,
+    layout: 'fitColumns',
+    responsiveLayout: 'collapse',
+    pagination: 'local',
+    paginationSize: 50,
+    paginationSizeSelector: [10, 25, 50, 100, 200, 500],
+    movableColumns: true,
+    initialSort,
+    headerFilterLiveFilter: true,
+    columns,
+    locale: true, langs: LANG_PT, locale: 'pt-br',
+    tooltips: true
+  };
+  if (TABLE_HEIGHT !== 'auto') base.height = TABLE_HEIGHT;
+  return new Tabulator(el, base);
+}
+
+function mkTabelaProducao() {
+  const columns = [
+    { title:'Nome', field:'nome', formatter: linkWithTitle, headerFilter:'input', widthGrow:3, tooltip:true },
+    { title:'Rótulo', field:'rotulo', headerFilter:'input', tooltip:true },
+    { title:'Bolsa CNPq', field:'bolsa', headerFilter:'input', tooltip:true },
+    { title:'Período', field:'periodo', headerFilter:'input', tooltip:true },
+    { title:'Atualização CV', field:'atualizacao', headerFilter:'input', sorter: sortDateBR, tooltip:true },
+    { title:'Grande área', field:'grande_area', headerFilter:'input', tooltip:true },
+    { title:'Área', field:'area', headerFilter:'input', tooltip:true },
+    { title:'PB (total)', field:'pb_total', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Periódicos', field:'periodicos', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Livros', field:'livros', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Capítulos', field:'capitulos', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Congressos', field:'congressos', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Resumos', field:'resumos', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Aceitos', field:'aceitos', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Técnica (total)', field:'tec_total', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Artística (total)', field:'art_total', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true }
+  ];
+  const t = createTable('#tabela-producao', DATA.producao, columns, [{ column: 'pb_total', dir: 'desc' }]);
+  document.getElementById('prod-csv').onclick  = () => t.download('csv',  'metricas_producao.csv', { bom:true });
+  document.getElementById('prod-xlsx').onclick = () => t.download('xlsx', 'metricas_producao.xlsx', { sheetName:'Produção' });
+  return t;
+}
+
+function mkTabelaOrientacoes() {
+  const columns = [
+    { title:'Nome', field:'nome', formatter: linkWithTitle, headerFilter:'input', widthGrow:3, tooltip:true },
+    { title:'Rótulo', field:'rotulo', headerFilter:'input', tooltip:true },
+    { title:'Bolsa CNPq', field:'bolsa', headerFilter:'input', tooltip:true },
+    { title:'Período', field:'periodo', headerFilter:'input', tooltip:true },
+    { title:'Atualização CV', field:'atualizacao', headerFilter:'input', sorter: sortDateBR, tooltip:true },
+    { title:'Grande área', field:'grande_area', headerFilter:'input', tooltip:true },
+    { title:'Área', field:'area', headerFilter:'input', tooltip:true },
+    { title:'Concluídas (total)', field:'concl_total', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Pós-doc', field:'concl_posdoc', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Doutorado', field:'concl_dout', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Mestrado', field:'concl_mest', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Especialização', field:'concl_espec', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'TCC', field:'concl_tcc', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'IC', field:'concl_ic', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Em andamento (total)', field:'and_total', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Pós-doc', field:'and_posdoc', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Doutorado', field:'and_dout', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Mestrado', field:'and_mest', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Especialização', field:'and_espec', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'TCC', field:'and_tcc', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'IC', field:'and_ic', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true }
+  ];
+  const t = createTable('#tabela-orientacoes', DATA.orientacoes, columns, [{ column: 'concl_total', dir: 'desc' }]);
+  document.getElementById('ori-csv').onclick  = () => t.download('csv',  'metricas_orientacoes.csv', { bom:true });
+  document.getElementById('ori-xlsx').onclick = () => t.download('xlsx', 'metricas_orientacoes.xlsx', { sheetName:'Orientações' });
+  return t;
+}
+
+function mkTabelaProjetos() {
+  const columns = [
+    { title:'Nome', field:'nome', formatter: linkWithTitle, headerFilter:'input', widthGrow:3, tooltip:true },
+    { title:'Rótulo', field:'rotulo', headerFilter:'input', tooltip:true },
+    { title:'Bolsa CNPq', field:'bolsa', headerFilter:'input', tooltip:true },
+    { title:'Período', field:'periodo', headerFilter:'input', tooltip:true },
+    { title:'Atualização CV', field:'atualizacao', headerFilter:'input', sorter: sortDateBR, tooltip:true },
+    { title:'Grande área', field:'grande_area', headerFilter:'input', tooltip:true },
+    { title:'Área', field:'area', headerFilter:'input', tooltip:true },
+    { title:'Projetos', field:'projetos', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Prêmios', field:'premios', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Participação em eventos', field:'part_event', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true },
+    { title:'Organização de eventos', field:'org_event', hozAlign:'right', headerFilter:'input', sorter:'number', tooltip:true }
+  ];
+  const t = createTable('#tabela-projetos', DATA.projetos, columns, [{ column: 'projetos', dir: 'desc' }]);
+  document.getElementById('proj-csv').onclick  = () => t.download('csv',  'metricas_projetos.csv', { bom:true });
+  document.getElementById('proj-xlsx').onclick = () => t.download('xlsx', 'metricas_projetos.xlsx', { sheetName:'Projetos' });
+  return t;
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  mkTabelaProducao();
+  mkTabelaOrientacoes();
+  mkTabelaProjetos();
+});
+</script>
+<br><p><br>(*) Relatório criado com produções desde 2025 até 2026
+<br>Data de processamento: 25/09/2026 02:06:41<br>         <div id="footer">         Relatório gerado por <a href="http://scriptlattes.sourceforge.net/">scriptLattes V.2025.09</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:admin@email.com">admin@email.com</a>         </div> </body></html>

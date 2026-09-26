@@ -1,0 +1,105 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>eerp</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"></head><body><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>eerp</h2></div>
+    <link href="css/tabulator_site.min.css" rel="stylesheet" />
+    <link href="css/tabulator-scriplattes.css" rel="stylesheet" />
+    <script src="js/tabulator.min.js"></script>
+    <script src="js/xlsx.full.min.js"></script>
+    
+    <style>
+    /* Ellipsis nas células: mostra "..." e deixa o tooltip trabalhar */
+    #tabela-membros .tabulator-cell {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    </style>
+    
+    <h3>Lista de membros</h3>
+    <div class="sl-controls">
+      <button id="membros-csv">⬇️ CSV</button>
+      <button id="membros-xlsx">⬇️ XLSX</button>
+    </div>
+    <div id="tabela-membros" class="sl-tabela" id="tabela-membros"></div>
+    
+    <script>
+    const DATA_MEMBROS = [{"nome": "Luciana Kusumota", "url": "membro-6541228840967312.html", "id_lattes": "6541228840967312", "rotulo_grupo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "03/08/2026", "atualizacao_num": 20260803, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto"}, {"nome": "Andrea Bernardes", "url": "membro-8267735570131241.html", "id_lattes": "8267735570131241", "rotulo_grupo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "07/08/2026", "atualizacao_num": 20260807, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "instituicao": "Escola de Enfermagem de Ribeirão Preto Usp, Escola de Enfermagem de Ribeirão Preto"}, {"nome": "Carina Aparecida Marosti Dessotte", "url": "membro-7908727257671488.html", "id_lattes": "7908727257671488", "rotulo_grupo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "30/07/2026", "atualizacao_num": 20260730, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "instituicao": "Escola de Enfermagem de Ribeirão Preto - USP"}, {"nome": "Renata Karina Reis", "url": "membro-2569298609941547.html", "id_lattes": "2569298609941547", "rotulo_grupo": "* Sem rótulo", "bolsa": "Nível B", "periodo": "", "atualizacao": "12/08/2026", "atualizacao_num": 20260812, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto"}, {"nome": "Cristina Mara Zamarioli", "url": "membro-2208888423045747.html", "id_lattes": "2208888423045747", "rotulo_grupo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "30/07/2026", "atualizacao_num": 20260730, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto"}, {"nome": "Elucir Gir", "url": "membro-2381136403879304.html", "id_lattes": "2381136403879304", "rotulo_grupo": "* Sem rótulo", "bolsa": "Nível B", "periodo": "", "atualizacao": "26/11/2025", "atualizacao_num": 20251126, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto, Departamento de Enfermagem Geral e Especializada"}, {"nome": "Fabiana Bolela de Souza", "url": "membro-1737583784229958.html", "id_lattes": "1737583784229958", "rotulo_grupo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "20/06/2026", "atualizacao_num": 20260620, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto"}, {"nome": "Fernanda Ludmilla Rossi Rocha", "url": "membro-8058597226308063.html", "id_lattes": "8058597226308063", "rotulo_grupo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "12/08/2026", "atualizacao_num": 20260812, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto"}, {"nome": "Renata Cristina de Campos Pereira Silveira", "url": "membro-2030116667358851.html", "id_lattes": "2030116667358851", "rotulo_grupo": "* Sem rótulo", "bolsa": "Nível C", "periodo": "", "atualizacao": "10/08/2026", "atualizacao_num": 20260810, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "instituicao": "Universidade de São Paulo, Escola de Enfermagem de Ribeirão Preto, Departamento de Enfermagem Geral e Especializada"}, {"nome": "Andre Aparecido da Silva Teles", "url": "membro-6738061485505129.html", "id_lattes": "6738061485505129", "rotulo_grupo": "* Sem rótulo", "bolsa": "", "periodo": "", "atualizacao": "11/08/2026", "atualizacao_num": 20260811, "grande_area": "Ciências da Saúde", "area": "Enfermagem", "instituicao": "Escola de Enfermagem da Universidade de São Paulo Campus Ribeirão Preto"}];
+    const TABLE_HEIGHT = "auto"; // "auto" | "70vh" | "90vh"
+    
+    const LANG_PT = {
+      "pt-br": {
+        "pagination": {
+          "first":"«","first_title":"Primeira",
+          "last":"»","last_title":"Última",
+          "prev":"‹","prev_title":"Anterior",
+          "next":"›","next_title":"Próxima"
+        },
+        "headerFilters": { "default":"⎯ Filtrar ⎯" }
+      }
+    };
+    
+    // Ordenador para data BR usando campo auxiliar yyyymmdd (numérico)
+    function sortDateBR(a, b, aRow, bRow, column, dir, sorterParams) {
+      const av = aRow?.getData()?.atualizacao_num ?? 0;
+      const bv = bRow?.getData()?.atualizacao_num ?? 0;
+      return av - bv;
+    }
+    
+    // Formatter de link com title (tooltip no próprio <a>)
+    function linkWithTitle(cell, formatterParams, onRendered) {
+      const data = cell.getData();
+      const url = data && data.url ? String(data.url) : "#";
+      const label = String(cell.getValue() ?? "");
+      const a = document.createElement("a");
+      a.href = url;
+      a.textContent = label;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.title = label; // <-- tooltip no link
+      return a;
+    }
+    
+    function createTable(el, data, columns, initialSort) {
+      const base = {
+        data,
+        layout: "fitColumns",
+        responsiveLayout: "collapse",
+        pagination: "local",
+        paginationSize: 50,
+        paginationSizeSelector: [10, 25, 50, 100, 200, 500],
+        movableColumns: true,
+        initialSort,
+        headerFilterLiveFilter: true,
+        columns,
+        locale: true, langs: LANG_PT, locale: "pt-br",
+        tooltips: true    // <-- tooltip global (para colunas sem link)
+      };
+      if (TABLE_HEIGHT !== "auto") {
+        base.height = TABLE_HEIGHT;
+      }
+      return new Tabulator(el, base);
+    }
+    
+    document.addEventListener("DOMContentLoaded", function(){
+      const columns = [
+        // Nome com link + title no próprio <a>
+        { title:"Nome", field:"nome", formatter: linkWithTitle,
+           headerFilter:"input", widthGrow:3, tooltip:true },
+    
+        // Demais colunas (tooltip global já cobre)
+        { title:"ID Lattes", field:"id_lattes", headerFilter:"input", tooltip:true },
+        { title:"Rótulo/Grupo", field:"rotulo_grupo", headerFilter:"input", tooltip:true },
+        { title:"Bolsa CNPq", field:"bolsa", headerFilter:"input", tooltip:true },
+        { title:"Período de análise individual", field:"periodo", headerFilter:"input", tooltip:true },
+        { title:"Data de atualização do CV", field:"atualizacao", headerFilter:"input", sorter: sortDateBR, tooltip:true },
+        { title:"Grande área", field:"grande_area", headerFilter:"input", tooltip:true },
+        { title:"Área", field:"area", headerFilter:"input", tooltip:true },
+        { title:"Instituição", field:"instituicao", headerFilter:"input", tooltip:true },
+      ];
+    
+      const t = createTable("#tabela-membros", DATA_MEMBROS, columns, [{ column: "nome", dir: "asc" }]);
+    
+      document.getElementById("membros-csv").onclick  = () => t.download("csv",  "lista_membros.csv", { bom:true });
+      document.getElementById("membros-xlsx").onclick = () => t.download("xlsx", "lista_membros.xlsx", { sheetName:"Membros" });
+    });
+    </script>
+    <br><p><br>(*) Relatório criado com produções desde 2025 até 2026
+<br>Data de processamento: 25/09/2026 02:06:41<br>         <div id="footer">         Relatório gerado por <a href="http://scriptlattes.sourceforge.net/">scriptLattes V.2025.09</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:admin@email.com">admin@email.com</a>         </div> </body></html>
