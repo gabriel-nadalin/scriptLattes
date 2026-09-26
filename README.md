@@ -3,8 +3,7 @@
 Fork do [jpmenachalco/scriptLattes](https://github.com/jpmenachalco/scriptLattes): programa
 GNU-GPL que baixa currículos da Plataforma Lattes e gera os relatórios de produção científica
 de um grupo. O original é de Jesús P. Mena-Chalco e Roberto M. Cesar-Jr (IME/USP) e continua
-sendo a referência; o que está aqui é a minha cópia, com as alterações que eu precisava para
-usar no dia a dia. Licença GPLv2, veja `COPYING`.
+sendo a referência; o que está aqui é a minha cópia, com alterações para customizar alguns comportamentos. Licença GPLv2, veja `COPYING`.
 
 - original (upstream): https://github.com/jpmenachalco/scriptLattes
 - este fork (origin): https://github.com/gabriel-nadalin/scriptLattes
