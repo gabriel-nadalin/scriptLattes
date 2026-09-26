@@ -33,6 +33,8 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
   programa morria com `FileNotFoundError: ''`. Os valores `0/1/false/true` passaram a ser
   reconhecidos, o `.config` volta a ser gravado como `sim`/`nao`, e o filtro ligado sem lista
   de termos agora apenas avisa.
+- `--diagnostico` informa se a janela gráfica (`--janela`) está disponível e, quando o Tkinter
+  falta, diz o comando de instalação de cada distribuição — antes a janela simplesmente não abria.
 - As mensagens passaram a chamar o programa pelo nome do ambiente atual: `scriptlattes` no
   executável, `python scriptLattes.py` a partir do código (antes o executável mandava o usuário
   rodar um comando que não existe naquele contexto).
