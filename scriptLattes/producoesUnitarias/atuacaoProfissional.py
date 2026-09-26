@@ -31,7 +31,6 @@ class AtuacaoProfissional:
         self.idMembro.add(idMembro)
 
         if partesDoItem:
-            print(f"DEBUG: AtuacaoProfissional partesDoItem: {partesDoItem}")
             # partesDoItem[0]: Pode ser periodo ou numero
             # partesDoItem[1]: Descricao
             self.item = partesDoItem[1]
@@ -104,9 +103,6 @@ class AtuacaoProfissional:
                     instituicao_text = re.sub(r'^\d{4}\s*-\s*(?:\d{4}|Atual),?\s*', '', instituicao_text)
                     instituicao_text = re.sub(r'^\d{2}/\d{4}\s*-\s*(?:\d{2}/\d{4}|Atual),?\s*', '', instituicao_text)
                     self.instituicao = instituicao_text.strip()
-        
-        if not self.instituicao:
-            print(f"DEBUG: Instituicao not found in text: {texto!r}")
         
         # Parse da instituição em nome, sigla e país
         self._parse_instituicao()

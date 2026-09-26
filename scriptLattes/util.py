@@ -14,25 +14,87 @@ except ImportError:
 
 SEP     = os.path.sep
 BASE    = 'scriptLattes' + SEP
-ABSBASE = os.path.abspath('.') + SEP
+
+
+def diretorio_do_projeto():
+    """Pasta onde estão os arquivos que acompanham o programa (css, js, dados, exemplo).
+
+    Não é a pasta de onde o programa foi executado: rodando de outra pasta, os arquivos
+    estáticos (css/js) têm de vir de onde o projeto está instalado — senão os relatórios
+    saem sem estilo. Em executável empacotado (PyInstaller), é a pasta extraída do pacote.
+    """
+    if getattr(sys, 'frozen', False):
+        return getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(sys.executable)))
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+ABSBASE = diretorio_do_projeto() + SEP
+
+
+def esta_empacotado():
+    """Verdadeiro quando roda como executável gerado pelo PyInstaller."""
+    return bool(getattr(sys, 'frozen', False))
+
+
+def nome_do_programa():
+    """Como o usuário chama o programa neste ambiente, para as mensagens de ajuda."""
+    if esta_empacotado():
+        return os.path.basename(sys.executable)
+    return 'python scriptLattes.py'
 
 
 
 def buscarArquivo(filepath, arquivoConfiguracao=None):
-    if not arquivoConfiguracao:
-        arquivoConfiguracao = sys.argv[1]
-    curdir = os.path.abspath(os.path.curdir)
-    if not os.path.isfile(filepath) and arquivoConfiguracao:
-        # vamos tentar mudar o diretorio para o atual do arquivo
-        os.chdir(os.path.abspath(os.path.join(arquivoConfiguracao, os.pardir)))
-    if not os.path.isfile(filepath):
-        # se ainda nao existe, tentemos ver se o arquivo não está junto com o config
-        filepath = os.path.abspath(os.path.basename(filepath))
+    """Localiza um arquivo de entrada informado no .config.
+
+    Procura, nesta ordem: o caminho como informado (a partir da pasta atual, que é o
+    comportamento histórico), relativo à pasta do .config e, por fim, com o nome do
+    arquivo ao lado do .config. Não muda a pasta atual do processo: isso é importante
+    porque a interface gráfica executa o pipeline em outra thread.
+    """
+    if not filepath:
+        return ''
+
+    if os.path.isabs(filepath):
+        candidatos = [filepath]
     else:
-        # se encontramos, definimos então caminho absoluto
-        filepath = os.path.abspath(filepath)
-    os.chdir(curdir)
-    return filepath
+        candidatos = [os.path.join(os.getcwd(), filepath)]
+        if arquivoConfiguracao:
+            pasta_do_config = os.path.dirname(os.path.abspath(arquivoConfiguracao))
+            candidatos.append(os.path.join(pasta_do_config, filepath))
+            candidatos.append(os.path.join(pasta_do_config, os.path.basename(filepath)))
+        # arquivos que vêm junto com o programa (ex.: exemplo/demo-lattes/demo.list)
+        candidatos.append(os.path.join(ABSBASE, filepath))
+
+    for candidato in candidatos:
+        if os.path.isfile(candidato):
+            return os.path.abspath(candidato)
+    return os.path.abspath(candidatos[0])
+
+
+def buscarDiretorio(caminho, arquivoConfiguracao=None):
+    """Localiza (ou decide onde criar) um diretório de trabalho, como a pasta de cache.
+
+    Procura, nesta ordem: como informado (pasta de execução), relativo à pasta do
+    `.config` e junto dos arquivos que acompanham o programa. Se não existir em lugar
+    nenhum, devolve o caminho informado (relativo à pasta de execução) — assim o cache
+    do usuário fica ao lado de onde ele está rodando, e não dentro do programa.
+    """
+    if not caminho:
+        return caminho
+
+    if os.path.isabs(caminho):
+        return os.path.normpath(caminho)
+
+    candidatos = [os.path.join(os.getcwd(), caminho)]
+    if arquivoConfiguracao:
+        candidatos.append(os.path.join(os.path.dirname(os.path.abspath(arquivoConfiguracao)), caminho))
+    candidatos.append(os.path.join(ABSBASE, caminho))
+
+    for candidato in candidatos:
+        if os.path.isdir(candidato):
+            return os.path.normpath(candidato)
+    return os.path.normpath(candidatos[0])
 
 
 def copiarArquivos(dir):
@@ -43,8 +105,7 @@ def copiarArquivos(dir):
             shutil.rmtree(dst)
         shutil.copytree(os.path.join(base, 'css'), dst)
     except OSError as e:
-        pass  # provavelmente diretório já existe
-        #logging.warning(e)
+        print(f"[AVISO] Não foi possível copiar os arquivos estáticos: {e}")
 
     try:
         dst = os.path.join(dir, 'js')
@@ -52,8 +113,7 @@ def copiarArquivos(dir):
             shutil.rmtree(dst)
         shutil.copytree(os.path.join(base, 'js'), dst)
     except OSError as e:
-        pass  # provavelmente diretório já existe
-        #logging.warning(e)
+        print(f"[AVISO] Não foi possível copiar os arquivos estáticos: {e}")
     # shutil.copy2(os.path.join(base, 'js', 'jquery.min.js'), dir)
     # shutil.copy2(os.path.join(base, 'js', 'highcharts.js'), dir)
     # shutil.copy2(os.path.join(base, 'js', 'exporting.js'), dir)
@@ -64,42 +124,13 @@ def copiarArquivos(dir):
     print(f"\n[ARQUIVOS SALVOS NO SEGUINTE DIRETÓRIO]\n{format(os.path.abspath(dir))}")
 
 # ---------------------------------------------------------------------------- #
-def similaridade_entre_cadeias(str1, str2, qualis=False):
-    '''
-    Compara duas cadeias de caracteres e retorna a medida de similaridade entre elas, entre 0 e 1, onde 1 significa que as cadeias são idênticas ou uma é contida na outra.
-    :param str1:
-    :param str2:
-    '''
-    str1 = str1.strip().lower()
-    str2 = str2.strip().lower()
-
-    # caso especial
-    if ('apresentação'==str1 or 'apresentação'==str2 or 'apresentacao'==str1 or 'apresentacao'==str2 ):
-        return 0
-
-    if len(str1) == 0 or len(str2) == 0:
-        return 0
-
-    if len(str1) >= 50 and len(str2) >= 50 and (str1 in str2 or str2 in str1):
-        return 1
-
-    distancia  = distancia_Levenshtein(str1, str2)
-    ratio = ...
- 
-    if len(str1) >= 10 and len(str2) >= 10 and (ratio >= 0.93 or distancia <= 5):
-        return 1
-
-    return 0
-
-
 def criarDiretorio(dir):
     if not os.path.exists(dir):
         try:
             os.makedirs(dir)
-        ### except OSError as exc:
-        except:
-            print("\n[ERRO] Não foi possível criar ou atualizar o diretório: " + dir.encode('utf8'))
-            print("[ERRO] Você conta com as permissões de escrita? \n")
+        except OSError as exc:
+            print(f"\n[ERRO] Não foi possível criar ou atualizar o diretório: {dir}")
+            print(f"[ERRO] Você conta com as permissões de escrita? ({exc})\n")
             return 0
     return 1
 
@@ -206,4 +237,96 @@ def similaridade_entre_cadeias(cadeia1: str, cadeia2: str, qualis: bool = False)
         return 1
 
     return 0
+
+# ---------------------------------------------------------------------------- #
+def lerTextoDeArquivo(caminho):
+    """Lê um arquivo de texto assumindo UTF-8.
+
+    No Windows o Python usaria a codificação local (cp1252/ANSI) e um .config, .list
+    ou currículo salvo em outra codificação quebraria com UnicodeDecodeError. Aqui o
+    UTF-8 é o padrão e, se falhar, relemos na codificação local avisando o usuário."""
+    try:
+        with open(caminho, encoding='utf-8') as arquivo:
+            return arquivo.read()
+    except UnicodeDecodeError:
+        pass
+
+    import locale
+    candidatos = [locale.getpreferredencoding(False), 'cp1252', 'latin-1']
+    for codificacao in candidatos:
+        if not codificacao or codificacao.lower().replace('-', '') == 'utf8':
+            continue
+        try:
+            with open(caminho, encoding=codificacao) as arquivo:
+                texto = arquivo.read()
+        except (UnicodeDecodeError, LookupError):
+            continue
+        print(f"[AVISO] O arquivo '{caminho}' não está em UTF-8. "
+              f"Foi lido como {codificacao}; salve como UTF-8 para não perder acentuação.")
+        return texto
+
+    with open(caminho, encoding='utf-8', errors='replace') as arquivo:
+        texto = arquivo.read()
+    print(f"[AVISO] O arquivo '{caminho}' tem caracteres inválidos; "
+          f"parte da acentuação pode ter sido perdida.")
+    return texto
+
+
+def lerLinhasDeTexto(caminho):
+    return lerTextoDeArquivo(caminho).splitlines(keepends=True)
+
+
+def formatar_duracao(tempo_decorrido):
+    """Duração compacta para barras de progresso: '8s', '2m03s', '1h05m'."""
+    segundos = int(tempo_decorrido.total_seconds())
+    if segundos < 60:
+        return f'{segundos}s'
+    if segundos < 3600:
+        return f'{segundos // 60}m{segundos % 60:02d}s'
+    return f'{segundos // 3600}h{(segundos % 3600) // 60:02d}m'
+
+# ---------------------------------------------------------------------------- #
+def escreverLeiaMe(dir, nome_do_grupo=''):
+    """Explica, dentro da própria pasta de saída, o que foi gerado e por onde começar."""
+    caminho = os.path.join(dir, 'LEIA-ME.txt')
+    texto = f"""O QUE É ESTA PASTA
+=================
+Relatórios gerados pelo scriptLattes para o grupo "{nome_do_grupo}".
+
+POR ONDE COMEÇAR
+================
+1) Abra o arquivo  index.html  neste navegador (ou clique duas vezes nele).
+2) Os relatórios individuais de cada pesquisador estão em  json/  e  *.html.
+
+O QUE TEM AQUI
+==============
+index.html              página inicial com a lista de membros e os relatórios
+*.html                  um relatório por tipo de produção (artigos, congressos, ...)
+json/                   os mesmos dados em formato JSON (para planilhas e programas)
+grafo_de_colaboracoes.gexf   grafo de coautorias (abra no Gephi)
+scriptlattes-log.txt    registro da execução; envie este arquivo ao pedir suporte
+
+COMO RODAR DE NOVO
+==================
+Rode o mesmo comando usado agora. Os currículos já baixados ficam guardados e são
+reaproveitados: a segunda execução é bem mais rápida e funciona sem internet.
+Para mudar o período ou os relatórios, edite o arquivo .config do grupo.
+
+CURRÍCULOS GUARDADOS
+====================
+A pasta de cache (por padrão  cache/ ) guarda uma cópia de cada currículo baixado.
+Faça backup dela: com a pasta em mãos você regenera tudo sem baixar de novo.
+
+AVISO SOBRE DADOS PESSOAIS (LGPD)
+=================================
+Estes relatórios reúnem dados públicos de currículos Lattes de terceiros
+(pesquisadores que não são necessariamente membros do grupo). Use-os para fins
+de pesquisa e gestão; não publique em site aberto nem compartilhe além do
+necessário sem consentimento dos titulares.
+"""
+    try:
+        with open(caminho, 'w', encoding='utf-8') as arquivo:
+            arquivo.write(texto)
+    except OSError as exc:
+        print(f"[AVISO] Não foi possível escrever {caminho}: {exc}")
 

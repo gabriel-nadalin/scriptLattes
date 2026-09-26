@@ -1,0 +1,116 @@
+name: Release
+
+# Gera os executáveis (um por sistema) e publica junto do código-fonte.
+#
+# O binário embute o Python e os arquivos do projeto; como o scriptLattes é GPLv2, o
+# release publica também o código-fonte correspondente (tarball) — o pacote `fontes`.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  empacotar:
+    name: Executável (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            artefato: scriptlattes-linux
+            executavel: dist/scriptlattes
+          - os: windows-latest
+            artefato: scriptlattes-windows
+            executavel: dist/scriptlattes.exe
+          - os: macos-latest
+            artefato: scriptlattes-macos
+            executavel: dist/scriptlattes
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Gerar o executável
+        run: python empacotar.py
+
+      # Antes de publicar, o executável precisa rodar de verdade: os testes do projeto
+      # mais a demonstração offline executada a partir de OUTRA pasta, usando só o
+      # binário (é o cenário de quem baixa o arquivo e dá duplo clique).
+      - name: Testes automatizados
+        run: python -m unittest discover -s tests -v
+
+      - name: Executável roda o diagnóstico
+        shell: bash
+        run: |
+          pasta="$(mktemp -d)"
+          cd "$pasta"
+          "$GITHUB_WORKSPACE/${{ matrix.executavel }}" --diagnostico | tee saida.txt
+          grep -q 'DIAGNÓSTICO DO AMBIENTE' saida.txt
+
+      - name: Executável gera os relatórios da demonstração (sem internet)
+        shell: bash
+        run: |
+          pasta="$(mktemp -d)"
+          cd "$pasta"
+          "$GITHUB_WORKSPACE/${{ matrix.executavel }}" --nao-abrir
+          test -f resultado-demonstracao/index.html
+          test -f resultado-demonstracao/LEIA-ME.txt
+          test -d resultado-demonstracao/css
+          test "$(ls resultado-demonstracao/json | wc -l)" -eq 3
+
+      # Linux precisa do Xvfb para a janela abrir; aqui só se verifica que ela inicia
+      # sem erro (o teste automatizado da janela roda no workflow de CI).
+      - name: Janela abre sem erro (Linux)
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq xvfb
+          pasta="$(mktemp -d)"
+          cd "$pasta"
+          set +e
+          timeout 15 xvfb-run -a "$GITHUB_WORKSPACE/${{ matrix.executavel }}" --janela > janela.log 2>&1
+          codigo=$?
+          set -e
+          echo "código: $codigo (124 = a janela continuava aberta, o esperado)"
+          ! grep -qi 'traceback' janela.log
+
+      - name: Empacotar o artefato
+        shell: bash
+        run: |
+          mkdir -p pacote
+          cp "${{ matrix.executavel }}" pacote/
+          cp COPYING README.md CHANGELOG.md pacote/
+          cp -r exemplo/demo.config pacote/ 2>/dev/null || true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artefato }}
+          path: pacote/
+          if-no-files-found: error
+
+  fontes:
+    name: Código-fonte (GPLv2)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Empacotar o código-fonte correspondente
+        run: |
+          nome="scriptLattes-fontes-${GITHUB_REF_NAME:-dev}.tar.gz"
+          tar --exclude='./venv' --exclude='./.git' --exclude='./dist' --exclude='./build' \
+              -czf "$nome" .
+          echo "gerado: $nome"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scriptlattes-fontes
+          path: scriptLattes-fontes-*.tar.gz
+          if-no-files-found: error

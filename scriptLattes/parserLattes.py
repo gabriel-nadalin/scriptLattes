@@ -43,7 +43,6 @@ from .orientacoes.orientacaoEmAndamento import *
 from .orientacoes.orientacaoConcluida import *
 
 from .eventos.organizacaoDeEvento import *
-from .eventos.organizacaoDeEvento import *
 from .eventos.participacaoEmEvento import *
 
 from .patentesRegistros.patente import *
@@ -51,8 +50,6 @@ from .patentesRegistros.programaComputador import *
 from .patentesRegistros.desenhoIndustrial import *
 
 from .producoesUnitarias.participacaoEmBanca import *
-
-sys.tracebacklimit = 0
 
 class ParserLattes(HTMLParser):
 
@@ -299,7 +296,6 @@ class ParserLattes(HTMLParser):
         self.listaOCIniciacaoCientifica = []
         self.listaOCOutroTipoDeOrientacao = []
 
-        self.listaParticipacaoEmEvento = []
         self.listaParticipacaoEmEvento = []
         self.listaOrganizacaoDeEvento = []
 
@@ -597,8 +593,6 @@ class ParserLattes(HTMLParser):
                                 self.partesDoItem[1] = self.ultimaInstituicao + " " + self.partesDoItem[1]
                             iessimaAtuacaoProfissional = AtuacaoProfissional(self.idMembro, self.partesDoItem) # criamos um objeto com a lista correspondentes às celulas da linha
                             self.listaAtuacaoProfissional.append(iessimaAtuacaoProfissional) # acrescentamos o objeto de AtuacaoProfissional
-                        else:
-                            print(f"DEBUG: Ignored AtuacaoProfissional item: {self.partesDoItem}")
 
                     if self.achouProjetoDePesquisa:
                         if not self.salvarParte3:

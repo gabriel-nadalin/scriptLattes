@@ -225,45 +225,6 @@ class ArtigoEmPeriodico:
         }
 
 
-    def ris(self):
-        paginas = self.paginas.split('-')
-        if len(paginas)<2:
-            p1 = self.paginas
-            p2 = ''
-        else:
-            p1 = paginas[0]
-            p2 = paginas[1]
-        s = '\n'
-        s+= '\nTY  - JOUR'
-        s+= '\nAU  - '+self.autores
-        s+= '\nTI  - '+self.titulo
-        s+= '\nJO  - '+self.revista
-        s+= '\nVL  - '+self.volume
-        s+= '\nIS  - '+self.numero
-        s+= '\nSP  - '+p1
-        s+= '\nEP  - '+p2
-        s+= '\nPY  - '+str(self.ano)
-        s+= '\nL2  - '+self.doi
-        s+= '\nL3  - '+self.issn
-        s+= '\nER  - '
-        return s
-
-    def csv(self, nomeCompleto=""):
-        s = "artigoEmPeriodico\t"
-
-        #if type(nomeCompleto) == bytes:
-        #    nomeCompleto = nomeCompleto.decode()
-        #nomeCompleto = str(nomeCompleto)
-
-        # FIXME: self.qualis estava dando erro de conversão; remediado temporariamente usando str(); verificar se comportamento está correto
-        if nomeCompleto=="": # tratamento grupal
-            s +=  str(self.ano) +"\t"+ self.issn + "\t"+ self.doi +"\t"+ self.titulo +"\t"+ self.revista +"\t"+ self.autores +"\t"+ str(self.qualis) +"\t"+ str(self.qualissimilar)
-        else: # tratamento individual
-            s += nomeCompleto +"\t"+ str(self.ano) + "\t"+ self.issn + "\t" + self.doi +"\t"+ self.titulo +"\t"+ self.revista +"\t"+ self.autores +"\t"+ str(self.qualis) +"\t"+ (self.qualissimilar)
-        return s
-
-
-    # ------------------------------------------------------------------------ #
     def __str__(self):
         s  = "\n[ARTIGO EM PERIODICO] \n"
         s += "+ID-MEMBRO   : " + str(self.idMembro) + "\n"

@@ -3,7 +3,8 @@
 
 import time
 import os
-from scriptLattes.baixaLattes import baixaCVLattes
+from scriptLattes.baixaLattes import (CurriculoInvalidoError, baixaCVLattes,
+                                      parece_um_cv_lattes)
 from scriptLattes.parserLattes import *
 from scriptLattes.util import *
 
@@ -32,6 +33,7 @@ class Membro:
     itemsDesdeOAno = ''  # periodo global
     itemsAteOAno = ''  # periodo global
     diretorioCache = ''  # diretorio de armazento de CVs (útil para extensas listas de CVs)
+    caminhoDoChromeDriver = ''  # vazio = Selenium Manager escolhe o ChromeDriver
 
     listaFormacaoAcademica = []
     listaAtuacaoProfissional = []
@@ -157,27 +159,36 @@ class Membro:
                     print(("[AVISO IMPORTANTE] CV Lattes: {}. Membro: {}\n".format(self.idLattes,
                                                                                   self.nomeInicial.encode('utf8'))))
 
+    def _lerCurriculo(self, caminho):
+        """Lê o HTML do currículo e confere se ele é aproveitável.
+
+        Um arquivo inválido no cache (download interrompido, página de erro ou HTML salvo
+        pela metade) produziria relatórios vazios sem aviso; melhor parar e explicar."""
+        try:
+            texto = lerTextoDeArquivo(caminho)
+        except OSError as erro:
+            raise CurriculoInvalidoError(
+                f'não foi possível ler o arquivo {caminho}: {erro}') from erro
+
+        if not parece_um_cv_lattes(texto):
+            raise CurriculoInvalidoError(
+                f'o arquivo {caminho} não parece um currículo Lattes completo. '
+                f'Apague esse arquivo e rode de novo para baixá-lo, ou salve a página '
+                f'http://lattes.cnpq.br/{self.idLattes} pelo navegador e importe com '
+                f'--adicionar-cv.')
+        return texto
+
     def carregarDadosCVLattes(self):
-        cvPath = self.diretorioCache + '/' + self.idLattes
-        cvPath = self.diretorioCache + '/' + self.idLattes
+        cvPath = os.path.join(self.diretorioCache, self.idLattes)
 
         if os.path.exists(cvPath):
-            #arquivoH = open(cvPath, encoding='iso-8859-1')
-            arquivoH = open(cvPath, encoding='utf8')
-            cvLattesHTML = arquivoH.read()
-            if self.idMembro!='':
-                print("Utilizando CV armazenado no cache: "+cvPath)
+            print("Utilizando CV armazenado no cache: "+cvPath)
         else:
-            print("Baixando CV no cache: "+cvPath)
-            baixaCVLattes(self.idLattes, self.diretorioCache)
-            #arquivoH = open(cvPath, encoding='iso-8859-1')            
-            arquivoH = open(cvPath, encoding='utf8')
-            cvLattesHTML = arquivoH.read()
+            print("Baixando CV no cache: "+cvPath+" (pode levar alguns segundos)")
+            baixaCVLattes(self.idLattes, self.diretorioCache, self.caminhoDoChromeDriver)
 
-        extended_chars = ''.join(chr(c) for c in range(127, 65536, 1))  # srange(r"[\0x80-\0x7FF]")
-        special_chars = ' -'''
-        #cvLattesHTML  = cvLattesHTML.encode().decode('ascii','replace')+extended_chars+special_chars                                          # Wed Jul 25 16:47:39 BRT 2012
-        cvLattesHTML = cvLattesHTML
+        cvLattesHTML = self._lerCurriculo(cvPath)
+
         parser = ParserLattes(self.idMembro, cvLattesHTML)
 
         p = re.compile('[a-zA-Z]+')
@@ -353,7 +364,7 @@ class Membro:
         return lista
 
     def contemAlgumTermoDeBusca(self, objeto):
-        if len(self.dicionarioDeTermos)==0:
+        if not self.dicionarioDeTermos:
             return True
 
         if hasattr(objeto, 'titulo'):
@@ -364,8 +375,8 @@ class Membro:
             texto = str(objeto.tituloDoTrabalho)
         elif hasattr(objeto, 'item'):
             texto = str(objeto.item)
-        # else:
-        #     texto = ''  # ou algum outro valor padrão
+        else:
+            texto = ''
 
         texto = eliminar_acentuacao(texto.strip())
         if len(texto) == 0:
@@ -394,86 +405,20 @@ class Membro:
 
 
     def estaDentroDoPeriodo(self, objeto):
-        if objeto.__module__ == 'orientacaoEmAndamento':
-            objeto.ano = int(objeto.ano) if objeto.ano else 0  # Caso
-            if objeto.ano > self.itemsAteOAno:
-                return 0
-            else:
-                return 1
-
-        elif objeto.__module__ == 'projetoDePesquisa':
-            if objeto.anoConclusao.lower() == 'atual':
-                objeto.anoConclusao = str(datetime.datetime.now().year)
-
-            if objeto.anoInicio == '':  # Para projetos de pesquisa sem anos! (sim... tem gente que não coloca os anos!)
-                objeto.anoInicio = '0'
-            if objeto.anoConclusao == '':
-                objeto.anoConclusao = '0'
-
-            objeto.anoInicio = int(objeto.anoInicio)
-            objeto.anoConclusao = int(objeto.anoConclusao)
-            objeto.ano = objeto.anoInicio  # Para comparação entre projetos
-
-            if objeto.anoInicio > self.itemsAteOAno and objeto.anoConclusao > self.itemsAteOAno or objeto.anoInicio < self.itemsDesdeOAno and objeto.anoConclusao < self.itemsDesdeOAno:
-                return 0
-            else:
-                fora = 0
-                for per in self.listaPeriodo:
-                    if objeto.anoInicio > per[1] and objeto.anoConclusao > per[1] or objeto.anoInicio < per[0] and objeto.anoConclusao < per[0]:
-                        fora += 1
-                if fora == len(self.listaPeriodo):
-                    return 0
-                else:
-                    return 1
-
+        if not str(objeto.ano).isdigit():  # se nao for identificado o ano sempre o mostramos na lista
+            objeto.ano = 0
+            return 1
         else:
-            if not str(objeto.ano).isdigit():  # se nao for identificado o ano sempre o mostramos na lista
-                objeto.ano = 0
-                return 1
-                #return 0
+            objeto.ano = int(objeto.ano)
+            if self.itemsDesdeOAno > objeto.ano or objeto.ano > self.itemsAteOAno:
+                return 0
             else:
-                objeto.ano = int(objeto.ano)
-                if self.itemsDesdeOAno > objeto.ano or objeto.ano > self.itemsAteOAno:
-                    return 0
-                else:
-                    retorno = 0
-                    for per in self.listaPeriodo:
-                        if per[0] <= objeto.ano and objeto.ano <= per[1]:
-                            retorno = 1
-                            break
-                    return retorno
-
-
-    def ris(self):
-        s = ''
-        s += '\nTY  - MEMBRO'
-        s += '\nNOME  - ' + self.nomeCompleto
-        #s+= '\nSEXO  - '+self.sexo
-        s += '\nCITA  - ' + self.nomeEmCitacoesBibliograficas
-        s += '\nBOLS  - ' + self.bolsaProdutividade
-        s += '\nENDE  - ' + self.enderecoProfissional
-        s += '\nURLC  - ' + self.url
-        s += '\nDATA  - ' + self.atualizacaoCV
-        s += '\nRESU  - ' + self.textoResumo
-
-        for i in range(0, len(self.listaFormacaoAcademica)):
-            formacao = self.listaFormacaoAcademica[i]
-            s += '\nFO' + str(i + 1) + 'a  - ' + formacao.anoInicio
-            s += '\nFO' + str(i + 1) + 'b  - ' + formacao.anoConclusao
-            s += '\nFO' + str(i + 1) + 'c  - ' + formacao.tipo
-            s += '\nFO' + str(i + 1) + 'd  - ' + formacao.nomeInstituicao
-            s += '\nFO' + str(i + 1) + 'e  - ' + formacao.descricao
-
-        for i in range(0, len(self.listaAreaDeAtuacao)):
-            area = self.listaAreaDeAtuacao[i]
-            s += '\nARE' + str(i + 1) + '  - ' + area.descricao
-
-        for i in range(0, len(self.listaIdioma)):
-            idioma = self.listaIdioma[i]
-            s += '\nID' + str(i + 1) + 'a  - ' + idioma.nome
-            s += '\nID' + str(i + 1) + 'b  - ' + idioma.proficiencia
-
-        return s
+                retorno = 0
+                for per in self.listaPeriodo:
+                    if per[0] <= objeto.ano and objeto.ano <= per[1]:
+                        retorno = 1
+                        break
+                return retorno
 
 
     def __str__(self):
@@ -549,12 +494,3 @@ class Membro:
             s += "\n"
         """
         return s
-
-		
-
-# ---------------------------------------------------------------------------- #
-# http://wiki.python.org/moin/EscapingHtml
-def htmlentitydecode(s):
-    return re.sub('&(%s);' % '|'.join(name2codepoint),
-                  lambda m: chr(name2codepoint[m.group(1)]), s)
-

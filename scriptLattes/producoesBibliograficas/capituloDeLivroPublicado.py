@@ -167,28 +167,6 @@ class CapituloDeLivroPublicado:
             "Páginas": nv(self.paginas),
         }
 
-    def ris(self):
-        paginas = self.paginas.split('-')
-        if len(paginas)<2:
-            p1 = self.paginas
-            p2 = ''
-        else:
-            p1 = paginas[0]
-            p2 = paginas[1]
-        s = '\n'
-        s+= '\nTY  - CHAP'
-        s+= '\nAU  - '+self.autores
-        s+= '\nT1  - '+self.titulo
-        s+= '\nTI  - '+self.livro
-        s+= '\nIS  - '+self.edicao
-        s+= '\nPB  - '+self.editora
-        s+= '\nPY  - '+str(self.ano)
-        s+= '\nVL  - '+self.volume
-        s+= '\nSP  - '+p1
-        s+= '\nEP  - '+p2
-        s+= '\nER  - '
-        return s
-
     # ------------------------------------------------------------------------ #
     def __str__(self):
         s  = "\n[CAPITULO DE LIVRO PUBLICADO] \n"

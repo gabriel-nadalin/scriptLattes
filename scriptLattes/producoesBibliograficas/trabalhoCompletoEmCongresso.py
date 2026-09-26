@@ -4,6 +4,7 @@
 
 from scriptLattes.geradorDePaginasWeb import *
 from scriptLattes.util import similaridade_entre_cadeias
+from scriptLattes.normalizacao import estruturar_evento_do_item
 
 
 class TrabalhoCompletoEmCongresso:
@@ -17,6 +18,10 @@ class TrabalhoCompletoEmCongresso:
     titulo = None
     nomeDoEvento = None
     ###	tituloDosAnais = None
+    sigla = None
+    edicaoDoEvento = None
+    localDoEvento = None
+    veiculoDoEvento = None
     ano = None
     volume = None
     paginas = None
@@ -110,6 +115,16 @@ class TrabalhoCompletoEmCongresso:
                 # Qualis - Verificar se todas as informacoes estao sendo armazenadas!
                 partes = partes[0]
 
+            # Evento estruturado: edição, sigla, local e veículo (ver
+            # scriptLattes/normalizacao.py). O nome já extraído acima é mantido.
+            evento = estruturar_evento_do_item(self.item)
+            if evento['nome']:
+                self.sigla = self.sigla or evento['sigla']
+                self.edicaoDoEvento = evento['edicao']
+                self.localDoEvento = evento['local']
+                self.veiculoDoEvento = evento['veiculo']
+                self.ano = self.ano or evento['ano']
+
             self.titulo = partes.strip().rstrip(".")
             self.chave = self.autores  # chave de comparação entre os objetos
 
@@ -119,6 +134,10 @@ class TrabalhoCompletoEmCongresso:
             self.autores = ''
             self.titulo = ''
             self.nomeDoEvento = ''
+            self.sigla = ''
+            self.edicaoDoEvento = ''
+            self.localDoEvento = ''
+            self.veiculoDoEvento = ''
             self.ano = ''
             self.volume = ''
             self.paginas = ''
@@ -193,46 +212,7 @@ class TrabalhoCompletoEmCongresso:
             "DOI": doi,
         }    
 
-    def ris(self):
-        paginas = self.paginas.split('-')
-        if len(paginas) < 2:
-            p1 = self.paginas
-            p2 = ''
-        else:
-            p1 = paginas[0]
-            p2 = paginas[1]
-        s = '\n'
-        s += '\nTY  - CONF'
-        s += '\nAU  - ' + self.autores
-        s += '\nT1  - ' + self.titulo
-        s += '\nTI  - ' + self.nomeDoEvento
-        s += '\nVL  - ' + self.volume
-        s += '\nSP  - ' + p1
-        s += '\nEP  - ' + p2
-        s += '\nPY  - ' + str(self.ano)
-        s += '\nL2  - ' + self.doi
-        s += '\nER  - '
-        return s
 
-    def csv(self, nomeCompleto=""):
-        s = "trabalhoCompletoEmCongresso\t"
-        if nomeCompleto == "":  # tratamento grupal
-            s += str(
-                self.ano) + "\t" + self.doi + "\t" + self.titulo + "\t" + self.nomeDoEvento + "\t" + self.autores
-        else:  # tratamento individual
-            try:
-                s += "{0}\t{1}\t{2}\t{3}\t{4}\t{5}".format(nomeCompleto, self.ano, self.doi,
-                                                                      self.titulo, self.nomeDoEvento, self.autores)
-            except UnicodeDecodeError as err:
-                print(nomeCompleto)
-                print((str(self.ano)))
-                print((self.doi))
-                print((self.titulo))
-                print((self.nomeDoEvento))
-                print((self.autores))
-        return s
-
-    # ------------------------------------------------------------------------ #
     def __str__(self):
         s = "\n[TRABALHO COMPLETO PUBLICADO EM CONGRESSO] \n"
         s += "+ID-MEMBRO   : " + str(self.idMembro) + "\n"

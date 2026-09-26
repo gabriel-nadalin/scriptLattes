@@ -147,29 +147,6 @@ class TextoEmJornalDeNoticia:
             "Páginas": nv(self.paginas),
         }
 
-
-    def ris(self):
-        paginas = self.paginas.split('-')
-        if len(paginas)<2:
-            p1 = self.paginas
-            p2 = ''
-        else:
-            p1 = paginas[0]
-            p2 = paginas[1]
-        s = '\n'
-        s+= '\nTY  - MGZN'
-        s+= '\nAU  - '+self.autores
-        s+= '\nT1  - '+self.titulo
-        s+= '\nTI  - '+self.nomeJornal
-        s+= '\nPY  - '+str(self.ano)
-        s+= '\nVL  - '+self.volume
-        s+= '\nSP  - '+p1
-        s+= '\nEP  - '+p2
-        s+= '\nM1  - '+self.data
-        s+= '\nER  - '
-        return s
-
-
     # ------------------------------------------------------------------------ #
     def __str__(self):
         s  = "\n[TEXTO EM JORNAL DE NOTICIA/REVISTA] \n"

@@ -6,8 +6,10 @@ env/
 **/__pycache__/
 *.py.bak
 *.pyc
-cache/
+# currículos baixados: apenas a pasta cache/ da raiz (a do exemplo é versionada)
+/cache/
 exemplo/teste-01/
+exemplo/demo-lattes/saida/
 exemplo/teste-02/
 exemplo/teste-03/
 exemplo/inct-IdoF/
@@ -18,3 +20,12 @@ exemplo/ensp2024-termos2/
 # Arquivos temporários do Makefile
 chromedriver-temp.zip
 chromedriver-linux64/
+# artefatos de empacotamento (PyInstaller)
+build/
+dist/
+*.spec
+resultado-demonstracao/
+# log gerado quando a pasta de saída não pôde ser usada
+scriptlattes-log.txt
+# candidatos gerados pelo relatório de normalização (derivados dos JSONs)
+dados/aliases/pendentes_*.csv

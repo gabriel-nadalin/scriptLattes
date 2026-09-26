@@ -41,7 +41,6 @@ class GeradorDePaginasWeb:
     dir = None
     version = None
     extensaoPagina = None
-    arquivoRis = None
 
     def __init__(self, grupo):
         self.grupo = grupo
@@ -51,10 +50,6 @@ class GeradorDePaginasWeb:
         self.extensaoPagina = '.html'
         self.html1 = '<html>'
         self.html2 = '</html>'
-
-        # geracao de arquivo RIS com as publicacoes
-        if self.grupo.obterParametro('relatorio-salvar_publicacoes_em_formato_ris'):
-            self.arquivoRis = open(self.dir + "/" + "publicacoes.ris", 'w', encoding='utf8')
 
         self.gerar_pagina_de_membros()
         self.gerar_pagina_de_metricas()
@@ -84,9 +79,6 @@ class GeradorDePaginasWeb:
 
         # final do fim!
         self.gerarPaginaPrincipal()
-
-        if self.grupo.obterParametro('relatorio-salvar_publicacoes_em_formato_ris'):
-            self.arquivoRis.close()
 
 
     def gerarPaginaPrincipal(self):
@@ -127,9 +119,6 @@ class GeradorDePaginasWeb:
 
         if self.grupo.obterParametro('grafo-mostrar_grafo_de_colaboracoes'):
             s += '| <a href=#grafo>Grafo de colaborações</a> '
-
-        if self.grupo.obterParametro('relatorio-incluir_internacionalizacao'):
-            s += '| <a href=#internacionalizacao>Internacionalização</a> '
 
         if self.grupo.obterParametro('relatorio-incluir_producao_com_colaboradores'):
             s += '| <a href=producao-com-colaboradores/index' + self.extensaoPagina + '><b>Produção com colaboradores</b></a> '
@@ -310,27 +299,25 @@ class GeradorDePaginasWeb:
 
         if self.grupo.obterParametro('relatorio-incluir_artigo_em_periodico'):
             self.nPB0 = self.gerar_pagina_de_producoes(self.grupo.compilador.listaCompletaArtigoEmPeriodico,
-                                                       "Artigos completos publicados em periódicos", "PB0", ris=True)
+                                                       "Artigos completos publicados em periódicos", "PB0")
         if self.grupo.obterParametro('relatorio-incluir_livro_publicado'):
             self.nPB1 = self.gerar_pagina_de_producoes(self.grupo.compilador.listaCompletaLivroPublicado,
-                                                       "Livros publicados/organizados ou edições", "PB1", ris=True)
+                                                       "Livros publicados/organizados ou edições", "PB1")
         if self.grupo.obterParametro('relatorio-incluir_capitulo_de_livro_publicado'):
             self.nPB2 = self.gerar_pagina_de_producoes(self.grupo.compilador.listaCompletaCapituloDeLivroPublicado,
-                                                       "Capítulos de livros publicados", "PB2", ris=True)
+                                                       "Capítulos de livros publicados", "PB2")
         if self.grupo.obterParametro('relatorio-incluir_texto_em_jornal_de_noticia'):
             self.nPB3 = self.gerar_pagina_de_producoes(self.grupo.compilador.listaCompletaTextoEmJornalDeNoticia,
-                                                       "Textos em jornais de notícias/revistas", "PB3", ris=True)
+                                                       "Textos em jornais de notícias/revistas", "PB3")
         if self.grupo.obterParametro('relatorio-incluir_trabalho_completo_em_congresso'):
             self.nPB4 = self.gerar_pagina_de_producoes(self.grupo.compilador.listaCompletaTrabalhoCompletoEmCongresso,
-                                                       "Trabalhos completos publicados em anais de congressos", "PB4",
-                                                       ris=True)
+                                                       "Trabalhos completos publicados em anais de congressos", "PB4")
         if self.grupo.obterParametro('relatorio-incluir_resumo_expandido_em_congresso'):
             self.nPB5 = self.gerar_pagina_de_producoes(self.grupo.compilador.listaCompletaResumoExpandidoEmCongresso,
-                                                       "Resumos expandidos publicados em anais de congressos", "PB5",
-                                                       ris=True)
+                                                       "Resumos expandidos publicados em anais de congressos", "PB5")
         if self.grupo.obterParametro('relatorio-incluir_resumo_em_congresso'):
             self.nPB6 = self.gerar_pagina_de_producoes(self.grupo.compilador.listaCompletaResumoEmCongresso,
-                                                       "Resumos publicados em anais de congressos", "PB6", ris=True)
+                                                       "Resumos publicados em anais de congressos", "PB6")
         if self.grupo.obterParametro('relatorio-incluir_artigo_aceito_para_publicacao'):
             self.nPB7 = self.gerar_pagina_de_producoes(self.grupo.compilador.listaCompletaArtigoAceito,
                                                        "Artigos aceitos para publicação", "PB7")
@@ -496,11 +483,6 @@ class GeradorDePaginasWeb:
         self.nEo = self.gerar_pagina_de_producoes(self.grupo.compilador.listaCompletaOrganizacaoDeEvento,
                                                   "Total de organização de eventos", "Eo")
 
-    def gerarPaginasDeInternacionalizacao(self):
-        self.nIn0 = 0
-        self.nIn0 = self.gerarPaginaDeInternacionalizacao(self.grupo.listaDePublicacoesEinternacionalizacao,
-                                                          "Coautoria e internacionalização", "In0")
-
     @staticmethod
     def arranjar_publicacoes(listaCompleta):
         l = []
@@ -593,7 +575,7 @@ class GeradorDePaginasWeb:
         """
 
   
-    def gerar_pagina_de_producoes(self, lista_completa, titulo_pagina, prefixo, ris=False):    
+    def gerar_pagina_de_producoes(self, lista_completa, titulo_pagina, prefixo):    
         def _s(x): 
             return '' if x is None else str(x)
     
@@ -867,69 +849,6 @@ class GeradorDePaginasWeb:
             return '<center>' + s + '</center>'
 
 
-    def gerarPaginaDeInternacionalizacao(self, listaCompleta, tituloPagina, prefixo):
-        numeroTotalDeProducoes = 0
-        gInternacionalizacao = GraficoDeInternacionalizacao(listaCompleta)
-        htmlCharts = gInternacionalizacao.criarGraficoDeBarrasDeOcorrencias()
-
-        keys = list(listaCompleta.keys())
-        keys.sort(reverse=True)
-        if len(keys) > 0:  # apenas geramos páginas web para lista com pelo menos 1 elemento
-            for ano in keys:
-                numeroTotalDeProducoes += len(listaCompleta[ano])
-
-            maxElementos = int(self.grupo.obterParametro('global-itens_por_pagina'))
-            #numeroDePaginas = int(math.ceil(numeroTotalDeProducoes / (maxElementos * 1.0)))  # dividimos os relatórios em grupos (e.g 1000 items)
-            numeroDePaginas = numeroTotalDeProducoes // maxElementos + (1 if numeroTotalDeProducoes % maxElementos != 0 else 0)
-
-            numeroDeItem = 1
-            numeroDePaginaAtual = 0
-            s = ''
-
-            for ano in keys:
-                anoRotulo = str(ano) if not ano == 0 else '*itens sem ano'
-
-                s += '<h3 class="year">' + anoRotulo + '</h3> <table>'
-
-                elementos = listaCompleta[ano]
-                elementos.sort(
-                    key=lambda x: x.chave.lower())  # Ordenamos a lista em forma ascendente (hard to explain!)
-
-                for index in range(0, len(elementos)):
-                    pub = elementos[index]
-                    s += '<tr valign="top"><td>' + str(index + 1) + '. &nbsp;</td> <td>' + pub.html() + '</td></tr>'
-
-                    if numeroDeItem % maxElementos == 0 or numeroDeItem == numeroTotalDeProducoes:
-                        st = self.pagina_top(cabecalho=htmlCharts)
-                        st += '\n<h3>' + tituloPagina + '</h3> <br> <center> <table> <tr> <td valign="top"><div id="barchart_div"></div> </td> <td valign="top"><div id="geochart_div"></div> </td> </tr> </table> </center>'
-                        st += '<table>'
-                        st += '<tr><td>Número total de publicações realizadas SEM parceria com estrangeiros:</td><td>' + str(
-                            gInternacionalizacao.numeroDePublicacoesRealizadasSemParceirasComEstrangeiros()) + '</td><td><i>(publicações realizadas só por pesquisadores brasileiros)</i></td></tr>'                       
-                        st += '<tr><td>Número total de publicações realizadas COM parceria com estrangeiros:</td><td>' + str(
-                            gInternacionalizacao.numeroDePublicacoesRealizadasComParceirasComEstrangeiros()) + '</td><td></td></tr>'
-                        st += '<tr><td>Número total de publicações com parcerias NÂO identificadas:</td><td>' + str(
-                            gInternacionalizacao.numeroDePublicacoesComParceriasNaoIdentificadas()) + '</td><td></td></tr>'
-                        st += '<tr><td>Número total de publicações com DOI cadastrado:</td><td><b>' + str(numeroTotalDeProducoes) + '</b></td><td></td></tr>'
-                        st += '</table>'
-                        st += '<br> <font color="red">(*) A estimativa de "coautoria e internacionalização" é baseada na análise automática dos DOIs das publicações cadastradas nos CVs Lattes. A identificação de países, para cada publicação, é feita através de buscas simples de nomes de países.</font><br><p>'
-                        st += self.gerarIndiceDePaginas(numeroDePaginas, numeroDePaginaAtual, prefixo)
-                        st += s  #
-                        st += '</table>'
-                        st += self.paginaBottom()
-
-                        self.salvarPagina(prefixo + '-' + str(numeroDePaginaAtual) + self.extensaoPagina, st)
-                        numeroDePaginaAtual += 1
-
-                        if (index + 1) < len(elementos):
-                            s = '<h3 class="year">' + anoRotulo + '</h3> <table>'
-                        else:
-                            s = ''
-                    numeroDeItem += 1
-
-                s += '</table>'
-        return numeroTotalDeProducoes
-
-
     def gerarPaginaDeGrafosDeColaboracoes(self):
         if nx is None:
             print("[AVISO] NetworkX não instalado. Grafo de colaborações não será gerado.")
@@ -990,7 +909,12 @@ class GeradorDePaginasWeb:
         G = self.grupo.grafoDeColaboracoes
         # from networkx.readwrite import json_graph
         import json
-        data = json_graph.node_link_data(G)
+        try:
+            # networkx >= 3: fixa a chave 'links' (a que o JS abaixo espera)
+            data = json_graph.node_link_data(G, edges="links")
+        except TypeError:
+            # networkx 2.x: a chave já se chama 'links' e o parâmetro não existe
+            data = json_graph.node_link_data(G)
         graph_js = json.dumps(data, ensure_ascii=False)
     
         # 4) estilos + estrutura + D3 (com tooltip/ellipsis nas tabelas ao final)
@@ -2413,10 +2337,6 @@ class GeradorDePaginasWeb:
         file = open(os.path.join(self.dir, nome), 'w', encoding='utf8')
         file.write(conteudo)
         file.close()
-
-
-    def salvarPublicacaoEmFormatoRIS(self, pub):
-        self.arquivoRis.write(pub.ris())
 
 
     def formatarTotaisQualis(self, qtd):

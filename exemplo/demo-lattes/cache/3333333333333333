@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Currículo Lattes - Juliana Prado Nogueira</title></head><body>
+<div class="infpessoa"><h2 class="nome" tabindex="0">Juliana Prado Nogueira</h2></div>
+<div class="title-wrapper"><a name="Identificacao" tabindex="0"><h1 tabindex="0">Identificação</h1></a></div>
+<div class="layout-cell layout-cell-12 data-cell">
+  <div class="layout-cell layout-cell-3 text-align-right"><div class="layout-cell-pad-5 text-align-right"><b>Nome em citações bibliográficas</b></div></div>
+  <div class="layout-cell layout-cell-9"><div class="layout-cell-pad-5">NOGUEIRA, Juliana Prado;NOGUEIRA, J. P.</div></div>
+  <div class="layout-cell layout-cell-3 text-align-right"><div class="layout-cell-pad-5 text-align-right"><b>Identificador Lattes</b></div></div>
+  <div class="layout-cell layout-cell-9"><div class="layout-cell-pad-5"><span style="font-weight: bold; color: #326C99;">3333333333333333</span></div></div>
+</div>
+<div class="title-wrapper"><a name="Endereco" tabindex="0"><h1 tabindex="0">Endereço</h1></a></div>
+<div class="layout-cell layout-cell-12 data-cell">
+  <div class="layout-cell layout-cell-3 text-align-right"><div class="layout-cell-pad-5 text-align-right"><b>Endereço Profissional</b></div></div>
+  <div class="layout-cell layout-cell-9"><div class="layout-cell-pad-5">Universidade Federal de Exemplo, Centro de Ciências Humanas. Avenida das Amostras, 2000. Bairro Inventado. 12345-000 Cidade Exemplo - EX.</div></div>
+</div>
+
+<div class="title-wrapper"><a name="Formaçãoacadêmicatitulação" tabindex="0"><h1 tabindex="0">Formação acadêmica/titulação</h1></a></div>
+<br class="clear"><br class="clear">
+<div class="layout-cell layout-cell-12 data-cell">
+  <div class="cita-artigos"><b>Formação acadêmica/titulação</b></div>
+  <div class="layout-cell layout-cell-1 text-align-right"><div class="layout-cell-pad-6 text-align-right"><b>1. </b></div></div>
+  <div class="layout-cell layout-cell-11"><span class="transform">Mestrado em Educação. Universidade Federal de Exemplo, UFEX, Brasil. Título: Formação docente e tecnologias, Ano de obtenção: 2018.</span></div>
+  <br class="clear">
+</div>
+<br class="clear"><br class="clear">
+<div class="title-wrapper"><a name="AtuaçãoProfissional" tabindex="0"><h1 tabindex="0">Atuação Profissional</h1></a></div>
+<br class="clear"><br class="clear">
+<div class="layout-cell layout-cell-12 data-cell">
+  <div class="cita-artigos"><b>Atuação Profissional</b></div>
+  <div class="layout-cell layout-cell-1 text-align-right"><div class="layout-cell-pad-6 text-align-right"><b>1. </b></div></div>
+  <div class="layout-cell layout-cell-11"><span class="transform">Vínculo: Servidor Público, Enquadramento Funcional: Professora Adjunta, Carga horária: 40. Universidade Federal de Exemplo, UFEX, Brasil.</span></div>
+  <br class="clear">
+</div>
+<br class="clear"><br class="clear">
+<div class="title-wrapper"><a name="Áreasdeatuação" tabindex="0"><h1 tabindex="0">Áreas de atuação</h1></a></div>
+<br class="clear"><br class="clear">
+<div class="layout-cell layout-cell-12 data-cell">
+  <div class="cita-artigos"><b>Áreas de atuação</b></div>
+  <div class="layout-cell layout-cell-1 text-align-right"><div class="layout-cell-pad-6 text-align-right"><b>1. </b></div></div>
+  <div class="layout-cell layout-cell-11"><span class="transform">Educação / Área: Ensino-Aprendizagem.</span></div>
+  <br class="clear">
+</div>
+<br class="clear"><br class="clear">
+<div class="title-wrapper"><a name="Idiomas" tabindex="0"><h1 tabindex="0">Idiomas</h1></a></div>
+<br class="clear"><br class="clear">
+<div class="layout-cell layout-cell-12 data-cell">
+  <div class="cita-artigos"><b>Idiomas</b></div>
+  <div class="layout-cell layout-cell-1 text-align-right"><div class="layout-cell-pad-6 text-align-right"><b>1. </b></div></div>
+  <div class="layout-cell layout-cell-11"><span class="transform">Inglês - Compreende Razoavelmente, Fala Pouco, Lê Bem, Escreve Pouco.</span></div>
+  <br class="clear">
+</div>
+<br class="clear"><br class="clear">
+<div class="title-wrapper"><a name="Produções" tabindex="0"><h1 tabindex="0">Produções</h1></a></div>
+<br class="clear"><br class="clear">
+<div class="cita-artigos"><b>Produção bibliográfica</b></div>
+<div id="ArtigosCompletos"><div class="cita-artigos"><b><a name="ArtigosCompletos"></a>Artigos completos publicados em periódicos</b></div><br class="clear"><br class="clear">
+  <div class="layout-cell layout-cell-1 text-align-right"><div class="layout-cell-pad-6 text-align-right"><b>1. </b></div></div>
+  <div class="layout-cell layout-cell-11"><span class="transform"><span class="informacao-artigo" data-tipo-ordenacao="importancia"></span><span class="informacao-artigo" data-tipo-ordenacao="autor">NOGUEIRA, Juliana Prado ; LIMA, A. B. F.</span><span class="informacao-artigo" data-tipo-ordenacao="ano">2024</span><a class="icone-producao icone-doi" href="" target="_blank"></a>NOGUEIRA, Juliana Prado ; LIMA, A. B. F. . Tecnologias educacionais na formação em saúde . Revista de Educação Exemplo, v. 15, n. 3, p. 220-233, 2024. <a class="tooltip" href="http://lattes.cnpq.br/1111111111111111" target="_blank"></a></span></div>
+  <br class="clear">
+</div>
+<div id="TrabalhosCompletos"><div class="cita-artigos"><b><a name="TrabalhosCompletos"></a>Trabalhos completos publicados em anais de congressos</b></div><br class="clear"><br class="clear">
+</div>
+<div id="Resumos"><div class="cita-artigos"><b><a name="Resumos"></a>Resumos publicados em anais de congressos</b></div><br class="clear"><br class="clear">
+  <div class="layout-cell layout-cell-1 text-align-right"><div class="layout-cell-pad-6 text-align-right"><b>1. </b></div></div>
+  <div class="layout-cell layout-cell-11"><span class="transform"><span class="informacao-artigo" data-tipo-ordenacao="importancia"></span><span class="informacao-artigo" data-tipo-ordenacao="autor">NOGUEIRA, Juliana Prado</span><span class="informacao-artigo" data-tipo-ordenacao="ano">2023</span><a class="icone-producao icone-doi" href="" target="_blank"></a>NOGUEIRA, Juliana Prado . Formação docente e tecnologias digitais . In: 5º Encontro de Educação Exemplo, 2023, Cidade Exemplo. Anais do 5º Encontro de Educação Exemplo. Cidade Exemplo: Editora Exemplo, 2023. </span></div>
+  <br class="clear">
+</div>
+<br class="clear"><br class="clear">
+<div class="title-wrapper"><a name="OutrasInformacoesRelevantes" tabindex="0"><h1 tabindex="0">Outras informações relevantes</h1></a></div>
+<div class="layout-cell layout-cell-12 data-cell">
+  <div class="layout-cell layout-cell-9"><div class="layout-cell-pad-5">Currículo sintético, sem dados reais, gerado por exemplo/demo-lattes/gerar_cvs_sinteticos.py.</div></div>
+</div>
+</body></html>

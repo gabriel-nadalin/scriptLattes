@@ -24,27 +24,7 @@ from scriptLattes.util import merge_dols
 
 class CompiladorDeListas:
     grupo = None
-    matrizArtigoEmPeriodico = None
-    matrizLivroPublicado = None
-    matrizCapituloDeLivroPublicado = None
-    matrizTextoEmJornalDeNoticia = None
-    matrizTrabalhoCompletoEmCongresso = None
-    matrizResumoExpandidoEmCongresso = None
-    matrizResumoEmCongresso = None
-    matrizArtigoAceito = None
-    matrizApresentacaoDeTrabalho = None
-    matrizOutroTipoDeProducaoBibliografica = None
-    matrizSoftwareComPatente = None
-    matrizSoftwareSemPatente = None
-    matrizProdutoTecnologico = None
-    matrizProcessoOuTecnica = None
-    matrizTrabalhoTecnico = None
-    matrizOutroTipoDeProducaoTecnica = None
-    matrizProducaoArtistica = None
 
-    matrizPatente = None
-    matrizProgramaComputador = None
-    matrizDesenhoIndustrial = None
 
     def __init__(self, grupo):
         self.grupo = grupo
@@ -309,7 +289,6 @@ class CompiladorDeListas:
                 print(":: Processando coautor sem CV-Lattes" + membro.nomeInicial)
 
                 self.adicionarCoautorNaLista(self.listaCompletaArtigoEmPeriodico, membro)
-                self.adicionarCoautorNaLista(self.listaCompletaArtigoEmPeriodico, membro)
 
                 self.adicionarCoautorNaLista(self.listaCompletaLivroPublicado, membro)
                 self.adicionarCoautorNaLista(self.listaCompletaCapituloDeLivroPublicado, membro)
@@ -336,15 +315,41 @@ class CompiladorDeListas:
                 self.adicionarCoautorNaLista(self.listaCompletaProducaoArtistica, membro)
 
     def adicionarCoautorNaLista(self, listaCompleta, membro):
+        # 'Nome em citações bibliográficas' pode listar várias grafias separadas por ';'
+        citacoes = [v.strip() for v in (membro.nomeEmCitacoesBibliograficas or '').split(';') if v.strip()]
+        variantes = tuple(citacoes) + (membro.nomeCompleto,)
+
         keys = list(listaCompleta.keys())
         for ano in keys:
             for pub in listaCompleta[ano]:
-                if self.procuraNomeEmPublicacao(membro.nomeInicial, pub.autores):
+                if self.procuraNomeEmPublicacao(membro.nomeInicial, pub.autores,
+                                                variantes=variantes,
+                                                vocabulario=getattr(self.grupo, 'vocabulario', None)):
                     pub.idMembro.add(membro.idMembro)
                     # print ">>>" + membro.nomeInicial
                     # print ">>>" + pub.autores
 
-    def procuraNomeEmPublicacao(self, nomesAbreviados, nomesDosCoautores):
+    def procuraNomeEmPublicacao(self, nomesAbreviados, nomesDosCoautores, variantes=(), vocabulario=None):
+        """Diz se um dos autores da publicação é o membro (ou um coautor conhecido).
+
+        Primeira passada: comparação exata como sempre foi feita.
+        Segunda passada: grafias diferentes do mesmo nome, via
+        ``normalizacao.mesma_pessoa`` (conservadora) e tabela de aliases
+        ``pesquisadores.csv`` (decisão explícita).
+        """
+        referencias = [nomesAbreviados] + [v for v in variantes if v]
+
+        # Segunda passada (apenas com normalização ativa): grafias diferentes do
+        # mesmo nome, via tabela pesquisadores.csv e heurística conservadora.
+        if vocabulario is not None:
+            for autor in str(nomesDosCoautores or '').split(';'):
+                autor = ' '.join(autor.split())
+                if not autor:
+                    continue
+                for referencia in referencias:
+                    if vocabulario.mesma_pessoa(autor, referencia):
+                        return True
+
         nomesAbreviados = nomesAbreviados.lower()
         nomesDosCoautores = nomesDosCoautores.lower()
 
@@ -384,14 +389,6 @@ class CompiladorDeListas:
                         break
                 if inserir:  # se pub for difererente a todos os elementos do listaCompleta
                     listaCompleta[pub.ano].append(pub)
-        return listaCompleta
-
-    # Para projetos não é feita a busca de projetos similares (NÃO MAIS UTILIZADA)
-    def compilarListaDeProjetos(self, listaDoMembro, listaCompleta):
-        for pub in listaDoMembro:  # adicionar 'pub'  em  'listaCompleta'
-            if listaCompleta.get(pub.anoInicio) == None:
-                listaCompleta[pub.anoInicio] = []
-            listaCompleta[pub.anoInicio].append(pub)
         return listaCompleta
 
     def compilarListasCompletas(self, listaCompleta, listaTotal):
@@ -650,49 +647,3 @@ class CompiladorDeListas:
             colaboracoes = self.intercalar_colaboracoes(colaboracoes, self.matrizesProducaoArtistica[2])
 
         return [matriz1, matriz2, colaboracoes]
-
-    def imprimirMatrizesDeFrequencia(self):
-        print("\n[LISTA DE MATRIZES DE FREQUENCIA]")
-        print("\nArtigo em periodico")
-        print(self.matrizArtigoEmPeriodico)
-        print("\nLivro publicado")
-        print(self.matrizLivroPublicado)
-        print("\nCapitulo de livro publicado")
-        print(self.matrizCapituloDeLivroPublicado)
-        print("\nTexto em jornal de noticia")
-        print(self.matrizTextoEmJornalDeNoticia)
-        print("\nTrabalho completo em congresso")
-        print(self.matrizTrabalhoCompletoEmCongresso)
-        print("\nResumo expandido em congresso")
-        print(self.matrizResumoExpandidoEmCongresso)
-        print("\nResumo em congresso")
-        print(self.matrizResumoEmCongresso)
-        print("\nArtigo aceito")
-        print(self.matrizArtigoAceito)
-        print("\nApresentacao de trabalho")
-        print(self.matrizApresentacaoDeTrabalho)
-        print("\nOutro tipo de producao bibliografica")
-        print(self.matrizOutroTipoDeProducaoBibliografica)
-        print("\nSoftware com registro")
-        print(self.matrizSoftwareComPatente)
-        print("\nSoftware sem registro")
-        print(self.matrizSoftwareSemPatente)
-        print("\nProduto tecnologico")
-        print(self.matrizProdutoTecnologico)
-        print("\nProcesso ou tecnica")
-        print(self.matrizProcessoOuTecnica)
-        print("\nTrabalho tecnico")
-        print(self.matrizTrabalhoTecnico)
-        print("\nOutro tipo de producao tecnica")
-        print(self.matrizOutroTipoDeProducaoTecnica)
-
-        print("\nPatente")
-        print(self.matrizPatente)
-        print("\nPrograma de computador")
-        print(self.matrizProgramaComputador)
-        print("\nDesenho industrial")
-        print(self.matrizDesenhoIndustrial)
-
-        print("\nProducao artistica")
-        print(self.matrizProducaoArtistica)
-

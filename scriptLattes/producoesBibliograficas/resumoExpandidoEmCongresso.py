@@ -4,6 +4,7 @@
 
 from scriptLattes.geradorDePaginasWeb import *
 from scriptLattes.util import similaridade_entre_cadeias
+from scriptLattes.normalizacao import estruturar_evento_do_item
 
 
 class ResumoExpandidoEmCongresso:
@@ -18,6 +19,10 @@ class ResumoExpandidoEmCongresso:
     autores = None
     titulo = None
     nomeDoEvento = None
+    sigla = None
+    edicaoDoEvento = None
+    localDoEvento = None
+    veiculoDoEvento = None
     ano = None
     volume = None
     paginas = None
@@ -88,6 +93,17 @@ class ResumoExpandidoEmCongresso:
                 self.nomeDoEvento = partes[2].strip().rstrip(".")
                 partes = partes[0]
 
+            # Evento estruturado: nome sem a cauda da citação, edição, sigla,
+            # local e veículo (ver scriptLattes/normalizacao.py)
+            evento = estruturar_evento_do_item(self.item)
+            if evento['nome']:
+                self.nomeDoEvento = evento['nome']
+                self.sigla = evento['sigla']
+                self.edicaoDoEvento = evento['edicao']
+                self.localDoEvento = evento['local']
+                self.veiculoDoEvento = evento['veiculo']
+                self.ano = self.ano or evento['ano']
+
             self.titulo = partes.strip().rstrip(".")
             self.chave = self.autores # chave de comparação entre os objetos
 
@@ -97,6 +113,10 @@ class ResumoExpandidoEmCongresso:
             self.autores = ''
             self.titulo = ''
             self.nomeDoEvento = ''
+            self.sigla = ''
+            self.edicaoDoEvento = ''
+            self.localDoEvento = ''
+            self.veiculoDoEvento = ''
             self.ano = ''
             self.volume = ''
             self.paginas = ''
@@ -176,41 +196,7 @@ class ResumoExpandidoEmCongresso:
         }
         
 
-    def ris(self):
-        paginas = self.paginas.split('-')
-        if len(paginas)<2:
-            p1 = self.paginas
-            p2 = ''
-        else:
-            p1 = paginas[0]
-            p2 = paginas[1]
-        s = '\n'
-        s+= '\nTY  - CONF'
-        s+= '\nAU  - '+self.autores
-        s+= '\nT1  - '+self.titulo
-        s+= '\nTI  - '+self.nomeDoEvento
-        s+= '\nVL  - '+self.volume
-        s+= '\nSP  - '+p1
-        s+= '\nEP  - '+p2
-        s+= '\nPY  - '+str(self.ano)
-        s+= '\nL2  - '+self.doi
-        s+= '\nER  - '
-        return s
 
-
-    def csv(self, nomeCompleto=""):
-        if self.qualis == None:
-            self.qualis = ''
-        if self.qualissimilar == None:
-            self.qualissimilar = ''
-        s  = "resumoExpandidoEmCongresso\t"
-        if nomeCompleto=="": # tratamento grupal
-            s +=  str(self.ano) +"\t"+ self.titulo +"\t"+ self.nomeDoEvento +"\t"+ self.autores +"\t"+ self.qualis +"\t"+ self.qualissimilar
-        else: # tratamento individual
-            s += nomeCompleto +"\t"+ str(self.ano) +"\t"+ self.titulo +"\t"+ self.nomeDoEvento +"\t"+ self.autores +"\t"+ self.qualis +"\t"+ self.qualissimilar
-        return s
-
-    # ------------------------------------------------------------------------ #
     def __str__(self):
         s  = "\n[RESUMO EXPANDIDO EM CONGRESSO] \n"
         s += "+ID-MEMBRO   : " + str(self.idMembro) + "\n"

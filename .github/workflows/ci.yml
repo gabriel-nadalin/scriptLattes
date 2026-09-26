@@ -1,0 +1,110 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  testes:
+    name: Testes e lançador (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compilação de todos os módulos
+        run: python -m compileall -q scriptLattes scriptLattes.py tests
+
+      - name: Testes automatizados
+        run: python -m unittest discover -s tests -v
+
+      # A janela gráfica só é exercitada de verdade onde há servidor gráfico: no
+      # Linux instalamos um servidor virtual (Xvfb), que roda os testes da janela em
+      # vez de pulá-los.
+      - name: Servidor gráfico virtual (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq xvfb
+
+      - name: Testes com janela gráfica (Linux)
+        if: runner.os == 'Linux'
+        run: xvfb-run -a python -m unittest discover -s tests -v
+
+      # O assistente precisa funcionar com entrada vinda de um script (é assim que ele
+      # será usado por quem cola uma lista de currículos e aperta Enter).
+      - name: Assistente cria .config e .list e roda os relatórios
+        shell: bash
+        run: |
+          pasta="$(mktemp -d)"
+          printf 'Grupo CI\n1111111111111111 , Ana Beatriz Ferreira Lima\n2222222222222222 , Carlos Eduardo Mendes Rocha\n\n2000\nhoje\n%s/relatorios\n%s/exemplo/demo-lattes/cache\n\ns\n' "$pasta" "$PWD" \
+            | python -m scriptLattes.assistente --pasta "$pasta" --rodar
+          test -f "$pasta/grupo-ci.config"
+          test -f "$pasta/grupo-ci.list"
+          test -f "$pasta/relatorios/index.html"
+
+      # O lançador é o caminho que um usuário sem experiência percorre: ele precisa
+      # funcionar nos dois sistemas, criando o ambiente virtual e instalando tudo.
+      - name: Lançador (Linux/macOS)
+        if: runner.os != 'Windows'
+        continue-on-error: true
+        run: ./executar.sh --diagnostico
+
+      - name: Lançador (Windows)
+        if: runner.os == 'Windows'
+        continue-on-error: true
+        shell: cmd
+        run: executar.bat --diagnostico
+
+      - name: Diagnóstico direto pelo Python
+        continue-on-error: true
+        run: python scriptLattes.py --diagnostico
+
+      # O exemplo do projeto usa currículos sintéticos que ficam versionados no
+      # repositório: precisa rodar de ponta a ponta sem internet e sem navegador.
+      - name: Demonstração offline (currículos sintéticos)
+        run: |
+          python scriptLattes.py exemplo/demo.config
+          python -c "import os,sys; sys.exit(0 if os.path.isfile('exemplo/demo-lattes/saida/index.html') else 1)"
+          python -c "import glob,sys; sys.exit(0 if len(glob.glob('exemplo/demo-lattes/saida/json/*.json')) == 3 else 1)"
+
+      - name: Importar currículos salvos pelo navegador (--adicionar-cv)
+        shell: bash
+        run: |
+          pasta="$(mktemp -d)"
+          python scriptLattes.py --adicionar-cv exemplo/demo-lattes/cache --cache "$pasta/cache"
+          python -c "import glob,os,sys; sys.exit(0 if len(os.listdir('$pasta/cache')) == 3 else 1)"
+
+      # Sem currículos em cache/ (a pasta é ignorada pelo git) e sem ChromeDriver, o
+      # programa precisa explicar o problema em português, sem traceback e sem travar.
+      - name: Falha previsível deve ser explicada, não quebrada
+        shell: bash
+        run: |
+          pasta="$(mktemp -d)"
+          {
+            echo "global-arquivo_de_entrada = $PWD/exemplo/teste-01.list"
+            echo "global-diretorio_de_saida = $pasta/saida"
+            echo "global-diretorio_de_armazenamento_de_cvs = $pasta/cache"
+          } > "$pasta/ci.config"
+          set +e
+          python scriptLattes.py "$pasta/ci.config" > "$pasta/saida.txt" 2> "$pasta/erro.txt"
+          codigo=$?
+          set -e
+          echo "código de saída: $codigo"
+          cat "$pasta/saida.txt"
+          test "$codigo" -eq 3
+          grep -q '\[ERRO\]' "$pasta/saida.txt"
+          grep -q 'O que fazer:' "$pasta/saida.txt"
+          test ! -s "$pasta/erro.txt"
